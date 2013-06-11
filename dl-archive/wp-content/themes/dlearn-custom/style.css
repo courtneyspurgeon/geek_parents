@@ -1,0 +1,244 @@
+/* @override 
+	http://dl.brenemanjaech.org/wp-content/themes/dlearn-custom/style.css?ver=1.6.4
+*/
+
+/**
+ * Theme Name: Geek Parents (BuddyPress Child Theme)
+ * Theme URI: http://dl.brenemanjaech.org
+ * Description: Based on the BuddyPress Theme
+ * Version: 0.1
+ * Author: Ambernight
+ * Author URI: http://ambernight.com
+ * Template: bp-default
+ * License: GNU General Public License
+ * License URI: license.txt
+ * Tags: blue, buddypress, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, fixed-width, light, right-sidebar, rtl-language-support, sticky-post, threaded-comments, translation-ready, two-columns, white
+ *
+ *
+ * This file intentionally left blank. CSS is enqueued in functions.php
+ *
+ */
+
+body {
+	background: none;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+/*div#content .padder {
+    margin-left:225px;
+}*/
+
+.favorite {
+    border: 2px solid blue;
+}
+
+.hide {
+    display:none;
+}
+
+.brthumbnail {
+    width:150px;
+}
+
+/* #left-sidebar {
+    border-right: 1px solid #ddd;
+    float: left;
+    margin-right: -226px;
+    margin-top: 1px;
+    width: 224px;
+}*/
+
+.widget_categories ul.children {
+    margin: 0 0 18px 1.5em;
+}
+
+#header {
+	background: none;
+	border-bottom: 1px solid #dadada;
+	border-radius: 0;
+}
+
+#header h1#logo a  {
+	color: rgba(0,0,0,0.8);
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 4px;
+}
+
+ul#nav {
+	float: left;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+ul#nav li:hover {
+	background: #dadada;
+}
+
+#container, #navigation, #header {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease-in-out;
+}
+
+#container, .container {
+	border-style: none !important;
+}
+
+/* @group Search Form Hidden */
+
+form#search-form {
+	position: relative;
+}
+
+form#search-form, form#search-form * {
+	-webkit-transition: all 0.25s ease-in-out;	
+}
+
+input#search-terms {
+	width: 10%;
+	padding: 5px 10px !important;
+	background: white url(http://dl.brenemanjaech.org/wp-includes/images/admin-bar-sprite.png) no-repeat 5px 5px;
+	padding-left: 30px !important;
+	border: 1px solid rgba(0,0,0,0.4) !important;
+}
+
+select#search-which {
+	opacity: 0;
+	display: none;
+}
+
+input#search-submit {
+	display: none;
+}
+
+/* @end */
+
+/* @group Search Form Shown */
+
+.search-show form#search-form {
+	margin: 0 auto;
+	z-index: 10002;
+	left: -20%;
+	opacity: 1 !important;
+	padding: 1em;
+}
+
+.search-show #container, .search-show #navigation {
+	opacity: 0.2;
+}
+
+.search-show input#search-terms {
+	padding: 0.75em !important;
+	font-size: 25px;
+	width: 50%;
+	padding-left: 40px !important;
+	background-size: 30px;
+	background-position-y: 14px;
+	border: none !important;
+	box-shadow: none;
+	border: 1px solid rgba(0,0,0,0.0) !important;
+	border-bottom: 1px solid rgba(0,0,0,1) !important;
+}
+
+.search-show select#search-which {
+	opacity: 1;
+}
+
+.search-show input#search-terms:before {
+	content: '';
+	opacity: 1;
+}
+
+
+/* @end */
+
+.topic-story {
+	border-bottom: 1px solid #dadada;
+	margin-top: 2em;
+}
+
+.widget_recent_entries ul li, .widget_recent_comments ul li, .widget_rss ul li {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	line-height: 125%;
+	padding: 0.75em 0;
+}
+
+
+.hidden { display: none; }
+h2.pagetitle { 
+	padding: 0; 
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+.author-box > div > div[id=post-mention] { margin: 0 0 15px 0; }
+.author-box > div > div[id=send-private-message] { margin: 15px 0; }
+.author-box > div[id=item-buttons] { margin: 15px 0 0 0; }
+
+img.featured { margin: 5px 0; }
+
+#logbook-content {
+	display: block;
+	position: fixed;
+	left: -300px;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	background: rgba(0,0,0,0.85);
+	z-index: 1000;
+	margin: 0;
+	padding: 2em;
+	padding-top: 6em;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+
+.logbook-show #logbook-content {
+	left: 0;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+}
+
+.logbook-show #container, .logbook-show #header {
+	opacity: 0.3;
+}
+
+#logbook-content ul:first-child:before {
+	content: 'User Logbook';
+	font-size: 150%;
+	line-height: 200%;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	display: block;
+	color: rgba(255,255,255,0.9);
+	font-weight: bold;
+}
+
+#logbook-content ul:first-child li:first-child {
+	margin-top: 1em;
+}
+
+
+.widget_logbook_widget .widgettitle {
+	display: none;
+}
+
+#logbook-heading {
+	position: fixed;
+	top: 40px;
+	left: 0;
+	display: block;
+	z-index: 1001;
+	padding: 0.5em 2em;
+	border-radius: 0 5px 5px 0;
+	background-color: #bbbcbb;
+	cursor: pointer;
+	-webkit-transition: all 0.5s ease-in-out;
+	
+}
+
+.logbook-show #logbook-heading {
+	color: white;
+	background: rgba(0,0,0,0.8);
+}
+
+#logbook-content .activity-inner {
+	display: none;
+}

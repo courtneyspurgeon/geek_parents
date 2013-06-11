@@ -1,0 +1,778 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+
+//
+// IMPORTING STYLES
+//
+
+// import normalize
+@import "normalize";
+
+// import mixins
+@import "mixins";
+
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+
+// styles in base.scss
+@import "base";
+
+body {
+	background: none;
+    width: 100%;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-smooth: always;
+	font-size: 80%;
+	font-weight: 400;
+	-webkit-font-smoothing: subpixel-antialiased;
+	color: rgba(0,0,0,0.75);
+}
+
+header.header {
+	background: rgb(243,208,54);
+	border-bottom: 1px solid #dadada;
+	border-radius: 0;
+	padding-top: 0;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	top: 0;
+	left: 0;
+	padding: 0 1em;
+}
+
+header.header h1#logo a  {
+	color: rgba(0,0,0,0.8);
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 4px;
+	font-size: 80%;
+	margin-left: 25px;
+}
+
+header.header h1#logo {
+	margin-bottom: 0;
+}
+
+div.page {
+	margin-top: 50px;
+}
+
+#blog-page h2 {
+	margin-bottom: 0;
+	margin-top: 1em;
+}
+
+.topic-story.span4 h2, .topic-story.span3 h2 {
+	margin-top: -0.5em !important;
+}
+
+.topic-story article.favorite {
+	border: inherit;
+	border-radius: 7px;
+	background-image: -webkit-linear-gradient(top, rgba(243,208,54,0.7) 0%, rgba(243,208,54, 0) 100%);	
+}
+
+.topic-story article.favorite .posttitle {
+/*	background-color: red;*/
+}
+
+#wpadminbar {
+	top: 50px;
+	position: absolute;
+	z-index: 0;
+}
+
+ul.ab-top-menu {
+	margin-left: 25px !important;
+}
+
+.offscreen {
+    position: absolute;
+    left: -999em;
+}
+
+.article-wrapper {
+    min-height: 600px;
+}
+
+.favorite {
+    border: 2px solid blue;
+}
+
+
+.spinner{
+    background: url('../img/ajax-loader.gif') no-repeat 4px 4px white;
+	padding-left: 20px;
+    border-radius: 5px;
+    padding: 3px 0.75em;
+    padding-left: 25px;
+    font-weight: 300;
+}
+
+.brthumbnail {
+    width:185px;
+}
+
+/* #left-sidebar {
+    border-right: 1px solid #ddd;
+    float: left;
+    margin-right: -226px;
+    margin-top: 1px;
+    width: 224px;
+}*/
+
+.widget_categories ul.children {
+    margin: 0 0 18px 1.5em;
+}
+
+#header {
+	background: none;
+	border-bottom: 1px solid #dadada;
+	border-radius: 0;
+}
+
+#header h1#logo a  {
+	color: rgba(0,0,0,0.8);
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 4px;
+}
+
+ul#nav {
+	float: left;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+ul#nav li:hover {
+	background: #dadada;
+}
+
+#container, #navigation, #header {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease-in-out;
+}
+
+#container, .container {
+	border-style: none !important;
+}
+
+/* @group Search Form Hidden */
+
+form#search-form {
+	position: relative;
+}
+
+form#search-form, form#search-form * {
+	-webkit-transition: all 0.25s ease-in-out;	
+}
+
+input#search-terms {
+	width: 10%;
+	padding: 5px 10px !important;
+	background: white url(http://dl.brenemanjaech.org/wp-includes/images/admin-bar-sprite.png) no-repeat 5px 5px;
+	padding-left: 30px !important;
+	border: 1px solid rgba(0,0,0,0.4) !important;
+}
+
+select#search-which {
+	opacity: 0;
+	display: none;
+}
+
+input#search-submit {
+	display: none;
+}
+
+/* @end */
+
+/* @group Search Form Shown */
+
+.search-show form#search-form {
+	margin: 0 auto;
+	z-index: 10002;
+	left: -20%;
+	opacity: 1 !important;
+	padding: 1em;
+}
+
+.search-show #container, .search-show #navigation {
+	opacity: 0.2;
+}
+
+.search-show input#search-terms {
+	padding: 0.75em !important;
+	font-size: 25px;
+	width: 50%;
+	padding-left: 40px !important;
+	background-size: 30px;
+	background-position-y: 14px;
+	border: none !important;
+	box-shadow: none;
+	border: 1px solid rgba(0,0,0,0.0) !important;
+	border-bottom: 1px solid rgba(0,0,0,1) !important;
+}
+
+.search-show select#search-which {
+	opacity: 1;
+}
+
+.search-show input#search-terms:before {
+	content: '';
+	opacity: 1;
+}
+
+
+/* @end */
+
+.topic-story {
+	border-bottom: 1px solid #dadada;
+	margin-top: 2em;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.03) 0%, rgba(0, 0, 0, 0.05) 100%);
+	border-radius: 7px;
+	-webkit-transition: all 0.25s ease-out;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+}
+
+.topic-story:hover {
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.topic-story article {
+	padding: 1em;
+}
+
+.topic-story.span4, .topic-story.span3 {
+	min-height: 55em;
+}
+
+.topic-story p.date {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	word-spacing: 2px;
+}
+
+.topic-story a.post-edit-link {
+	display: none !important;
+}
+
+.topic-story p.date a {
+	display: inline-block;
+	background: rgba(243,208,54,0.3);
+	padding: 0 0.5em;
+	font-weight: normal;
+	font-style: normal;
+	color: rgb(153,153,153);
+	border-radius: 5px;
+}
+
+.topic-story .entry-content p:first-child:after {
+	content: '\2026';
+}
+
+.topic-story .entry-content p a:last-child {
+	float: right;
+	background: rgba(255,255,255,0.7);
+	padding: 0.25em 1em;
+	margin: 0.5em 0 0 0.5em;
+	border-radius: 5px;
+	-webkit-transition: all 0.25s ease-in-out;
+	text-transform: capitalize;
+}
+
+.topic-story .entry-content p a:last-child:after {
+/*	content: ' \2192';*/
+}
+
+.topic-story .entry-content p a:last-child:hover {
+	background: rgb(243,208,54);
+	text-decoration: none;
+	color: rgb(89,89,89);
+}
+
+.topic-story div.entry p {
+	margin-bottom: 0;
+}
+
+.topic-story.span4 img.featured, .topic-story.span4 img.wp-post-image, .topic-story.span3 img.featured, .topic-story.span3 img.wp-post-image {
+	width: 100%;
+}
+
+.topic-story.span4 .entry-thumbnail, .topic-story.span3 .entry-thumbnail {
+	overflow: hidden;
+	max-height: 250px;
+	margin-bottom: 1em;
+}
+
+#main-topic-story img {
+	float: left;
+	margin-right: 2em;
+	margin-bottom: 1em;
+}
+
+#main-topic-story header h2 {
+	font-size: 350%;
+	line-height: 100%;
+	font-weight: 600;
+	margin-top: 6px;
+}
+
+#main-topic-story p.date {
+	border: none;
+	font-size: 100%;
+}
+
+#main-topic-story .entry p {
+	font-size: 125%;
+	font-weight: 400;
+}
+
+.widget_recent_entries ul li, .widget_recent_comments ul li, .widget_rss ul li {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	line-height: 125%;
+	padding: 0.75em 0;
+}
+
+.post-actions {
+	padding: 0 1em;
+	bottom: 1em;
+	position: absolute;
+}
+
+.post-actions a {
+	background: url(../img/64x64.png) no-repeat;
+	background-size: 64px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	text-indent: -1000em;
+	margin: 0 0.5em;
+}
+
+.post-actions a.share-action {
+	background-position: 0 -2px;
+}
+
+.post-actions a.action-comment {
+	background-position: 0 -162px;
+}
+
+.post-actions a.action-related {
+	background-position: 0 -572px;
+}
+
+.post-actions a:hover {
+	-webkit-transform: scale(1.05);
+}
+
+.topic-story .share {
+	position: absolute;
+	bottom: 50px;
+	padding: 1em;
+	width: 90%;
+	display: block;
+}
+
+.topic-story a.button.fav, .topic-story a.button.unfav {
+	position: absolute;
+	bottom: 160px;
+	left: 20px;
+	background: url(../img/64x64.png) no-repeat 2px -657px transparent;
+	border: none;
+	padding-left: 34px;
+	background-size: 64px;	
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+}
+
+.topic-story .related-posts li {
+	line-height: 110%;
+	padding: 0.5em 0;
+}
+
+.topic-story .related-posts li abbr {
+	display: none;
+}
+
+.topic-story .conversation {
+	position: absolute;
+	bottom: 60px;
+	left: 20px;
+	background: url(../img/64x64.png) no-repeat 2px -164px transparent;
+	border: none;
+	padding-left: 34px;
+	background-size: 64px;	
+	width: 0px;
+	height: 30px;
+	text-indent: -1000px;
+}
+
+.topic-story .conversation:after {
+	content: " . Leave a Comment";
+	position: absolute;
+	left: 35px;
+	width: 250px;
+	top: -22px;
+	text-indent: 890px;	
+}
+
+.topic-story a.button.fav {
+	background-position: 2px -698px;
+}
+
+.topic-story .share .mr_social_sharing {
+	height: 2em;
+	display: block;
+}
+
+.topic-story div.share a {
+	display: block;
+	height: 2em;
+	margin: 0.5em;
+	padding-top: 15px;
+	color: rgba(0,0,0,0.9);
+}
+
+.topic-story .share .mr_social_sharing:first-child {
+	width: auto;
+	height: 1em;
+	background: url(../img/64x64.png) no-repeat 7px -202px;
+	background-size: 64px;
+	padding-left: 40px;
+	padding-top: 15px;
+}
+
+.topic-story .share .mr_social_sharing:first-child:after {
+	content: "Share on Facebook";
+}
+
+.topic-story .share a.pin-it-button {
+	background: url(../img/64x64.png) no-repeat 0 -367px;
+	background-size: 64px;
+	padding-left: 32px;
+}
+
+.topic-story .share a.twitter-share-button {
+	background: url(../img/64x64.png) no-repeat -40px -38px;
+	background-size: 64px;
+	padding-left: 32px;
+}
+
+.topic-story .share a.pin-it-button:after {
+	content: "Pin it";
+}
+
+.topic-story .share a.pin-it-button img {
+	display: none;
+}
+
+.article-wrapper .related-posts {
+	bottom: 0;
+	position: absolute;
+	padding: 1em;
+}
+
+.hidden { display: none; }
+
+#featured-categories .span3, #all-categories .span3 {
+	border-bottom: 1px solid #dadada;
+	margin-top: 2em;
+	background: rgba(0,0,0,0.03);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	background: -webkit-linear-gradient(top, #f8f8f8 0%, #f0f0f0 100%);
+	border-radius: 7px;
+	-webkit-transition: all 0.25s ease-out;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	min-height: 28em;
+}
+
+#featured-categories .row:first-child .span3, #all-categories .row:first-child .span3 {
+	margin-top: 0;
+}
+
+#featured-categories .span3 .cat-name, #all-categories .span3 .cat-name, #featured-categories .span3 .cat-description, #all-categories .span3 .cat-description {
+	padding: 1em;
+}
+
+#featured-categories .span3 .cat-name, #all-categories .span3 .cat-name {
+	color: rgba(0,0,0,0.65);
+	font-size: 160%;
+	font-weight: 700;
+	padding-bottom: 0.5em;
+}
+
+#featured-categories .span3 .brthumbnail, #all-categories .span3 .brthumbnail {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+	line-height: 0;
+}
+
+#featured-categories .span3 .brthumbnail img, #all-categories .span3 .brthumbnail img {
+	margin: 5px;	
+}
+
+h2.pagetitle { 
+	padding: 0; 
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+h2.posttitle, h2.pagetitle {
+	color: rgba(0,0,0,0.65);
+	font-weight: 400;
+}
+
+h2.posttitle {
+	margin: -0.5em;
+	margin-bottom: 0;
+	background: rgb(243,208,54);
+	text-decoration: none;
+	color: rgb(89,89,89);
+	padding: 0.5em 1em;
+	border-radius: 7px 7px 0 0;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.author-box > div > div[id=post-mention] { margin: 0 0 15px 0; }
+.author-box > div > div[id=send-private-message] { margin: 15px 0; }
+.author-box > div[id=item-buttons] { margin: 15px 0 0 0; }
+
+img.featured { margin: 5px 0; }
+
+#right-sidebar {
+	display: block;
+	position: fixed;
+	left: -300px;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	background: rgba(0,0,0,0.85);
+	z-index: 1000;
+	margin: 0;
+	padding: 2em;
+	padding-top: 2em;
+	-webkit-transition: all 0.5s ease-in-out;
+	color: white;
+}
+
+.logbook-body-show #right-sidebar {
+	left: 0;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+}
+
+.logbook-body-show #container, .logbook-body-show #header {
+	opacity: 0.3;
+}
+
+#right-sidebar h4 {
+	font-size: 150%;
+	line-height: 200%;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	display: block;
+	color: rgba(255,255,255,0.9);
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+#logbook-content ul:first-child li:first-child {
+	margin-top: 1em;
+}
+
+#logbook-content ul li {
+	font-size: 130%;
+	line-height: 95%;
+}
+
+#logbook-content .activity-content {
+	position: relative;
+	padding-right: 50px;
+}
+
+#logbook-content a.button.unfav {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: url(../img/glyphicons-halflings-white.png) no-repeat -450px 5px transparent;
+	border: none;
+	width: 16px;
+	height: 16px;
+	text-indent: -500em;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+}
+
+#logbook-content ul li:hover a.button.unfav {
+	opacity: 1;
+}
+
+
+#right-sidebar .widget_logbook_widget h4 {
+	font-size: 250%;
+	margin: 0;
+}
+
+#logbook-heading a {
+	position: fixed;
+	top: 90px;
+	left: 0;
+	display: block;
+	z-index: 1001;
+	padding: 0;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	-webkit-transition: all 0.5s ease-in-out;
+	width: 34px;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -1000px;
+	background: url(../img/glyphicons-halflings-white.png) no-repeat -40px -41px #bbbcbb;
+}
+
+.logbook-body-show #logbook-heading a {
+	background-color: rgba(0,0,0,0.8);
+	left: 300px;
+}
+
+#logbook-content .activity-content p {
+    font-size: 0.8em;
+}
+
+#right-sidebar #members-list .activity {
+	background: inherit;
+}
+
+.widget_bp_core_members_widget #members-list-options {
+	display: none;
+}
+
+.widget_bp_core_members_widget ul#members-list li {
+	border: none;
+	padding: 0.5em 0;
+}
+
+.widget_bp_core_members_widget ul#members-list li .activity {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.widget_bp_core_members_widget ul#members-list li img.avatar {
+	border-radius: 5px;
+	width: 40px;
+	border: 1px solid rgba(255,255,255,0.5);
+}
+
+
+
+/*
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*/
+@media only screen and (min-width: 481px) {
+
+	// styles in 481up.scss
+	@import "481up";
+
+} // end of media query
+
+/*
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 768px) {
+
+	// import grids
+	// @import "grid";
+
+	// styles in 768up.scss
+	@import "768up";
+
+} // end of media query
+
+/*
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 1030px) {
+
+	// styles in 1030up.scss
+	@import "1030up";
+
+} // end of media query
+
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: 1240px) {
+
+	// styles in 1240up.scss
+	@import "1240up";
+
+} // end of media query
+
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+	// styles in 2x.scss
+	@import "2x";
+
+} // end of media query
+
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
+  
+}
+
+/*
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print {
+	@import "print";
+}

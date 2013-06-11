@@ -1,0 +1,9 @@
+.reg_groups {
+	float: right;
+	width: 48%;
+}
+
+.reg_groups_none {
+	font-style: italic;
+	color: gray;
+}

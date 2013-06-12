@@ -1,0 +1,20 @@
+/**
+ * Theme Name: Geek Parents
+ * Theme URI: http://dl.brenemanjaech.org
+ * Description: Based on the Newspress theme with the BuddyPress Theme Pack
+ * Version: 0.1
+ * Author: courtneyspurgeon
+ * Author URI: http://courtneyspurgeon.com
+ * Template: newsplus
+ * License: GNU General Public License
+ * License URI: license.txt
+ *
+ *
+ * This file intentionally left blank. CSS is enqueued in functions.php
+ *
+ */
+
+ @import url("../newsplus/style.css");
+
+ /* Custom Styles for main layout/fonts/colors */
+ @import url("css/layout.css");

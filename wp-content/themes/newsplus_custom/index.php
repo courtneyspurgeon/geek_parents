@@ -42,7 +42,7 @@ $featured_num = "4";
 
       <?php } else { /* all other featured posts */ ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3'); ?>>
-          <?php the_post_thumbnail( 'bones-thumb-302' ); ?>
+          <?php get_template_part( 'formats/format', get_post_format() ); ?>
           <div class="entry-content">
                       <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
                       <p class="post-excerpt"><?php echo short( get_the_excerpt(), 160 ); ?></p>
@@ -57,11 +57,12 @@ $featured_num = "4";
     <?php endwhile; ?> 
     
     <?php wp_reset_query(); ?>
-    </div> <!--end featured content -->
+    <div class="clear"></div>
+  </div> <!--end featured content -->
 <?php } /* end if is_home and !is_paged() */?>
 
 <!-- end featured post section -->
-
+<div class="clear"></div>
 <div id="primary" class="site-content">
     <div id="content" role="main">
       

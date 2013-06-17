@@ -13,8 +13,19 @@
 /*article {
   box-shadow: 0px 0px 5px #888888;
 }*/
-#featured_content .post-thumb { border-bottom: 5px solid #e00000; }
-#primary #content .post-thumb { border-bottom: 5px solid #0099ff; }
+/*#featured_content article .post-thumb { border-bottom: 5px solid #e00000; }*/
+
+#featured_content .post-thumb,
+#primary #content .post-thumb { 
+  height: 200px;
+  overflow: hidden;
+  }
+  #featured_content .post-thumb img,
+  #primary #content .post-thumb img {
+    height: 100%;
+    margin: auto;
+    max-width: 320px;
+    }  
 
 .large-feature {
   padding: 10px 0;
@@ -30,7 +41,9 @@
     margin-left: 3%;
     }
     /* .large-feature .post-thumb img {max-height: 400px;} */
-
+#featured_content .entry-grid,
+#featured_content .entry-classic {border-bottom: 0px;}
+#featured_content {border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5em;}
 
 
 
@@ -39,11 +52,7 @@
 
 
 /* ======================= Category Browse ==== */
-#featured-categories .span3 .brthumbnail, #all-categories .span3 .brthumbnail {
-  margin: 0 auto;
-  width: auto;
-  text-align: center;
-  line-height: 0; }
 
-#featured-categories .span3 .brthumbnail img, #all-categories .span3 .brthumbnail img {
-  margin: 5px; }
+
+/* ======================= Tool Classes ======== */
+.clear {clear: both;}

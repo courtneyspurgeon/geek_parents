@@ -1936,6 +1936,8 @@ ul.ss_social li a.rss:before {
 	color: #999;
 }
 
+/* 2013.06.17   Entry meta styles moved to newsplus_custom/layout.css by Rob Brennan */
+/*
 .entry-meta a,
 .widget .entry-meta a {
 	color: #999;
@@ -1960,6 +1962,7 @@ ul.ss_social li a.rss:before {
 .entry-classic .entry-meta {
 	margin-top: -0.375em;
 }
+*/
 
 
 /* Post Short codes */

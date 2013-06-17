@@ -46,7 +46,19 @@
 #featured_content {border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5em;}
 
 
+/* ======================= Meta content =======
+    2013.06.17 Added by Rob Brennan
+*/
+.entry-meta a, .widget .entry-meta a{
+    display: inline-block;
+    background: rgba(243, 208, 54, 0.3);
+    padding: 0 0.5em;
+    font-weight: normal;
+    font-style: normal;
+    color: #999999;
+    border-radius: 5px;
 
+}
 
 /* ======================= Post Content ======= */
 

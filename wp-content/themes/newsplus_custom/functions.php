@@ -45,6 +45,20 @@ require_once('inc/custom-post-type.php'); // you can disable this if you like
 */
 // require_once('inc/translation/translation.php'); // this comes turned off by default
 
+/* 2013.06.17   Custom post meta display created by Rob Brennan */
+function newsplus_post_meta() {
+    // Styled to reflect meta display in original theme
+    printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+
+}
+
+function newsplus_small_meta() {
+    // Styled to reflect meta display in original theme
+    printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+
+}
+
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes

@@ -62,10 +62,10 @@ function newsplus_small_meta() {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-featured', 680, 320, true );
-//add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'bones-thumb-300', 300, 250, true );
-add_image_size( 'bones-thumb-302', 300, 200, true );
+add_image_size( 'bones-thumb-680', 680, 320, true );
+/* Currently not using additional custom sizes
+//add_image_size( 'bones-thumb-300', 300, 250, true );
+*/
 
 /* 
 to add more sizes, simply copy a line from above 

@@ -36,7 +36,9 @@ $featured_num = "4";
             echo( '<p class="post-excerpt">' . get_the_excerpt() . '</p>' ); ?>
             <p><a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e( 'Read More', 'newsplus' ); ?></a></p>
           </div>
-          <?php the_post_thumbnail( 'bones-thumb-600' ); ?>
+          <div class="featured-image">
+            <?php the_post_thumbnail( 'bones-thumb-680' ); ?>
+          </div>
             
         </article><!-- #post-<?php the_ID(); ?> -->
 

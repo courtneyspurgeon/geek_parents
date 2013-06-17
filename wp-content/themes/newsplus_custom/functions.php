@@ -48,8 +48,11 @@ require_once('inc/custom-post-type.php'); // you can disable this if you like
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bones-thumb-featured', 680, 320, true );
+//add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bones-thumb-300', 300, 250, true );
+add_image_size( 'bones-thumb-302', 300, 200, true );
+
 /* 
 to add more sizes, simply copy a line from above 
 and change the dimensions & name. As long as you
@@ -483,5 +486,14 @@ function custom_excerpt_length( $length ) {
 	return 100;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+
+function exclude_featured_category( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', '-615' );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_featured_category' );
 
 ?>

@@ -2,202 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ef6c87-826d-4b85-b35e-78e1078ad8b7" name="Default" comment="Updated formatting for post meta content">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/badge-2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/badge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/button-grad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/icons32-2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/icons32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/menu-2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/Example.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/Invision.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/Mingle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/SimplePress5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/Vanilla.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/actions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/actions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/activity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/akismet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/archive-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/archive-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/bbPress1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress-functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/css/bbpress-rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/css/bbpress-rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/css/bbpress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/bbpress.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/languages/bbpress.pot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/cache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/capabilities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/forums/capabilities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/replies/capabilities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/topics/capabilities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/users/capabilities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/classes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-archive-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-archive-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-reply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-topic-lead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-user.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-single-view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-statistics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/content-topic-tag-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dl.brenemanjaech.org.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/extend.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-logged-in.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-no-access.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-no-forums.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-no-replies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-no-search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/feedback-no-topics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/filters.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-anonymous.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-protected.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-reply-move.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-reply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-topic-merge.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-topic-split.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-topic-tag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-user-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-user-login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-user-lost-pass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-user-register.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/form-user-roles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/formatting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/forums.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/forums/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/replies/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/search/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/topics/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/users/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/green-34.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/green-34.dev.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/green-34.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/green.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/group.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/humans.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/images/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/styles/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/forums/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/replies/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/search/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/topics/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/users/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/languages/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/loader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-forums.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-replies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-search-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-search-reply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-search-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-single-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-single-reply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-single-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/loop-topics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/extend/buddypress/members.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/metaboxes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/options.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/users/options.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-create-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-forum-statistics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-front-forums.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-front-topics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-topic-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-topics-no-replies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-user-login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-user-lost-pass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/page-user-register.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/pagination-replies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/pagination-search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/pagination-topics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/parser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/phpBB.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/replies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/settings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/shortcodes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-forum-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-forum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-reply-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-reply-move.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-reply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-topic-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-topic-merge.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-topic-split.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-topic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-user-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-user.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/single-view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/sub-actions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/taxonomy-topic-tag-edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/extras/taxonomy-topic-tag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/template-functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/template-loader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/forums/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/replies/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/search/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/topics/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/users/template-tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/theme-compat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/tools.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/js/topic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/js/topic.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/topics.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/core/update.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-details.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-favorites.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-profile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-replies-created.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-subscriptions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/templates/default/bbpress/user-topics-created.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/admin/converters/vBulletin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/bbpress/includes/common/widgets.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/bp-backpat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/bp-rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/bp.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/bpt-admin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/bpt-functions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/lang/bp-tpack.pot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/loader.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/plugins/bp-template-pack/readme.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/feed-icon-16x16.gif" afterPath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/feed-icon-16x16.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" afterPath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/page_header_bblogo.png" afterPath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/page_header_bblogo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/page_header_tile.png" afterPath="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-forums/bbpress/bb-templates/kakumei/images/page_header_tile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dl.brenemanjaech.org.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371589131149" ignored="false" />
+    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371596118657" ignored="false" />
     <file path="/README" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371060761004" ignored="false" />
     <file path="/deleteme.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371061307328" ignored="false" />
     <file path="/a.dummy" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371586927874" ignored="false" />
     <file path="/functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371494648101" ignored="false" />
     <file path="/layout.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371497991531" ignored="false" />
     <file path="/style.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371496601942" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/admin/bp-core-schema.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/activity/entry.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/admin/bp-core-slugs.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/activity/comment.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-languages/buddypress.pot" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-groups/bp-groups-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-xprofile/bp-xprofile-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-blogs/bp-blogs-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default-rtl.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress-rtl.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-groups/bp-groups-forums.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-akismet.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-blogs/bp-blogs-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-classes.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-admin.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/deprecated/1.5.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-template.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-members/bp-members-notifications.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-classes.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-catchuri.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress/activity/entry.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress/activity/comment.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-template.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-members/bp-members-adminbar.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-friends/bp-friends-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-friends/bp-friends-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-adminbar.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/admin/bp-core-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
+    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-messages/bp-messages-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,6 +145,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,7 +198,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,22 +305,22 @@
     <frame x="10" y="22" width="1900" height="975" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32788798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973032" sideWeight="0.67134506" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2664509" sideWeight="0.67211205" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26968718" sideWeight="0.67017543" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32788798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -530,13 +392,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/dlearn-custom/single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="35" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.44990176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/inc/metabox/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -565,23 +420,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/dlearn-custom/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1335" column="0" selection-start="33973" selection-end="34168" vertical-scroll-proportion="0.4171705">
-          <folding />
-        </state>
+        <state line="1335" column="0" selection-start="33973" selection-end="34168" vertical-scroll-proportion="0.4171705" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/dlearn-custom/page-home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="53" selection-start="1339" selection-end="1353" vertical-scroll-proportion="0.46699876">
-          <folding />
-        </state>
+        <state line="45" column="53" selection-start="1339" selection-end="1353" vertical-scroll-proportion="0.46699876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="74" selection-start="2309" selection-end="2319" vertical-scroll-proportion="0.42963886">
-          <folding />
-        </state>
+        <state line="49" column="74" selection-start="2309" selection-end="2319" vertical-scroll-proportion="0.42963886" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css">
@@ -593,9 +442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus/includes/header-widget-area.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-includes/nav-menu-template.php">
@@ -608,12 +455,7 @@
     <entry file="file://$PROJECT_DIR$/wp-includes/wp-db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="852" column="195" selection-start="17809" selection-end="17809" vertical-scroll-proportion="0.3483366">
-          <folding>
-            <marker date="1370982817000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1370982817000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1370982817000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1370982817000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -639,6 +481,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-includes/nav-menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />

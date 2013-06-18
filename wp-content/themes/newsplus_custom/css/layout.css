@@ -5,52 +5,36 @@
 
  /* Custom Styles for main layout/fonts/colors */
 
+/* ======================= Page Layout ======= */
+#page {margin: 0 auto 2%;}
+#utility-top { 
+  width: 100%;
+  margin: 10px auto 0;
+  background: #f8f8f8;
+  }
+  #utility-top input[type="text"], 
+  #utility-top input[type="submit"] { height: 2.2em; }
+  #utility-top input[type="submit"] { padding: 0px 10px;
+  }
+
+.secondary-nav li a { margin: 0.4em 0 }
+/*#optional-nav ul { margin: 0 0 1em 2em;}*/
+  
+
  /* ======================= Header ============ */
  .secondary-nav {max-width: 65%;}
- .brand { max-width: 50%;}
+ .brand { max-width: 50%; margin-bottom: 2em; }
 
 /* ======================= Featured Content === */
-/*article {
-  box-shadow: 0px 0px 5px #888888;
-}*/
-/*#featured_content article .post-thumb { border-bottom: 5px solid #e00000; }*/
-
-#featured_content .post-thumb,
-#primary #content .post-thumb { 
-  height: 200px;
-  overflow: hidden;
+  .home-page .entry-content .half {
+    width: 45.484848%;
+    margin-right: 5.030303%
   }
-  #featured_content .post-thumb img,
-  #primary #content .post-thumb img {
-    height: 100%;
-    margin: auto;
-    max-width: 320px;
-    }  
+  .home-page .entry-content .half.last {margin-right: 0px; width: 49.484848%;;}
 
-#featured_content .large-feature {
-  padding: 10px 0;
-  }
-  #featured_content .large-feature .post-content {
-    width: 30%; 
-    float: left;
-    margin-left: 0px;
-    }
-  #featured_content .large-feature .featured-image {
-    width: 65%; 
-    float: left;
-    margin-left: 3%;
-    height: 320px;
-    }
-    #featured_content .large-feature .featured-image img {
-    max-height: 100%;
-    margin: auto;
-    }
-    /* .large-feature .post-thumb img {max-height: 400px;} */
-#featured_content .entry-grid,
-#featured_content .entry-classic {border-bottom: 0px;}
-#featured_content {border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5em;}
-
-
+  .half .entry-list .entry-list-right h3 { font-size: 1.3em; }
+  .half .entry-list .entry-list-right p {margin-bottom: 1em;}
+  .half .entry-list .entry-meta { font-size: .9em; margin-bottom: 1em;}
 /* ======================= Meta content =======
     2013.06.17 Added by Rob Brennan
 */
@@ -77,6 +61,11 @@
 }
 
 /* ======================= Category Browse ==== */
+
+/* ======================= Home Page ========== */
+/*.home-page #sidebar {width: 18%;}
+.home-page #primary {width: 80%;}*/
+.flexslider .slides img {max-height: 400px; margin: auto;}
 
 
 /* ======================= Tool Classes ======== */

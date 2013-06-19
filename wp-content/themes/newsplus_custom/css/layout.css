@@ -5,58 +5,39 @@
 
  /* Custom Styles for main layout/fonts/colors */
 
- /* ======================= Header ============ */
- .secondary-nav {max-width: 65%;}
- .brand { max-width: 50%;}
+/* ======================= Page Layout ======= */
+#page {margin: 0 auto 2%;}
 
-/* ======================= Featured Content === */
-/*article {
-  box-shadow: 0px 0px 5px #888888;
-}*/
-/*#featured_content article .post-thumb { border-bottom: 5px solid #e00000; }*/
+/* ======================= Headers =========== */
 
-#featured_content .post-thumb,
-#primary #content .post-thumb { 
-  height: 200px;
-  overflow: hidden;
+#utility-top { 
+    margin: 10px auto 0;
+    background: #f8f8f8;
   }
-  #featured_content .post-thumb img,
-  #primary #content .post-thumb img {
-    height: 100%;
-    margin: auto;
-    max-width: 320px;
-    }  
+  #utility-top input[type="text"], 
+  #utility-top input[type="submit"] { height: 2.2em; }
+  #utility-top input[type="submit"] { padding: 0px 10px; }
 
-#featured_content .large-feature {
-  padding: 10px 0;
+.secondary-nav li a { margin: 0.4em 0 }  
+.secondary-nav {max-width: 65%;}
+.brand { max-width: 50%; margin-bottom: 2em; }
+
+/* ======================= Homepage Featured Content === */
+  .home-page .entry-content .half {
+    width: 45.484848%;
+    margin-right: 5.030303%
   }
-  #featured_content .large-feature .post-content {
-    width: 30%; 
-    float: left;
-    margin-left: 0px;
-    }
-  #featured_content .large-feature .featured-image {
-    width: 65%; 
-    float: left;
-    margin-left: 3%;
-    height: 320px;
-    }
-    #featured_content .large-feature .featured-image img {
-    max-height: 100%;
-    margin: auto;
-    }
-    /* .large-feature .post-thumb img {max-height: 400px;} */
-#featured_content .entry-grid,
-#featured_content .entry-classic {border-bottom: 0px;}
-#featured_content {border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5em;}
-
+  .home-page .entry-content .half.last {
+    margin-right: 0px; 
+    width: 49.484848%;
+  }
 
 /* ======================= Meta content =======
     2013.06.17 Added by Rob Brennan
 */
 .entry-meta a, .widget .entry-meta a{
     display: inline-block;
-    background: rgba(243, 208, 54, 0.3);
+    background: rgba(240, 240, 240, 1);
     padding: 0 0.5em;
     font-weight: normal;
     font-style: normal;
@@ -66,7 +47,10 @@
 }
 
 /* ======================= Post Content ======= */
-.post-thumb {position: relative;}
+.post-thumb {position: relative; margin-bottom: 1em;}
+.entry-content h3 { font-size: 1.3em; line-height: 1.4;}
+.entry-content p {margin-bottom: 1em;}
+.entry-content .entry-meta { font-size: .9em; margin-bottom: 1em;}
 .new-tag {
   position: absolute;
   top: 0px;
@@ -77,6 +61,7 @@
 }
 
 /* ======================= Category Browse ==== */
+
 
 
 /* ======================= Tool Classes ======== */

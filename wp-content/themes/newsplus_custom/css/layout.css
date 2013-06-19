@@ -7,40 +7,37 @@
 
 /* ======================= Page Layout ======= */
 #page {margin: 0 auto 2%;}
+
+/* ======================= Headers =========== */
+
 #utility-top { 
-  width: 100%;
-  margin: 10px auto 0;
-  background: #f8f8f8;
+    margin: 10px auto 0;
+    background: #f8f8f8;
   }
   #utility-top input[type="text"], 
   #utility-top input[type="submit"] { height: 2.2em; }
-  #utility-top input[type="submit"] { padding: 0px 10px;
-  }
+  #utility-top input[type="submit"] { padding: 0px 10px; }
 
-.secondary-nav li a { margin: 0.4em 0 }
-/*#optional-nav ul { margin: 0 0 1em 2em;}*/
-  
+.secondary-nav li a { margin: 0.4em 0 }  
+.secondary-nav {max-width: 65%;}
+.brand { max-width: 50%; margin-bottom: 2em; }
 
- /* ======================= Header ============ */
- .secondary-nav {max-width: 65%;}
- .brand { max-width: 50%; margin-bottom: 2em; }
-
-/* ======================= Featured Content === */
+/* ======================= Homepage Featured Content === */
   .home-page .entry-content .half {
     width: 45.484848%;
     margin-right: 5.030303%
   }
-  .home-page .entry-content .half.last {margin-right: 0px; width: 49.484848%;;}
+  .home-page .entry-content .half.last {
+    margin-right: 0px; 
+    width: 49.484848%;
+  }
 
-  .half .entry-list .entry-list-right h3 { font-size: 1.3em; }
-  .half .entry-list .entry-list-right p {margin-bottom: 1em;}
-  .half .entry-list .entry-meta { font-size: .9em; margin-bottom: 1em;}
 /* ======================= Meta content =======
     2013.06.17 Added by Rob Brennan
 */
 .entry-meta a, .widget .entry-meta a{
     display: inline-block;
-    background: rgba(243, 208, 54, 0.3);
+    background: rgba(240, 240, 240, 1);
     padding: 0 0.5em;
     font-weight: normal;
     font-style: normal;
@@ -50,7 +47,10 @@
 }
 
 /* ======================= Post Content ======= */
-.post-thumb {position: relative;}
+.post-thumb {position: relative; margin-bottom: 1em;}
+.entry-content h3 { font-size: 1.3em; line-height: 1.4;}
+.entry-content p {margin-bottom: 1em;}
+.entry-content .entry-meta { font-size: .9em; margin-bottom: 1em;}
 .new-tag {
   position: absolute;
   top: 0px;
@@ -62,10 +62,6 @@
 
 /* ======================= Category Browse ==== */
 
-/* ======================= Home Page ========== */
-/*.home-page #sidebar {width: 18%;}
-.home-page #primary {width: 80%;}*/
-.flexslider .slides img {max-height: 400px; margin: auto;}
 
 
 /* ======================= Tool Classes ======== */

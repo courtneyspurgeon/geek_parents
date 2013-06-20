@@ -502,19 +502,34 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+// 2013.06.20 => Original method of hiding the admin bar needed to be replaced. A custom function was created to allow checking if a user has a specific role
 /**
- * 2013.06.20 => Hide the admin bar unless the user is an administrative user added by Rob Brennan
+ * Checks if a particular user has a role.
+ * Returns true if a match was found.
  *
- * http://codex.wordpress.org/Function_Reference/is_admin - This Conditional Tag checks if the Dashboard or the administration panel is
- * attempting to be displayed. It should not be used as a means to verify whether the current user has permission to view the Dashboard
- * or the administration panel. This is a boolean function that will
- * return true if the URL being accessed is in the admin section, or false for a front-end page.
+ * @param string $role Role name.
+ * @param int $user_id (Optional) The ID of a user. Defaults to the current user.
+ * @return bool
  */
+function check_user_role( $role, $user_id = null ) {
+
+    if ( is_numeric( $user_id ) )
+        $user = get_userdata( $user_id );
+    else
+        $user = wp_get_current_user();
+
+    if ( empty( $user ) )
+        return false;
+
+    return in_array( $role, (array) $user->roles );
+}
+// 2013.06.20 => Hide the admin bar unless the user is an administrative user or editor added by Rob Brennan
 $displayAdminBar = '__return_false';
-if (is_admin()) {
+if (check_user_role('administrator') || check_user_role('editor')){
     $displayAdminBar = '__return_true';
 }
 add_filter('show_admin_bar', $displayAdminBar);
+//
 
 function exclude_featured_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {

@@ -495,13 +495,22 @@ require( get_stylesheet_directory() . '/inc/sortable-stories.php' );
 require( get_stylesheet_directory() . '/inc/favorite-post.php' );
 
 function custom_excerpt_length( $length ) {
-	// Change the length of the excerpt 
-	// 2013.06.11 => Updated default length of 20 words to accommodate larger abstracts by Rob Brennan
-	return 100;
+	// Change the length of the excerpt
+    // 2013.06.20 => Updated default length to be 80 words per 6/19/13 meeting where the team will keep abstracts around 75 words or less
+	    // 2013.06.11 => Updated default length of 20 words to accommodate larger abstracts by Rob Brennan
+	return 80;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-
+/**
+ * 2013.06.20 => Hide the admin bar unless the user is an administrative user added by Rob Brennan
+ *
+ * http://codex.wordpress.org/Function_Reference/is_admin - This Conditional Tag checks if the Dashboard or the administration panel is
+ * attempting to be displayed. It should not be used as a means to verify whether the current user has permission to view the Dashboard
+ * or the administration panel. This is a boolean function that will
+ * return true if the URL being accessed is in the admin section, or false for a front-end page.
+ */
+add_filter('show_admin_bar', '__return_'.is_admin());
 
 function exclude_featured_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {

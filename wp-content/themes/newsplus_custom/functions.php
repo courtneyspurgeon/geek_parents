@@ -510,7 +510,11 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
  * or the administration panel. This is a boolean function that will
  * return true if the URL being accessed is in the admin section, or false for a front-end page.
  */
-add_filter('show_admin_bar', '__return_'.is_admin());
+$displayAdminBar = '__return_false';
+if (is_admin()) {
+    $displayAdminBar = '__return_true';
+}
+add_filter('show_admin_bar', $displayAdminBar);
 
 function exclude_featured_category( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {

@@ -121,7 +121,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_forum' ); ?>
 
-						<p>
+						<p class="select_forum">
 							<label for="bbp_forum_id"><?php _e( 'Forum:', 'bbpress' ); ?></label><br />
 							<?php bbp_dropdown( array( 'selected' => bbp_get_form_topic_forum() ) ); ?>
 						</p>
@@ -134,7 +134,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_type' ); ?>
 
-						<p>
+						<p class="topic_type">
 
 							<label for="bbp_stick_topic"><?php _e( 'Topic Type:', 'bbpress' ); ?></label><br />
 
@@ -226,7 +226,7 @@
 
 	<div id="no-topic-<?php bbp_topic_id(); ?>" class="bbp-no-topic">
 		<div class="bbp-template-notice">
-			<p><?php is_user_logged_in() ? _e( 'You cannot create new topics.', 'bbpress' ) : _e( 'You must be logged in to create new topics.', 'bbpress' ); ?></p>
+			<p class="cannot-create"><?php is_user_logged_in() ? _e( 'You cannot create new topics.', 'bbpress' ) : _e( 'You must be <a href="#">logged in</a> to create new topics.', 'bbpress' ); ?></p>
 		</div>
 	</div>
 

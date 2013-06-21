@@ -14,6 +14,8 @@ $ad_above_check 	= ( isset( $post_opts['ad_above_check'] ) ) ? $post_opts['ad_ab
 $ad_below_check 	= ( isset( $post_opts['ad_below_check'] ) ) ? $post_opts['ad_below_check'] : '';
 $hide_meta 			= ( isset( $post_opts['hide_meta'] ) ) ? $post_opts['hide_meta'] : '';
 $post_full_width 	= ( isset( $post_opts['post_full_width'] ) ) ? $post_opts['post_full_width'] : '';
+$article_url      = get_post_meta( $posts[0]->ID, '_cmb_source_url', true );
+$article_domain   = parse_url($article_url, PHP_URL_HOST);
 ?>
 <div id="primary" class="site-content<?php if ( 'true' == $post_full_width ) echo( ' full-width' ); ?>">
     <div id="content" role="main">
@@ -36,23 +38,39 @@ $post_full_width 	= ( isset( $post_opts['post_full_width'] ) ) ? $post_opts['pos
 			 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="entry-header">
                     <h1 class="entry-title"><?php the_title(); ?></h1>
-                    <?php if ( 'true' != $pls_hide_post_meta ) :
-                        if ( 'true' != $hide_meta ) : ?>
-                            <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_post_meta(); ?></aside>
-                        <?php endif; // Hide Post meta on individual post
-                    endif; // Globally hide post meta
+                    <?php 
                     if( 'video' == get_post_format() )
                         get_template_part( 'formats/format', 'video' );
                     elseif ( 'gallery' == get_post_format() )
                         get_template_part( 'formats/format', 'gallery' );
                     else {
-						if ( 'true' != $pls_hide_feat_image )
-							the_post_thumbnail( 'single_thumb' );
-						}
+                    if ( 'true' != $pls_hide_feat_image )
+                      the_post_thumbnail( 'single_thumb' );
+                    }
                     ?>
+                    <?php if ( 'true' != $pls_hide_post_meta ) :
+                        if ( 'true' != $hide_meta ) : ?>
+                            <aside id="meta-<?php the_ID();?>" class="entry-meta">
+                              <aside>
+                              <?php if (true) { ?>
+                                Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a> 
+                                  <br/>
+                                  Discovered by 
+                                  <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+                                    <?php printf( __( '%s ', 'newsplus' ), get_the_author() ); ?>
+                                  </a>, added <?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) ); ?>
+                              <?php } else { ?>
+                                <?php newsplus_post_meta(); ?>
+                              <?php } ?>
+                              </aside>
+
+                              
+                            </aside>
+                        <?php endif; // Hide Post meta on individual post
+                    endif; // Globally hide post meta ?>
                 </header>
                 <div class="entry-content">
-					<?php the_content(); ?>
+					       <?php the_content(); ?>
                 </div><!-- .entry-content -->
                 <footer>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'newsplus' ), 'after' => '</div>' ) );
@@ -63,14 +81,8 @@ $post_full_width 	= ( isset( $post_opts['post_full_width'] ) ) ? $post_opts['pos
                     endif; // hide tags ?>
                 </footer><!-- .entry-meta -->
 			</article><!-- #post-<?php the_ID();?> -->
-			<?php if ( 'true' == $pls_ss_sharing ) : ?>
-                <div class="ss-sharing-container clear">
-					<?php if ( ! empty( $pls_ss_sharing_heading ) )
-						echo stripslashes( '<h4>' . $pls_ss_sharing_heading . '</h4>' );
-					ss_sharing(); ?>
-                </div><!-- .ss-sharing-container -->
-			<?php endif; // Social Sharing
-			if ( 'true' == $pls_author ) :
+			<?php //sharing was moved from here to the sidebar-posts.php template ?>
+			<?php if ( 'true' == $pls_author ) :
 				if ( get_the_author_meta( 'description' ) ) : ?>
 					<div class="author-info">
 						<div class="author-avatar">
@@ -119,5 +131,5 @@ $post_full_width 	= ( isset( $post_opts['post_full_width'] ) ) ? $post_opts['pos
     </div><!-- #content -->
 </div><!-- #primary -->
 <?php if ( 'true' != $post_full_width )
-	get_sidebar(); ?>
+	get_sidebar('posts'); ?>
 <?php get_footer(); ?>

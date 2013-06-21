@@ -47,7 +47,12 @@
 }
 
 /* ======================= Post Content ======= */
-.post-thumb {position: relative; margin-bottom: 1em;}
+.post-thumb {
+  position: relative; 
+  margin-bottom: 1em; 
+  max-height: 200px; 
+  overflow: hidden;
+}
 .entry-content h3 { font-size: 1.3em; line-height: 1.4;}
 .entry-content p {margin-bottom: 1em;}
 .entry-content .entry-meta { font-size: .9em; margin-bottom: 1em;}
@@ -60,31 +65,68 @@
   text-transform: uppercase;
 }
 
-/* ======================= Category Browse ==== */
 
+/* ======================= Article Page ======= */
+
+.entry-content > p:last-child > a {
+  display: inline-block;
+  background: rgba(240, 240, 240, 1);
+  padding: .3em 1em;
+  color: #000;
+  border-radius: 5px;
+}
+
+/* comments */
+#respond h3 {margin-bottom: 0em;}
+#respond p.logged-in-as,
+#respond p.comment-form-comment,
+#respond p.form-allowed-tags {margin-bottom: .8em;}
+
+/* related posts */
+.related-posts .rp-thumb {max-height: 94px; overflow: hidden;}
+
+
+/* ======================= Article Sidebar ======= */
+.widgettitle,
+.sb-title,
+h3.sb-title {
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin-bottom: .5em;
+  color: #999;
+  padding-top: 10px;
+}
+
+/* sharing sidebar */
+.ss-sharing-container {border-bottom: 0px; margin-bottom: 1em;}
+.fb-like, .ss-sharing-btn { padding: 0px; border-right: 0px;}
+
+/* conversation sidebar */
+#sidebar .bbp-breadcrumb,
+#sidebar label#bbp_forum_id,
+#sidebar #bbpress-forums .select_forum,
+#sidebar #bbpress-forums .topic_type,
+#sidebar #bbpress-forums label[for=bbp_forum_id],
+#sidebar #bbpress-forums label[for=bbp_stick_topic],
+#sidebar #bbpress-forums fieldset legend {display: none;} /* hide extra elements */
+
+/* tighten spacing */
+#sidebar #bbpress-forums { border: 0px; margin-bottom: 0px; }
+#sidebar #bbpress-forums fieldset { padding: 0; margin: 0; border: 0px; width: 100%;}
+#sidebar #bbpress-forums input { line-height: 1.2em; height: auto; padding: 0.4em 0.5em}
+#sidebar #bbpress-forums textarea { height: 200px; max-width: 98%;}
+#sidebar #bbpress-forums .bbp-submit-wrapper { margin-top: 0px;}
+
+/* hide template notice UNLESS it is the login notice */
+#sidebar #bbpress-forums .bbp-template-notice {display: none;}
+#sidebar #bbpress-forums .bbp-no-topic .bbp-template-notice,
+#sidebar #bbpress-forums .bbp-template-notice.error {display: block;}
+
+
+/* ======================= Category Browse ==== */
+h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
+.section-title + p {font-size: 1.2em;}
 
 
 /* ======================= Tool Classes ======== */
-.clear {clear: both;}
-
-
-/* 2013.06.21 => Added by Rob Brennan to display custom BuddyPress registration elements */
-.field-visibility-settings-toggle {
-    display:none;
-}
-
-.field-visibility-settings-notoggle {
-    display:none;
-}
-
-.standard-form #tos,
-.standard-form #after-profile-details-section{
-    float: left;
-    width: 48%;
-}
-
-.standard-form #tos,
-.standard-form #after-profile-details-section{
-    float: right;
-    width: 48%;
-}
+.clear {clear: both; }

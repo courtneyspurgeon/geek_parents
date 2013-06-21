@@ -109,9 +109,9 @@ h3.sb-title {
 
 /* tighten spacing */
 #sidebar #bbpress-forums { border: 0px; margin-bottom: 0px; }
-#sidebar #bbpress-forums fieldset { padding: 0; margin: 0; border: 0px;}
+#sidebar #bbpress-forums fieldset { padding: 0; margin: 0; border: 0px; width: 100%;}
 #sidebar #bbpress-forums input { line-height: 1.2em; height: auto; padding: 0.4em 0.5em}
-#sidebar #bbpress-forums textarea { height: 200px;}
+#sidebar #bbpress-forums textarea { height: 200px; max-width: 98%;}
 #sidebar #bbpress-forums .bbp-submit-wrapper { margin-top: 0px;}
 
 /* hide template notice UNLESS it is the login notice */

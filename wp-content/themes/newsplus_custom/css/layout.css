@@ -50,7 +50,7 @@
 .post-thumb {
   position: relative; 
   margin-bottom: 1em; 
-  max-height: 220px; 
+  max-height: 200px; 
   overflow: hidden;
 }
 .entry-content h3 { font-size: 1.3em; line-height: 1.4;}
@@ -80,7 +80,10 @@
 #respond h3 {margin-bottom: 0em;}
 #respond p.logged-in-as,
 #respond p.comment-form-comment,
-#respond p.form-allowed-tags {margin-bottom: .8em;} 
+#respond p.form-allowed-tags {margin-bottom: .8em;}
+
+/* related posts */
+.related-posts .rp-thumb {max-height: 94px; overflow: hidden;}
 
 
 /* ======================= Article Sidebar ======= */
@@ -121,7 +124,8 @@ h3.sb-title {
 
 
 /* ======================= Category Browse ==== */
-
+h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
+.section-title + p {font-size: 1.2em;}
 
 
 /* ======================= Tool Classes ======== */

@@ -649,36 +649,36 @@ function bp_the_profile_field_options( $args = '' ) {
 
 				// $type will be passed by calling function when needed
 				switch ( $type ) {
+                    case 'month':
+                        $eng_months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
+
+                        $months = array(
+                            __( 'January', 'buddypress' ),
+                            __( 'February', 'buddypress' ),
+                            __( 'March', 'buddypress' ),
+                            __( 'April', 'buddypress' ),
+                            __( 'May', 'buddypress' ),
+                            __( 'June', 'buddypress' ),
+                            __( 'July', 'buddypress' ),
+                            __( 'August', 'buddypress' ),
+                            __( 'September', 'buddypress' ),
+                            __( 'October', 'buddypress' ),
+                            __( 'November', 'buddypress' ),
+                            __( 'December', 'buddypress' )
+                        );
+
+                        $html .= '<option value=""' . selected( $month, '', false ) . '>------</option>';
+
+                        for ( $i = 0; $i < 12; ++$i ) {
+                            $html .= '<option value="' . $eng_months[$i] . '"' . selected( $month, $eng_months[$i], false ) . '>' . $months[$i] . '</option>';
+                        }
+                        break;
+
 					case 'day':
 						$html .= '<option value=""' . selected( $day, '', false ) . '>--</option>';
 
 						for ( $i = 1; $i < 32; ++$i ) {
 							$html .= '<option value="' . $i .'"' . selected( $day, $i, false ) . '>' . $i . '</option>';
-						}
-						break;
-
-					case 'month':
-						$eng_months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
-
-						$months = array(
-							__( 'January', 'buddypress' ),
-							__( 'February', 'buddypress' ),
-							__( 'March', 'buddypress' ),
-							__( 'April', 'buddypress' ),
-							__( 'May', 'buddypress' ),
-							__( 'June', 'buddypress' ),
-							__( 'July', 'buddypress' ),
-							__( 'August', 'buddypress' ),
-							__( 'September', 'buddypress' ),
-							__( 'October', 'buddypress' ),
-							__( 'November', 'buddypress' ),
-							__( 'December', 'buddypress' )
-						);
-
-						$html .= '<option value=""' . selected( $month, '', false ) . '>------</option>';
-
-						for ( $i = 0; $i < 12; ++$i ) {
-							$html .= '<option value="' . $eng_months[$i] . '"' . selected( $month, $eng_months[$i], false ) . '>' . $months[$i] . '</option>';
 						}
 						break;
 

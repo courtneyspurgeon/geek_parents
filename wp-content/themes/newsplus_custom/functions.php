@@ -538,4 +538,9 @@ function exclude_featured_category( $query ) {
 }
 add_action( 'pre_get_posts', 'exclude_featured_category' );
 
+// 2013.06.21 => Added by Rob Brennan to display additional age verification info if need be
+function bp_after_signup_profile_fields(){
+    //echo "<div id='after-profile-details-section'>Here's some more text; yippee.</div>";
+}
+add_action('bp_after_signup_profile_fields','bp_after_signup_profile_fields');
 ?>

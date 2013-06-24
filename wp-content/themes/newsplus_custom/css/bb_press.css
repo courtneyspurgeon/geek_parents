@@ -1,0 +1,51 @@
+/**
+ * Author: courtneyspurgeon
+ * Author URI: http://courtneyspurgeon.com
+**/
+
+/* Customization for BB Press pages */
+
+#bbpress-forums ul.bbp-lead-topic, 
+#bbpress-forums ul.bbp-topics, 
+#bbpress-forums ul.bbp-forums, 
+#bbpress-forums ul.bbp-replies, 
+#bbpress-forums ul.bbp-search-results { border: 0; }
+
+.bbp-reply-author br {display: none;}
+.bbp-replies .bbp-footer  { display: none; }
+
+/* Forum and Topic Lists */
+.bbp-pagination-count {font-size: 1.3em;}
+#bbpress-forums div.bbp-forum-header,
+#bbpress-forums div.bbp-topic-header,
+#bbpress-forums div.bbp-reply-header {
+  background: none;
+  border-bottom: 1px solid #ccc;
+  border-top: 0;
+}
+#bbpress-forums div.odd, #bbpress-forums ul.odd { background-color: transparent; }
+#bbpress-forums li.bbp-footer {padding: 0;}
+#bbpress-forums li.bbp-footer,
+#bbpress-forums li.bbp-header { background: none; border-top: 0;}
+#bbpress-forums li.bbp-body ul.forum, 
+#bbpress-forums li.bbp-body ul.topic,
+.bbp-header {border: 0; border-bottom: 1px solid #ccc;}
+#bbpress-forums ul.bbp-topics {border: 0;}
+.bbp-body img {border: 0 !important; margin-bottom: -2px !important;}
+.bbp-topic-permalink {font-size: 1.1em; color: #000; padding: 3px 0; display: inline-block;}
+.bbp-body {color: #666;}
+.bbp-body li a {color: inherit;}
+.bbp-body .bbp-topic-voice-count,
+.bbp-body .bbp-topic-reply-count {padding-top: 12px;}
+
+
+/* New Topic */
+#bbpress-forums fieldset.bbp-form { padding: 0; margin: 0; border: 0px; width: 100%;}
+#bbpress-forums .bbp-template-notice.info {display: none;}
+
+/* Breadcrumbs */
+.bbp-breadcrumb-root,
+.bbp-breadcrumb-root + .bbp-breadcrumb-sep { display: none; }
+.bbp-breadcrumb-current {font-size: 1.4em;}
+
+#bbpress-forums div.bbp-reply-author img.avatar {height: 60px;}

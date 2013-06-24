@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74ef6c87-826d-4b85-b35e-78e1078ad8b7" name="Default" comment="Updated formatting for post meta content">
+    <list default="true" id="74ef6c87-826d-4b85-b35e-78e1078ad8b7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/privacy_and_authorization_form.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" afterPath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css" afterPath="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dl.brenemanjaech.org.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371855383688" ignored="false" />
+    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372095497846" ignored="false" />
     <file path="/README" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371060761004" ignored="false" />
     <file path="/deleteme.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371061307328" ignored="false" />
     <file path="/a.dummy" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371586927874" ignored="false" />
     <file path="/functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371494648101" ignored="false" />
-    <file path="/layout.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371497991531" ignored="false" />
+    <file path="/layout.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372097285292" ignored="false" />
     <file path="/style.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371496601942" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/admin/bp-core-schema.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/activity/entry.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
@@ -21,16 +22,13 @@
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/activity/comment.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-languages/buddypress.pot" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-groups/bp-groups-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
-    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-xprofile/bp-xprofile-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-blogs/bp-blogs-activity.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
-    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default-rtl.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress-rtl.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-groups/bp-groups-forums.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-akismet.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-blogs/bp-blogs-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-classes.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
-    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default.css" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-admin.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/deprecated/1.5.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044515" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-activity/bp-activity-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
@@ -40,7 +38,6 @@
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-catchuri.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress/activity/entry.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress/activity/comment.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
-    <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-template.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-members/bp-members-adminbar.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
@@ -69,10 +66,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="default.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="1" selection-start="16" selection-end="16" vertical-scroll-proportion="0.018094089">
+            <state line="1600" column="0" selection-start="32801" selection-end="32913" vertical-scroll-proportion="-5.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="143" column="0" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.64416057">
               <folding />
             </state>
           </provider>
@@ -107,9 +113,9 @@
         <option value="$PROJECT_DIR$/wp-config.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus/style.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/functions.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css" />
       </list>
     </option>
   </component>
@@ -146,7 +152,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,12 +198,231 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsplus_custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsplus_custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buddypress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buddypress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-xprofile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buddypress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buddypress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buddypress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bp-default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dl.brenemanjaech.org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,29 +523,33 @@
       <created>1371498219224</created>
       <updated>1371498219224</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merged proposed age verification code with existing article formatting code.">
+      <created>1371857910572</created>
+      <updated>1371857910572</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1900" height="975" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32788798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973032" sideWeight="0.67134506" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2729234" sideWeight="0.67017543" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28263214" sideWeight="0.67211205" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32788798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -370,7 +598,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated formatting for post meta content" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged proposed age verification code with existing article formatting code." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -388,31 +616,12 @@
     <MESSAGE value="Committed code will need to be manually deployed to our development server." />
     <MESSAGE value="Modified newsplus_custom to display meta data a la our previous dlearn-custom theme" />
     <MESSAGE value="Updated formatting for post meta content" />
+    <MESSAGE value="Merged proposed age verification code with existing article formatting code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/inc/metabox/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="451" column="50" selection-start="16303" selection-end="16303" vertical-scroll-proportion="-9.375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1931" column="16" selection-start="28131" selection-end="28131" vertical-scroll-proportion="0.27641279" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/dlearn-custom/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1335" column="0" selection-start="33973" selection-end="34168" vertical-scroll-proportion="0.4171705" />
@@ -426,11 +635,6 @@
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="74" selection-start="2309" selection-end="2319" vertical-scroll-proportion="0.42963886" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="1" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.45054945" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus/includes/header-widget-area.php">
@@ -450,9 +654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="77" selection-start="11451" selection-end="11451" vertical-scroll-proportion="0.61252445">
-          <folding />
-        </state>
+        <state line="317" column="77" selection-start="11451" selection-end="11451" vertical-scroll-proportion="0.61252445" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus/header.php">
@@ -472,7 +674,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="1" selection-start="16" selection-end="16" vertical-scroll-proportion="0.018094089">
+        <state line="1" column="1" selection-start="16" selection-end="16" vertical-scroll-proportion="0.018094089" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/css/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1600" column="0" selection-start="32801" selection-end="32913" vertical-scroll-proportion="-5.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/buddypress/bp-themes/bp-default/registration/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="0" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.64416057">
           <folding />
         </state>
       </provider>

@@ -130,3 +130,21 @@ h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
 
 /* ======================= Tool Classes ======== */
 .clear {clear: both; }
+
+/* ======================= Terms of Service ======== */
+.standard-form #tos.register-section{
+    float: left;
+    width: 48%;
+}
+
+.standard-form #tos.register-section{
+    float: right;
+    width: 48%;
+}
+
+.standard-form#tos label,
+.standard-form#tos span.label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+}

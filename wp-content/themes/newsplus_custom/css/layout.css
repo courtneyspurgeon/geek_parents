@@ -31,6 +31,7 @@
     margin-right: 0px; 
     width: 49.484848%;
   }
+  .home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
 
 /* ======================= Meta content =======
     2013.06.17 Added by Rob Brennan
@@ -106,13 +107,13 @@ h3.sb-title {
 #sidebar label#bbp_forum_id,
 #sidebar #bbpress-forums .select_forum,
 #sidebar #bbpress-forums .topic_type,
+#sidebar #bbpress-forums .form-title,
 #sidebar #bbpress-forums label[for=bbp_forum_id],
 #sidebar #bbpress-forums label[for=bbp_stick_topic],
 #sidebar #bbpress-forums fieldset legend {display: none;} /* hide extra elements */
 
 /* tighten spacing */
 #sidebar #bbpress-forums { border: 0px; margin-bottom: 0px; }
-#sidebar #bbpress-forums fieldset { padding: 0; margin: 0; border: 0px; width: 100%;}
 #sidebar #bbpress-forums input { line-height: 1.2em; height: auto; padding: 0.4em 0.5em}
 #sidebar #bbpress-forums textarea { height: 200px; max-width: 98%;}
 #sidebar #bbpress-forums .bbp-submit-wrapper { margin-top: 0px;}

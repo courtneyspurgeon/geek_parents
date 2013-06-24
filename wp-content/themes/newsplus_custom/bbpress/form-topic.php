@@ -34,16 +34,16 @@
 			<?php do_action( 'bbp_theme_before_topic_form' ); ?>
 
 			<fieldset class="bbp-form">
-				<legend>
+				<h4 class="form-title">
 
 					<?php
 						if ( bbp_is_topic_edit() )
 							printf( __( 'Now Editing &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_topic_title() );
 						else
-							bbp_is_single_forum() ? printf( __( 'Create New Topic in &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
+							bbp_is_single_forum() ? printf( __( 'Open a New Discussion', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
 					?>
 
-				</legend>
+				</h4>
 
 				<?php do_action( 'bbp_theme_before_topic_form_notices' ); ?>
 

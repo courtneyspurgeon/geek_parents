@@ -54,6 +54,8 @@
 
 				<?php do_action( 'bp_after_account_details_fields' ); ?>
 
+
+
 				<?php /***** Extra Profile Details ******/ ?>
 
 				<?php if ( bp_is_active( 'xprofile' ) ) : ?>
@@ -64,8 +66,10 @@
 
 						<h4><?php _e( 'Profile Details', 'buddypress' ); ?></h4>
 
-						<?php /* Use the profile field loop to render input fields for the 'base' profile field group */ ?>
-						<?php if ( bp_is_active( 'xprofile' ) ) : if ( bp_has_profile( 'profile_group_id=1' ) ) : while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
+						<?php
+						/* Use the profile field loop to render input fields for the 'base' profile field group */ ?>
+
+						<?php if ( bp_is_active( 'xprofile' ) ) : if ( bp_has_profile( 'profile_group_id=1' )) : while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
 
 						<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
 
@@ -191,6 +195,7 @@
 						<?php endwhile; endif; endif; ?>
 
 					</div><!-- #profile-details-section -->
+
 
                     <?php do_action( 'bp_after_signup_profile_fields' ); ?>
 

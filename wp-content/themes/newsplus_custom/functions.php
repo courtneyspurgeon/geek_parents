@@ -58,6 +58,15 @@ function newsplus_small_meta() {
 
 }
 
+/* 2013.06.25   Custom taxonomies created by Rob Brennan
+    Tutorial => Introducing WordPress 3 Custom Taxonomies   (thanks, Courtney!)
+    http://net.tutsplus.com/tutorials/wordpress/introducing-wordpress-3-custom-taxonomies/
+*/
+function build_taxonomies(){
+    register_taxonomy( 'section', 'post', array( 'hierarchical' => false, 'label' => 'Section', 'query_var' => true, 'rewrite' => true ) );
+
+}
+add_action( 'init', 'build_taxonomies', 0 );
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 

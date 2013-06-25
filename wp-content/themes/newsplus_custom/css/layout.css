@@ -138,11 +138,6 @@ h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
     width: 48%;
 }
 
-.standard-form #tos.register-section{
-    float: right;
-    width: 48%;
-}
-
 .standard-form#tos label,
 .standard-form#tos span.label {
     display: block;

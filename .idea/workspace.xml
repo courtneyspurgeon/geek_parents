@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="74ef6c87-826d-4b85-b35e-78e1078ad8b7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" afterPath="$PROJECT_DIR$/wp-content/themes/dlearn-custom/library/metabox" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dl.brenemanjaech.org.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372189896734" ignored="false" />
+    <file path="/Dummy.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372190079203" ignored="false" />
     <file path="/README" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372190046679" ignored="false" />
     <file path="/deleteme.txt" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371061307328" ignored="false" />
     <file path="/a.dummy" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372111710367" ignored="false" />
@@ -41,7 +41,7 @@
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-friends/bp-friends-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/admin/bp-core-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-messages/bp-messages-functions.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371593044516" ignored="false" />
-    <file path="/.gitignore" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1371856895873" ignored="false" />
+    <file path="/.gitignore" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372191671145" ignored="false" />
     <file path="$PROJECT_DIR$/wp-content/themes/newsplus_custom/js/libs/modernizr.custom.min.js" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372105422982" ignored="false" />
     <file path="/bp-core-avatars.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372107187539" ignored="false" />
     <file path="/wp-config.php" changelist="74ef6c87-826d-4b85-b35e-78e1078ad8b7" time="1372109218607" ignored="false" />
@@ -64,7 +64,17 @@
     <favorites_list name="dl.brenemanjaech.org" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="48" selection-start="84" selection-end="84" vertical-scroll-proportion="0.055045873">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -92,7 +102,6 @@
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus/style.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/functions.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/layout.css" />
         <option value="$PROJECT_DIR$/wp-content/plugins/buddypress/bp-core/bp-core-avatars.php" />
         <option value="$PROJECT_DIR$/wp-content/advanced-cache.php" />
@@ -104,6 +113,7 @@
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/css/bootstrap-responsive.min.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/newsplus_custom/inc/bones.php" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -548,7 +558,11 @@
       <created>1372189912974</created>
       <updated>1372189912974</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finally updated the README file">
+      <created>1372190082000</created>
+      <updated>1372190082000</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -619,7 +633,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged proposed age verification code with existing article formatting code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally updated the README file" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -638,18 +652,12 @@
     <MESSAGE value="Modified newsplus_custom to display meta data a la our previous dlearn-custom theme" />
     <MESSAGE value="Updated formatting for post meta content" />
     <MESSAGE value="Merged proposed age verification code with existing article formatting code." />
+    <MESSAGE value="Finally updated the README file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/bp-xtra-signup/bp-xtra-signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="0" selection-start="3113" selection-end="3113" vertical-scroll-proportion="21.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/dlearn-custom/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -735,6 +743,13 @@
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="12" selection-start="97" selection-end="97" vertical-scroll-proportion="0.08256881">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="48" selection-start="84" selection-end="84" vertical-scroll-proportion="0.055045873">
           <folding />
         </state>
       </provider>

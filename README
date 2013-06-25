@@ -1,4 +1,10 @@
 Welcome to the Parental Planet repository
------------------------------------------
+----------------------------------------------------------------------------------------
 
 We're getting closer...nice work!
+
+Raise a glass. Our .gitignore problems can be solved by running the following in master:
+    git update-index --assume-unchanged <file_to_ignore_local_changes_to>
+
+Today's fun fact...
+    There is a "Rob" in every pROBlem =)

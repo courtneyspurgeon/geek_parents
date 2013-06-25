@@ -23,15 +23,31 @@
 .brand { max-width: 50%; margin-bottom: 2em; }
 
 /* ======================= Homepage Featured Content === */
-  .home-page .entry-content .half {
-    width: 45.484848%;
-    margin-right: 5.030303%
+.home-page .entry-content .half {
+  width: 45.484848%;
+  margin-right: 5.030303%
   }
-  .home-page .entry-content .half.last {
-    margin-right: 0px; 
-    width: 49.484848%;
+.home-page .entry-content .half.last {
+  margin-right: 0px; 
+  width: 49.484848%;
   }
-  .home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
+.home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
+.home-page .column.half .one-col { border-bottom: 0;}
+.home-page .column.half div + div + div { border-bottom: 0; }
+.ad-row { 
+  border-top: 1px solid #e5e5e5; 
+  border-bottom: 1px solid #e5e5e5; 
+  margin-top: -20px;
+  margin-bottom: 20px;
+  height: 130px;
+  }
+
+/* This day in History Widget */
+.tdih_list { list-style: none; margin-left: 0px; margin-bottom: 10px;}
+.tdih_list li + li {display: none;}
+.tdih_year { font-weight: bold; }
+.ad-row .widgettitle + p {display: none;}
+
 
 /* ======================= Meta content =======
     2013.06.17 Added by Rob Brennan
@@ -127,7 +143,6 @@ h3.sb-title {
 /* ======================= Category Browse ==== */
 h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
 .section-title + p {font-size: 1.2em;}
-
 
 /* ======================= Tool Classes ======== */
 .clear {clear: both; }

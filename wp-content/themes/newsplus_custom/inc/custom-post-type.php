@@ -141,6 +141,12 @@ URL: http://themble.com/bones/
                     'type' => 'text'
                 ),
                 array(
+                    'name' => 'Original Publish Date',
+                    'desc' => 'Date the original article was published',
+                    'id' => $prefix . 'original_publish_date',
+                    'type' => 'text'
+                ),
+                array(
                     'name' => 'Full-Text',
                     'desc' => 'Paste the full text of the content here. This will NOT be shown to users; it is only indexed for searching purposes.',
                     'id' => $prefix . 'full_text',
@@ -195,8 +201,6 @@ URL: http://themble.com/bones/
                     'options' => array(
                         array( 'name' => 'News',       'value' => 'news', ),
                         array( 'name' => 'Scholarly',  'value' => 'scholarly', ),
-                        array( 'name' => 'Opinion',    'value' => 'opinion', ),
-                        array( 'name' => 'Paper',      'value' => 'paper', ),
                         array( 'name' => 'Blog Post',  'value' => 'blog', ),
                     ),
                 ),

@@ -128,7 +128,9 @@ function bones_scripts_and_styles() {
     wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
     // register main stylesheet
-    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
+    //wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
+    // 2013.06.24   =>  Use our newsplus_custom style sheet as encouraged by the theme instead of the original '/css/style.css' declaration
+    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/css/ie.css', array(), '' );

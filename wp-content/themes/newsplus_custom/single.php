@@ -37,7 +37,8 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 		endif; // Single post show-ad-above check ?>
 			 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="entry-header">
-                    <h1 class="entry-title"><?php the_title(); ?></h1>
+                    <h1 class="entry-title">
+                        <?php printf( __( '<span class="post-type %1$s">%1$s</span> %2$s', 'buddypress' ), get_post_meta(get_the_ID(), '_cmb_source_type', true), get_the_title() ); ?></h1>
                     <?php 
                     if( 'video' == get_post_format() )
                         get_template_part( 'formats/format', 'video' );
@@ -52,13 +53,13 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                         if ( 'true' != $hide_meta ) : ?>
                             <aside id="meta-<?php the_ID();?>" class="entry-meta">
                               <aside>
-                              <?php if (true) { ?>
-                                Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a> 
+                              <?php if ($article_url) { ?>
+                                Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a>&nbsp;
+                                <?php echo get_post_meta($posts[0]->ID, '_cmb_original_publish_date', true); ?>
                                   <br/>
-                                  Discovered by 
-                                  <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+                                  Discovered by <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
                                     <?php printf( __( '%s ', 'newsplus' ), get_the_author() ); ?>
-                                  </a>, added <?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) ); ?>
+                                  </a> | <?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) ); ?>
                               <?php } else { ?>
                                 <?php newsplus_post_meta(); ?>
                               <?php } ?>
@@ -90,13 +91,19 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 							echo get_avatar( get_the_author_meta( 'user_email' ), 64 ); ?>
 						</div><!-- .author-avatar -->
 						<div class="author-description">
-							<h3><?php printf( __( 'About %s', 'newsplus' ), get_the_author() ); ?></h3>
+							<h3>
+                                <?php 
+                                if ($article_url) :
+                                    printf( __( 'Discovered by %s', 'newsplus' ), get_the_author() ); 
+                                else :
+                                    printf( __( 'About %s', 'newsplus' ), get_the_author() ); 
+                                endif; 
+                                ?>
+                                <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+                                    <?php printf( __( 'View all posts', 'newsplus' ) ); ?>
+                                </a>
+                            </h3>
 							<p><?php the_author_meta( 'description' ); ?></p>
-							<div class="author-link">
-								<a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-									<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'newsplus' ), get_the_author() ); ?>
-								</a>
-							</div><!-- .author-link	-->
 						</div><!-- .author-description -->
 					</div><!-- .author-info -->
 				<?php endif; // has description

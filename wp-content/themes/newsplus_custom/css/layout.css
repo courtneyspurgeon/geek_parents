@@ -155,6 +155,10 @@ h3.sb-title {
 /* ======================= Category Browse ==== */
 h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
 .section-title + p {font-size: 1.2em;}
+#category_list ul {list-style-type: none;}
+#category_list ul ul {padding-left: 30px;}
+#category_list .cat-item > a {font-size: 1.4em;}
+#category_list .cat-item .count {margin-left: 10px; margin-top: -10px;}
 
 /* ======================= Tool Classes ======== */
 .clear {clear: both; }

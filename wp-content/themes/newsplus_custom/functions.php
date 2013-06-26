@@ -48,13 +48,14 @@ require_once('inc/custom-post-type.php'); // you can disable this if you like
 /* 2013.06.17   Custom post meta display created by Rob Brennan */
 function newsplus_post_meta() {
     // Styled to reflect meta display in original theme
-    printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+    printf( __( '%1$s | %2$s <span>in %3$s</span>', 'buddypress' ), get_the_author(), get_the_date(), get_the_category_list( ' ' ) );
 
 }
 
 function newsplus_small_meta() {
     // Styled to reflect meta display in original theme
-    printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+    $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
+    printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
 
 }
 

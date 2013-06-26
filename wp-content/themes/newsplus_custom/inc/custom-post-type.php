@@ -202,6 +202,7 @@ URL: http://themble.com/bones/
                         array( 'name' => 'News',       'value' => 'news', ),
                         array( 'name' => 'Scholarly',  'value' => 'scholarly', ),
                         array( 'name' => 'Blog Post',  'value' => 'blog', ),
+                        array( 'name' => 'None',  'value' => '', )
                     ),
                 ),
             ),

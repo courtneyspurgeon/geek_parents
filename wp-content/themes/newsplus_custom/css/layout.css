@@ -74,17 +74,27 @@
 .entry-content p {margin-bottom: 1em;}
 .entry-content .entry-meta { font-size: .9em; margin-bottom: 1em;}
 .new-tag {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: yellow;
-  padding: 5px 10px;
-  text-transform: uppercase;
+  background: #FFFD9D;
+  padding: 2px 5px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  font-size: .7em;
 }
+.post-type {
+  display: inline-block;
+  color: #fff;
+  padding: .1em .5em;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.post-type.blog {background-color: #AEE4AE;}
+.post-type.scholarly {background-color: #5D96DD;}
+.post-type.news {background-color: #5D96DD;}
 
 
 /* ======================= Article Page ======= */
 
+.entry-title .post-type { font-size: .7em; padding: .1em .5em .2em;}
 .entry-content > p:last-child > a {
   display: inline-block;
   background: rgba(240, 240, 240, 1);
@@ -92,6 +102,8 @@
   color: #000;
   border-radius: 5px;
 }
+.author-info {margin-top: -7px;}
+.author-info .more-link {font-size: .7em; margin-left: 7px;}
 
 /* comments */
 #respond h3 {margin-bottom: 0em;}

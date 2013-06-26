@@ -59,6 +59,17 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                                   <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
                                     <?php printf( __( '%s ', 'newsplus' ), get_the_author() ); ?>
                                   </a>, added <?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) ); ?>
+
+                                  <!--  -->
+                                  <br/>
+                                  <?php
+                                    //2013.06.25 => If this post contains our new "section" taxonomy, display that here
+                                    $sections = get_the_term_list( $post->ID, 'section', '', ',', '' );
+                                    if ($sections != ""){
+                                        echo "Appears in ".$sections;
+                                    }
+                                    ?>
+                                  <!-- -->
                               <?php } else { ?>
                                 <?php newsplus_post_meta(); ?>
                               <?php } ?>

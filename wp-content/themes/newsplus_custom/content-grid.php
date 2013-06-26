@@ -32,7 +32,10 @@ if ( ! have_posts() ) : ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid '. $fclass.$lclass ); ?>>
 			<?php get_template_part( 'formats/format', get_post_format() ); ?>
             <div class="entry-content">
-                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+                <h2 class="entry-title">
+                    <?php if (get_post_time('U', true) > strtotime('-5 days')) { ?><span class="new-tag">New</span><?php } ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                </h2>
                 <p class="post-excerpt"><?php echo short( get_the_excerpt(), 160 ); ?></p>
                 <?php if ( 'true' != $pls_hide_post_meta ) { ?>
                 <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_small_meta(); ?></aside>

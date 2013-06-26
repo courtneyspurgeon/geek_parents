@@ -54,7 +54,8 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                             <aside id="meta-<?php the_ID();?>" class="entry-meta">
                               <aside>
                               <?php if ($article_url) { ?>
-                                Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a> 
+                                Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a>&nbsp;
+                                <?php echo get_post_meta($posts[0]->ID, '_cmb_original_publish_date', true); ?>
                                   <br/>
                                   Discovered by <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
                                     <?php printf( __( '%s ', 'newsplus' ), get_the_author() ); ?>

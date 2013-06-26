@@ -29,32 +29,13 @@ get_header(); ?>
 
             </div><!-- #featured-categories -->
 
-            <h2>All Categories</h2>
+            <h2>Browse by Topic</h2>
 
-            <div id="all-categories">
-
-                <?php $arrCategories = get_categories(array(
-                    'parent'                   => 0,
-                    'orderby'                  => 'name',
-                    'order'                    => 'ASC',
-                    'hide_empty'               => 1,
-                    'exclude'                  => '6,1,17',
-                    'hierarchical'             => 0,
-                    'pad_counts'               => true ));?>
-
-                <?php $intCount = 0; ?>
-
-                <?php foreach ($arrCategories as $objCategory) { ?>
-                        <div class='span3'>
-                            <a href="<?php echo get_category_link($objCategory->cat_ID) ?>">
-                                <div class="cat-name"><?php echo $objCategory->cat_name ?></div>
-                                <div class="brthumbnail"><?php // echo get_thumbnails_from_categories($objCategory->cat_ID); ?></div>
-                            </a>
-                            <div class="cat-description"><?php echo $objCategory->description ?></div>
-                        </div>
-                <?php } ?>
-
-            </div><!-- #all-categories -->
+            <div id="category_list">
+                <ul>
+                    <?php list_cats_with_desc(); ?>
+                </ul>
+            </div><!-- #category_list -->
 
     </div><!-- #content -->
 </div><!-- #primary -->

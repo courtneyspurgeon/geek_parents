@@ -619,4 +619,49 @@ function list_cats_with_desc() {
   $base = implode("\n", $base_arr);
   echo $base;
 }
+
+/* Customizing the login page */
+function my_login_stylesheet() { ?>
+    <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/css/login.css'; ?>" type="text/css" media="all" />
+    <link rel='stylesheet' id='newsplus-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Parental Planet';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// 2013.06.26 added by Courtney Spurgeon to add state-specific links to the top secondary nav menu
+// Logged in users have: Members, My Profile, Logout
+// Logged out users have: Login, Register
+function add_login_out_item_to_menu( $items, $args ){
+
+    //change theme location with your them location name
+    if( is_admin() ||  $args->theme_location != 'secondary' )
+        return $items; 
+
+    $redirect =( is_home() ) ? false : get_permalink();
+    //build links
+    $links = array();
+    if( is_user_logged_in( ) ) {
+        array_push($links, '<a href="/memebers" title="' .  __( 'Members' ) .'">' . __( 'Members' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'My Profile' ) .'">' . __( 'My Profile' ) . '</a>');
+        array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
+    }
+    else {
+        array_push($links, '<a href="' . wp_login_url( $redirect  ) . '" title="' .  __( 'Login' ) .'">' . __( 'Login' ) . '</a>');
+        array_push($links, '<a href="' . site_url('/wp-login.php?action=register&redirect_to=' . get_permalink()) . '">Register</a>');
+    }
+    //add to $items
+    foreach ($links as $link) {
+        $items .= '<li class="menu-item menu-type-link">'. $link . '</li>';
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
 ?>

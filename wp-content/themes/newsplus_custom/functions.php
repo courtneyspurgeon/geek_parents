@@ -649,7 +649,7 @@ function add_login_out_item_to_menu( $items, $args ){
     //build links
     $links = array();
     if( is_user_logged_in( ) ) {
-        array_push($links, '<a href="/memebers" title="' .  __( 'Members' ) .'">' . __( 'Members' ) . '</a>');
+        array_push($links, '<a href="/members" title="' .  __( 'Members' ) .'">' . __( 'Members' ) . '</a>');
         array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'My Profile' ) .'">' . __( 'My Profile' ) . '</a>');
         array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
     }

@@ -72,6 +72,7 @@ add_action( 'init', 'build_taxonomies', 0 );
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-680', 680, 320, true );
+add_image_size( 'bones-thumb-90', 80, 80, true );
 /* Currently not using additional custom sizes
 //add_image_size( 'bones-thumb-300', 300, 250, true );
 */
@@ -483,9 +484,8 @@ function get_thumbnails_from_categories($strCategory = null)
     $strThumbnails = '';
     foreach ($arrPosts as $objPost)
     {
-        $strDefaultThumb = '<img width="90" height="90" src="http://dummyimage.com/90x90/000/fff.png" class="attachment-thumbnail wp-post-image" alt="blank image">';
-        $strThumbnail = get_the_post_thumbnail($objPost['ID'], array('90','90'));
-        $strThumbnails .= $strThumbnail ? $strThumbnail : $strDefaultThumb;
+        $strThumbnail = get_the_post_thumbnail($objPost['ID'], array('80','80'));
+        $strThumbnails .= $strThumbnail ? $strThumbnail : '';
     }
 
     return $strThumbnails;
@@ -575,8 +575,9 @@ add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 // 2013.06.26 added by Courtney Spurgeon to list categories with descriptions
 // code found online and adjusted to our needs
 // source: http://www.wplover.com/1016/category-based-navigation-with-description-a-la-grid-focus/
-function list_cats_with_desc() {
+function list_cats_desc_thumb() {
   $base = wp_list_categories('echo=0&title_li=&show_count=1');
+  error_log($base);
  
   // wp_list_categories adds a "cat-item-[category_id]" class to the <li> so let's make use of that! 
   $get_cat_id = '/cat-item-[0-9]+/';
@@ -584,6 +585,7 @@ function list_cats_with_desc() {
  
   // Let's prepare our category descriptions to be injected.
   $inject_desc = array();
+  $inject_thumbs = array();
  
   $i = 0;
   foreach($cat_id[0] as $id) {
@@ -596,7 +598,8 @@ function list_cats_with_desc() {
                                                                 // which we promptly trim out.
     if($desc=="") $desc = "Add Description";
  
-    $inject_desc[$i] = '</a><p class="cat-desc">' . $desc . '</p>';
+    $inject_desc[$i] = '<div class="cat_thumbnails">' . get_thumbnails_from_categories($id) . '</div><p class="cat-desc">' . $desc . '</p>';
+    //$inject_thumbs[$i] = '<div class="cat_thumbnails">' . get_thumbnails_from_categories($id) . '</div>';
     $i++;
   }
  
@@ -611,7 +614,8 @@ function list_cats_with_desc() {
       $base_i++;
     }
  
-    // If we find one, ad our description <p>
+    // If we find one, add our description <p>
+    //$base_arr[$base_i] = '<h3 class="cat_title">' . $base_arr[$base_i] . '</a></h3>';
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }

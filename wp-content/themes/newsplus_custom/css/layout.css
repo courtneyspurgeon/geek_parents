@@ -159,6 +159,15 @@ h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
 #category_list ul ul {padding-left: 30px;}
 #category_list .cat-item > a {font-size: 1.4em;}
 #category_list .cat-item .count {margin-left: 10px; margin-top: -10px;}
+#category_list .cat_thumbnails {clear: both; overflow: hidden; height: 80px;}
+#category_list .cat_thumbnails:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#category_list .cat_thumbnails img {float: left; max-width: 80px; margin-right: 20px;}
 
 /* ======================= Tool Classes ======== */
 .clear {clear: both; }
@@ -175,3 +184,15 @@ h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
     font-weight: bold;
     margin: 15px 0 5px 0;
 }
+
+/* Responsive fixes: */
+@media only screen and (max-width: 768px) {
+
+  .secondary-nav .sec-menu,
+  .primary-nav ul.nav-menu {
+    display: block;
+  }
+}
+
+/* Staff List */
+div.staff .entry-title {}

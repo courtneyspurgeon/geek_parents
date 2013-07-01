@@ -5,7 +5,7 @@ return array(
 	'browsercache.configuration_sealed' => false,
 	'cdn.configuration_sealed' => false,
 	'cloudflare.configuration_sealed' => false,
-	'common.install' => 1372273629,
+	'common.install' => 1372276058,
 	'common.visible_by_master_only' => true,
 	'dbcache.configuration_sealed' => false,
 	'minify.configuration_sealed' => false,

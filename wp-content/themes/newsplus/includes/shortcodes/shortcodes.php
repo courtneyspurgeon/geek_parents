@@ -687,21 +687,6 @@ function insert_posts( $atts ) {
 			'ignore_sticky_posts'	=> 1
 		);
 	}
-	// added by Courtney Spurgeon 6.28.2013 - adding support for using insert_posts
-	// with section defined
-	elseif ('section' == $taxonomy ) {
-		$custom_args = array(
-			'taxonomy' 		=> 'section',
-			'posts_per_page' 		=> $num,
-			'order' 				=> $order,
-			'orderby' 				=> $orderby,
-			'section' 					=> $section,
-			'offset' 				=> $offset,
-			'post_status'			=> 'publish',
-			'ignore_sticky_posts'	=> 1
-		);
-	}
-	// end CSpurgeon customization
 	else {
 		$custom_args = array(
 			'posts_per_page' 		=> $num,

@@ -129,9 +129,9 @@ URL: http://themble.com/bones/
             'show_names' => true, // Show field names on the left
             'fields' => array(
                 array(
-                    'name' => 'Alternative Title',
+                    'name' => 'Original Title',
                     'desc' => '(optional)',
-                    'id' => $prefix . 'alt_title',
+                    'id' => $prefix . 'orig_title',
                     'type' => 'text'
                 ),
                 array(
@@ -143,7 +143,7 @@ URL: http://themble.com/bones/
                 array(
                     'name' => 'Original Publish Date',
                     'desc' => 'Date the original article was published',
-                    'id' => $prefix . 'original_publish_date',
+                    'id' => $prefix . 'orig_pub_date',
                     'type' => 'text'
                 ),
                 array(
@@ -163,6 +163,12 @@ URL: http://themble.com/bones/
             'priority' => 'high',
             'show_names' => true, // Show field names on the left
             'fields' => array(
+                array(
+                    'name' => 'Subtitle',
+                    'desc' => '(optional)',
+                    'id' => $prefix . 'subtitle',
+                    'type' => 'text'
+                ),
                 array(
                     'name' => 'Creator',
                     'desc' => '(optional)',

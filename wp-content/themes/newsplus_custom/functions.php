@@ -45,6 +45,9 @@ require_once('inc/custom-post-type.php'); // you can disable this if you like
 */
 // require_once('inc/translation/translation.php'); // this comes turned off by default
 
+// 2013.07.02  Adds shortcodes for homepage
+require_once('inc/custom-shortcodes.php');
+
 /* 2013.06.17   Custom post meta display created by Rob Brennan */
 function newsplus_post_meta() {
     // Styled to reflect meta display in original theme

@@ -57,8 +57,11 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                                 Original article by <?php echo get_post_meta($posts[0]->ID, '_cmb_creator', true); ?> on <a href="<?php echo $article_url ?>"><?php echo $article_domain ?></a>&nbsp;
                                 <?php echo get_post_meta($posts[0]->ID, '_cmb_orig_pub_date', true); ?>
                                   <br/>
-                                  Discovered by <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                                    <?php printf( __( '%s ', 'newsplus' ), get_the_author() ); ?>
+                                  Discovered by <?php if ( function_exists( 'coauthors_posts_links' ) ) {
+                                        coauthors_posts_links();
+                                    } else {
+                                        the_author_posts_link();
+                                    } ?>
                                   </a> | <?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) ); ?>
                                   <br/>
                                   <?php

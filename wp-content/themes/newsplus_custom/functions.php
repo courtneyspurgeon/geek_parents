@@ -51,7 +51,12 @@ require_once('inc/custom-shortcodes.php');
 /* 2013.06.17   Custom post meta display created by Rob Brennan */
 function newsplus_post_meta() {
     // Styled to reflect meta display in original theme
-    printf( __( '%1$s | %2$s <span>in %3$s</span>', 'buddypress' ), get_the_author(), get_the_date(), get_the_category_list( ' ' ) );
+    if ( function_exists( 'coauthors_posts_links' ) ) {
+        coauthors_posts_links();
+    } else {
+        the_author_posts_link();
+    }
+    printf( __( '| %1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
 
 }
 

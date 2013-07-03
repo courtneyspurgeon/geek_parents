@@ -88,6 +88,7 @@ add_action( 'init', 'build_taxonomies', 0 );
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-680', 680, 320, true );
+add_image_size( 'sm_thumb', 80, 80, true );
 /* Currently not using additional custom sizes
 //add_image_size( 'bones-thumb-300', 300, 250, true );
 */
@@ -500,7 +501,7 @@ function get_thumbnails_from_categories($strCategory = null)
     foreach ($arrPosts as $objPost)
     {
         $strDefaultThumb = '<img width="90" height="90" src="http://dummyimage.com/90x90/000/fff.png" class="attachment-thumbnail wp-post-image" alt="blank image">';
-        $strThumbnail = get_the_post_thumbnail($objPost['ID'], array('90','90'));
+        $strThumbnail = '<a href="' . get_permalink( $objPost['ID'] ) . '">' . get_the_post_thumbnail($objPost['ID'], array('80','80')) . '</a>';
         $strThumbnails .= $strThumbnail ? $strThumbnail : $strDefaultThumb;
     }
 
@@ -605,14 +606,18 @@ function list_cats_with_desc() {
   foreach($cat_id[0] as $id) {
     $id = trim($id,'cat-item-');
     $id = trim($id,'"');
+    $cat = get_category($id);
  
-    $desc = trim(strip_tags(category_description($id)),"\n");   // For some reason, category_description returns the
+    $desc = trim(strip_tags($cat->category_description),"\n");   // For some reason, category_description returns the
                                                                 // description wrapped in an unwanted paragraph tag which
                                                                 // we remove with strip_tags. It also adds a newline
                                                                 // which we promptly trim out.
+    $thumbs = get_thumbnails_from_categories($cat->term_id);
+
     if($desc=="") $desc = "Add Description";
  
-    $inject_desc[$i] = '</a><p class="cat-desc">' . $desc . '</p>';
+    $inject_desc[$i] = '<div class="cat_thumbnails">' . $thumbs . '</div>' .
+        '<p class="cat-desc">' . $desc . '</p></li>';
     $i++;
   }
  
@@ -628,12 +633,15 @@ function list_cats_with_desc() {
     }
  
     // If we find one, ad our description <p>
+    //$base_arr[$base_i] = '<h3>' . $base_arr[$base_i];
+    //$base_arr[$base_i] = str_replace('</li>', $desc . '</li>', $base_arr[$base_i]);
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }
  
   $base = implode("\n", $base_arr);
-  echo $base;
+  echo $base; 
+  //. print_r($inject_thumb);
 }
 
 /* Customizing the login page */

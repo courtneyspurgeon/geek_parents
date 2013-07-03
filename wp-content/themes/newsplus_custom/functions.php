@@ -633,8 +633,6 @@ function list_cats_with_desc() {
     }
  
     // If we find one, ad our description <p>
-    //$base_arr[$base_i] = '<h3>' . $base_arr[$base_i];
-    //$base_arr[$base_i] = str_replace('</li>', $desc . '</li>', $base_arr[$base_i]);
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }

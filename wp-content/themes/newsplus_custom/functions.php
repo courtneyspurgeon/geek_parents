@@ -67,7 +67,15 @@ function newsplus_small_meta() {
     http://net.tutsplus.com/tutorials/wordpress/introducing-wordpress-3-custom-taxonomies/
 */
 function build_taxonomies(){
-    register_taxonomy( 'section', 'post', array( 'hierarchical' => true, 'label' => 'Section', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'section', 'post', 
+        array( 
+            'hierarchical' => true, 
+            'label' => 'Section', 
+            'query_var' => true, 
+            'rewrite' => true,
+            'show_admin_column'     => true,
+        ) 
+    );
 }
 add_action( 'init', 'build_taxonomies', 0 );
 

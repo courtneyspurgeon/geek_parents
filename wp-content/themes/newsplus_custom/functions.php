@@ -579,6 +579,84 @@ function bp_after_signup_profile_fields(){
 }
 add_action('bp_after_signup_profile_fields','bp_after_signup_profile_fields');
 
+// 2013.07.03 => Added by Rob Brennan for additional registration
+function display_after_registration() { ?>
+
+    <?php
+    global $bp;   // Refer to http://codex.buddypress.org/developer/developer-docs/the-bp-global/
+    // Get the user object that matches our username
+    $user = get_user_by( 'login', $bp->signup->username );  // Refer to http://codex.wordpress.org/Function_Reference/get_user_by
+    $the_user_id = $user->id;
+    $username = $bp->signup->username;
+
+    /*
+    foreach ( (array)$bp as $key => $value ) {
+        echo '<pre>';
+        echo '<strong>' . $key . ': </strong><br />';
+        print_r( $value );
+        echo '</pre>';
+    }
+    */
+
+    updateUserDisplayName($the_user_id);    // Programatically update our user's display and nickname values
+    ?>
+    <p>&nbsp;</p>
+    <?
+    if (getAge($the_user_id) <= 18){
+        // The user requires additional approval before their account will be active
+        ?>
+        <strong class="required">ATTENTION: Parental or Legal Guardian Consent Required</strong>
+        <p>&nbsp;</p>
+        <p><strong>Anyone <a href="/privacy-for-teen-members" target="__blank">under the age of eighteen (18) years old</a> must have approval from their parent or legal guardian before their account will be active. Please have your parent or legal guardian fill out our <a href="/consent-form" target="__blank">consent form</a>.</strong></p>
+        <?
+        updateUnderageUser($the_user_id);
+    } else {
+        ?>
+        Thank you. Your account has been created on Parental Planet.
+        <?
+    }
+
+}
+add_action( 'bp_after_registration_confirmed', 'display_after_registration' );
+
+function getAge($userID)
+{
+    $dob_time=xprofile_get_field_data('Date of birth', $userID);//get the datetime as mysql datetime
+    $dob=new DateTime($dob_time);//create a DateTime Object from that
+    $current_date_time=new DateTime();//current date time object
+    $diff= $current_date_time->diff($dob);//returns DateInterval object
+    return $diff->format("%y years %m months %d days");
+}
+
+// 2013.07.05 Update user based on age during the registration process
+function updateUnderageUser($userID){
+    if (getAge($userID) <= 18){
+        // What role should we assign?
+        $role = 'parental_approval_needed';
+        // Update their account
+        wp_update_user( array ( 'ID' => $userID, 'role' => $role ) ) ;
+    }
+}
+
+// 2013.07.05 Update user based on age during the registration process
+function updateUserDisplayName($userID){
+    $firstName = xprofile_get_field_data('First Name', $userID);
+    $lastName = xprofile_get_field_data('Last Name', $userID);
+    wp_update_user( array ( 'ID' => $userID, 'first_name' => $firstName, 'last_name' => $lastName, 'display_name' => $firstName .' '.$lastName, 'nickname' => $firstName ) ) ;
+}
+
+// 2013.07.05 Disable email activation in BuddyPress
+function disable_validation( $user_id ) {
+    global $wpdb;
+
+    $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->users SET user_status = 0 WHERE ID = %d", $user_id ) );
+}
+add_action( 'bp_core_signup_user', 'disable_validation' );
+
+function fix_signup_form_validation_text() {
+    return false;
+}
+add_filter( 'bp_registration_needs_activation', 'fix_signup_form_validation_text' );    // ~Line 227 in /wp-content/plugins/buddypress/bp-themes/bp-default/registration/register.php is where the confirmation message gets displayed
 
 // 2013.06.26 added by Courtney Spurgeon - otherwise wp_list_categories causes formatting
 // errors when category descriptions have non alphabetic characters, ex: ()

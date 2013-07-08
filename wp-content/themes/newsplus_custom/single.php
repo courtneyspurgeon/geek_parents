@@ -82,7 +82,10 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                     endif; // Globally hide post meta ?>
                 </header>
                 <div class="entry-content">
-					       <?php the_content(); ?>
+					<?php the_content(); ?>
+                    <?php if ($article_url) : ?>
+                        <p><a href="<?php echo $article_url ?>" class="read-more">Read More</a></p>
+                    <?php endif; ?>
                 </div><!-- .entry-content -->
                 <footer>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'newsplus' ), 'after' => '</div>' ) );

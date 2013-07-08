@@ -2,7 +2,8 @@
 <div id="ai1ec-container" class="ai1ec-container">
 	<!-- AI1EC_PAGE_CONTENT_PLACEHOLDER -->
 	<div class="timely">
-		<div class="ai1ec-calendar-toolbar clearfix">
+        // 2013.07.08 => Modified by Rob Brennan
+		<div id="rb-toolbar" class="ai1ec-calendar-toolbar clearfix">
 			<ul class="nav nav-pills pull-left"><?php echo $views_dropdown; ?></ul>
 			<?php if ( $categories || $tags ) : ?>
 				<ul class="nav nav-pills pull-left">

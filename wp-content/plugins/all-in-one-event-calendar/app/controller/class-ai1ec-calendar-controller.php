@@ -74,15 +74,23 @@ class Ai1ec_Calendar_Controller {
 		$view = $this->$get_view( $view_args );
 		$content = '';
 		$args_for_filter = array();
-		$categories = $ai1ec_calendar_helper->get_html_for_categories( $view_args );
-		$tags = $ai1ec_calendar_helper->get_html_for_tags( $view_args );
-		$dropdown_args = $view_args;
-		if ( isset( $dropdown_args['time_limit'] ) && false !== $exact_date ) {
-			$dropdown_args['exact_date'] = $exact_date;
-		}
-		$views_dropdown =
-			$ai1ec_calendar_helper->get_html_for_views_dropdown( $dropdown_args );
-		$subscribe_buttons = '';
+
+        // 2013.07.08   =>  Modified by Rob Brennan
+        if ($action === 'agenda'){
+            // Do not add items to the toolbar for the agenda view
+
+        } else {
+            $categories = $ai1ec_calendar_helper->get_html_for_categories( $view_args );
+            $tags = $ai1ec_calendar_helper->get_html_for_tags( $view_args );
+            $dropdown_args = $view_args;
+            if ( isset( $dropdown_args['time_limit'] ) && false !== $exact_date ) {
+                $dropdown_args['exact_date'] = $exact_date;
+            }
+            $views_dropdown =
+                $ai1ec_calendar_helper->get_html_for_views_dropdown( $dropdown_args );
+            $subscribe_buttons = '';
+        }
+
 		if ( ! $ai1ec_settings->turn_off_subscription_buttons ) {
 			$subscribe_buttons =
 				$ai1ec_calendar_helper->get_html_for_subscribe_buttons( $view_args );
@@ -712,6 +720,8 @@ class Ai1ec_Calendar_Controller {
 	 * @return string	        returns string of view output
 	 */
 	function get_agenda_view( $args ) {
+        // 2013.07.08   =>  Added by Rob Brennan to hide navigation at the bottom of the agenda view
+        $args['no_navigation'] = true;
 		return $this->get_agenda_like_view( 'agenda', $args );
 	}
 

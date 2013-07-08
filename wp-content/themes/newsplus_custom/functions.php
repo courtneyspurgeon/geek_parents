@@ -632,14 +632,13 @@ function list_cats_with_desc() {
       $base_i++;
     }
  
-    // If we find one, ad our description <p>
+    // If we find one, add our description <p>
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }
  
   $base = implode("\n", $base_arr);
-  echo $base; 
-  //. print_r($inject_thumb);
+  echo $base;
 }
 
 /* Customizing the login page */

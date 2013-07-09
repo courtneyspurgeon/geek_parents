@@ -119,9 +119,12 @@ a.read-more:hover {background: #333; color: #fff;}
 
 /* related posts */
 .related-posts .rp-thumb {max-height: 94px; overflow: hidden;}
-
+#sidebar .related-posts li { float: none; width: 100%; clear: both; overflow: hidden;}
+#sidebar .related-posts li .rp-thumb {width: 33%; float: left; margin-right: 10px;}
+#sidebar .related-posts li h4 { }
 
 /* ======================= Article Sidebar ======= */
+.related-posts h3,
 .widgettitle,
 .sb-title,
 h3.sb-title {

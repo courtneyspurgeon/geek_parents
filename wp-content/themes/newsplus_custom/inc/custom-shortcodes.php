@@ -99,20 +99,22 @@ function insert_homepage_section_posts( $atts ) {
 			else {
 				$write_comments = '';
 			}
-			$post_meta = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta"><a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>%5$s</span>',
+			$post_meta = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta">%7$s on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>%5$s</span>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
-			$write_comments );
+			$write_comments,
+			coauthors_posts_links(null, null, null, null, false) );
 			
-			$post_meta_big = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta"><a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s</span>',
+			$post_meta_big = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta">%7$s on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s</span>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			get_the_category_list( ', ' ),
-			$write_comments );
+			$write_comments,
+			coauthors_posts_links(null, null, null, null, false) );
 			
 			$no_meta_class = ( 'true' == $hide_excerpt && 'true' == $hide_meta ) ? 'no-meta' : '';
 

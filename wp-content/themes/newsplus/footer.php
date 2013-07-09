@@ -28,30 +28,12 @@ if ( is_active_sidebar( 'secondary-column-1' ) || is_active_sidebar( 'secondary-
 	if ( 'true' != $hide_secondary ) : ?>
         <div id="secondary" role="complementary">
             <div class="wrap clear">
-                <div class="column one-fourth">
+                <div class="column full-width">
 					<?php
                     if ( is_active_sidebar( 'secondary-column-1' ) )
 						dynamic_sidebar( 'secondary-column-1' );
                     ?>
                 </div><!-- .column one-fourth -->
-                <div class="column one-fourth">
-					<?php
-                    if ( is_active_sidebar( 'secondary-column-2' ) )
-						dynamic_sidebar( 'secondary-column-2' );
-                    ?>
-                </div><!-- .column one-fourth -->
-                <div class="column one-fourth">
-					<?php
-                    if ( is_active_sidebar( 'secondary-column-3' ) )
-						dynamic_sidebar( 'secondary-column-3' );
-                    ?>
-                </div><!-- .column one-fourth -->
-                <div class="column one-fourth last">
-					<?php
-                    if ( is_active_sidebar( 'secondary-column-4' ) )
-						dynamic_sidebar( 'secondary-column-4' );
-                    ?>
-                </div><!-- .column one-fourth .last -->
             </div><!-- #secondary .wrap -->
         </div><!-- #secondary -->
 	<?php endif; // hide secondary

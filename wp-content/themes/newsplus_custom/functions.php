@@ -592,7 +592,7 @@ add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 // 2013.06.26 added by Courtney Spurgeon to list categories with descriptions
 // code found online and adjusted to our needs
 // source: http://www.wplover.com/1016/category-based-navigation-with-description-a-la-grid-focus/
-function list_cats_with_desc() {
+function list_cats_desc_thumb() {
   $base = wp_list_categories('echo=0&title_li=&show_count=1');
  
   // wp_list_categories adds a "cat-item-[category_id]" class to the <li> so let's make use of that! 
@@ -613,8 +613,6 @@ function list_cats_with_desc() {
                                                                 // we remove with strip_tags. It also adds a newline
                                                                 // which we promptly trim out.
     $thumbs = get_thumbnails_from_categories($cat->term_id);
-
-    if($desc=="") $desc = "Add Description";
  
     $inject_desc[$i] = '<div class="cat_thumbnails">' . $thumbs . '</div>' .
         '<p class="cat-desc">' . $desc . '</p></li>';

@@ -41,7 +41,9 @@ get_header(); ?>
             $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
               <article <?php post_class( 'entry-grid col3'. $fclass . $lclass ); ?>>
                 <?php //echo bp_core_get_avatar( $user->ID, 2 ); ?>
-                <?php echo get_avatar( $user->ID, 230); ?>
+                <div class="post-thumb">
+                  <?php echo get_avatar( $user->ID, 320); ?>
+                </div>
 
                   <div class="entry-content">
                     <?php //echo print_r($user) ?>

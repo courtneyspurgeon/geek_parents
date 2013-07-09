@@ -51,9 +51,16 @@ get_header(); ?>
         $fclass = ( 0 == ( ( $count - 1 ) % 3 ) ) ? ' first-grid' : '';
         $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
-        <?php get_template_part( 'formats/format', get_post_format() ); ?>
+        <div class="post-thumb">
+          <?php $title = get_the_title();
+            if ( has_post_thumbnail() ) {
+              $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
+              $img = $img_src[0];
+              echo( '<div class="post-thumb"><img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/></div>');
+            } ?>
+        </div>
         <div class="entry-content">
-          <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+          <h2 class="entry-title"><?php the_title(); ?></h2>
           <p class="post-excerpt"><?php echo $meta['cap-description'][0]; ?></p>
         </div><!-- .entry-content -->
         </article><!-- #post-<?php the_ID();?> -->

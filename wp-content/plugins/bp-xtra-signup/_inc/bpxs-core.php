@@ -51,7 +51,7 @@ function bpxs_check_additional_signup()
 		$dob = $_POST['field_'. $bpxs->options->dob_field .'_year'] .'-'. bpxs_get_month_number( $_POST['field_'. $bpxs->options->dob_field .'_month'] ) .'-'. $_POST['field_'. $bpxs->options->dob_field .'_day'];
 
 		if( ! bpxs_check_dob( $dob ) )
-			$bp->signup->errors['field_' . $bpxs->options->dob_field] = sprintf( __( 'You need to be at least %d years old to create an account here. If you are at least 13 years old, please have your parent(s) or legal guardian(s) follow the instructions below to create your account.', 'bpxs' ), $bpxs->options->dob_age );
+			$bp->signup->errors['field_' . $bpxs->options->dob_field] = sprintf( __( 'You need to be at least %d years old to join this network.', 'bpxs' ), $bpxs->options->dob_age );
 	}
 }
 add_action( 'bp_signup_validate', 'bpxs_check_additional_signup' );
@@ -202,6 +202,14 @@ add_action('bp_signup_validate', 'bpxs_check_email_confirm');
  * http://buddydev.com/buddypress/creating-a-buddypress-wordpress-username-availability-checker-for-your-site/
  * @since 1.3
  */
+function dummy_check_username(){
+    //echo '<script>Console.log("Dummy check")</script>';
+    $msg = array( 'code' => 'error', 'message' => 'Sorry. Please choose another user name.' );
+    //$msg = apply_filters( 'bpxs_custom_message_filter', $msg );
+    echo json_encode( $msg );
+    die();
+}
+
 function bpxs_check_username()
 {
 	global $bpxs;
@@ -234,9 +242,12 @@ function bpxs_check_username()
 		$msg = apply_filters( 'bpxs_custom_message_filter', $msg );
 
 		echo json_encode( $msg );
+        die();
 	}
 }
-add_action( 'wp_ajax_check_username', 'bpxs_check_username' );
+//add_action( 'wp_ajax_check_username', 'dummy_check_username' );
+//add_action( 'wp_ajax_nopriv_check_username', 'dummy_check_username' );
+add_action( 'wp_ajax_nopriv_check_username', 'bpxs_check_username' );
 
 /**
  * Check if a username exists already
@@ -294,8 +305,8 @@ function bpxs_validate_username( $user_name )
 {
 	global $wpdb;
 
-	$maybe = array();
-	preg_match( "/[a-z0-9]+/", $user_name, $maybe );
+    $maybe = array();
+	preg_match( "/[A-Za-z0-9]+/", $user_name, $maybe );
 
 	$db_illegal_names = get_option( 'illegal_names' );
 	$filtered_illegal_names = apply_filters( 'bp_core_illegal_usernames', array( 'www', 'web', 'root', 'admin', 'main', 'invite', 'administrator', BP_GROUPS_SLUG, BP_MEMBERS_SLUG, BP_FORUMS_SLUG, BP_BLOGS_SLUG, BP_REGISTER_SLUG, BP_ACTIVATION_SLUG ) );
@@ -303,7 +314,7 @@ function bpxs_validate_username( $user_name )
 	$illegal_names = array_merge( (array)$db_illegal_names, (array)$filtered_illegal_names );
 
 	if( ! validate_username( $user_name ) || $user_name != $maybe[0] )
-		$error = __( 'Only lowercase letters and numbers allowed.', 'bpxs' );
+		$error = __( 'Only uppercase letters, lowercase letters, and numbers are allowed.', 'bpxs' );
 		
 	if( in_array( $user_name, (array)$illegal_names ) )
 		$error = __( 'This username is reserved. Please chose another one.', 'bpxs' );
@@ -452,7 +463,11 @@ function bpxs_check_useremail()
 		$msg = apply_filters( 'bpxs_custom_email_message_filter', $msg );
 
 		echo json_encode( $msg );
+        die();
 	}
 }
-add_action( 'wp_ajax_check_email', 'bpxs_check_useremail' );
+//add_action( 'wp_ajax_check_email', 'bpxs_check_useremail' );
+// 2013.07.10 Added by Rob Brennan to adjust issue with BuddyPress AJAX validation
+add_action( 'wp_ajax_nopriv_check_useremail', 'bpxs_check_useremail' );
+
 ?>

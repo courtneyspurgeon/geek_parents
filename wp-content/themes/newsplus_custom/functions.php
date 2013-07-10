@@ -63,7 +63,12 @@ function newsplus_post_meta() {
 function newsplus_small_meta() {
     // Styled to reflect meta display in original theme
     $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
-    printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
+    if ($post_type !== '') {
+        printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
+    } else {
+        printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ));
+    }
+    
 
 }
 

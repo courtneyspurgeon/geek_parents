@@ -31,6 +31,7 @@
   margin-right: 0px; 
   width: 49.484848%;
   }
+.home-page .entry-content .section-title span {display: inline-table;}
 .home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
 .home-page .column.half .one-col { border-bottom: 0;}
 .home-page .column.half div + div + div { border-bottom: 0; }

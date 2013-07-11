@@ -15,8 +15,7 @@
     background: #f8f8f8;
   }
   #utility-top input[type="text"], 
-  #utility-top input[type="submit"] { height: 2.2em; }
-  #utility-top input[type="submit"] { padding: 0px 10px; }
+  #utility-top input[type="submit"] { height: 2.2em; padding: 0px 10px;}
 
 .secondary-nav li a { margin: 0.4em 0 }  
 .secondary-nav {max-width: 65%;}

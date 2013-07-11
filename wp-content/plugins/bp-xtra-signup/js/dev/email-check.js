@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
 		var email = jQuery(signup_mail_field).val();
 		
 		jQuery.post( ajaxurl, {
-			action: 'check_email',
+			action: 'check_useremail',
 			'cookie': encodeURIComponent(document.cookie),
 			'email': email
 		},

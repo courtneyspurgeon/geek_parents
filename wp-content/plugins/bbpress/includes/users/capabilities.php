@@ -309,12 +309,14 @@ function bbp_get_user_role_map() {
 	$default_role = bbp_get_default_role();
 
 	// Return filtered results, forcing admins to keymasters.
+    //  2013.07.09  Updated to combat bbPress access issues
 	return (array) apply_filters( 'bbp_get_user_role_map', array (
 		'administrator' => bbp_get_keymaster_role(),
 		'editor'        => $default_role,
 		'author'        => $default_role,
 		'contributor'   => $default_role,
-		'subscriber'    => $default_role
+		'subscriber'    => $default_role,
+        'parental_approval_needed'  =>  bbp_get_spectator_role()
 	) );
 }
 

@@ -496,7 +496,7 @@ function get_thumbnails_from_categories($strCategory = null)
     $arrPosts = get_transient('gb_get_recent_posts_thumb'.$strCategory);
     if (!$arrPosts)
     {
-        $arrPosts = wp_get_recent_posts(array('numberposts' => '4', 'category' => $strCategory, 'post_type' => 'post'));
+        $arrPosts = wp_get_recent_posts(array('numberposts' => '4', 'category' => $strCategory, 'post_type' => 'post', 'post_status' => 'publish' ));
         set_transient('gb_get_recent_posts_thumb'.$strCategory,$arrPosts, 60*60*2);
     }
 
@@ -661,7 +661,7 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 // 2013.06.26 added by Courtney Spurgeon to add state-specific links to the top secondary nav menu
-// Logged in users have: Members, My Profile, Logout
+// Logged in users have: Logbook, My Account
 // Logged out users have: Login, Register
 function add_login_out_item_to_menu( $items, $args ){
 
@@ -673,8 +673,8 @@ function add_login_out_item_to_menu( $items, $args ){
     //build links
     $links = array();
     if( is_user_logged_in( ) ) {
-        array_push($links, '<a href="/members" title="' .  __( 'Members' ) .'">' . __( 'Members' ) . '</a>');
-        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'My Profile' ) .'">' . __( 'My Profile' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'Logbook' ) .'">' . __( 'Logbook' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . '/profile" title="' .  __( 'My Account' ) .'">' . __( 'My Account' ) . '</a>');
         array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
     }
     else {

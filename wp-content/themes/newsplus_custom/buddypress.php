@@ -1,7 +1,7 @@
 <?php
 /**
  * The basic one-page template for use on bbpress pages
- * Started as a copy of page.php
+ * Started as a copy of page.php, remove breadcrumbs and sidebar
  */
 
 get_header(); ?>

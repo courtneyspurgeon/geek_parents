@@ -33,45 +33,45 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                 if ( $primary_query->have_posts() ) : ?>
 
                  <h2 class="section-title"><span class="ss-label red">Focus On: <?php echo $focus_topic ?></span> &nbsp;feature articles by our staff<span class="right_link"><a href="#">Browse Previous Features</a></span></h2>
-                    <div class="clear primary_posts">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <?php
-                                $count = 1;
-                                $fclass = '';
-                                $lclass = '';
-                                while ( $primary_query->have_posts() ) :
-                                    $primary_query->the_post();
-                                    $fclass = ( 0 == ( ( $count - 1 ) % 2 ) ) ? ' first-grid' : '';
-                                    $lclass = ( 0 == ( $count % 2 ) ) ? ' last-grid' : ''; ?>
-                                    <li>
-                                        <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-list clear' ); ?>>
-                                        <?php get_template_part( 'formats/list-format', get_post_format() ); ?>
-                                        <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                                        <?php echo ( '<p class="post-excerpt">' . get_the_excerpt() . '</p>' ); ?>
-                                        <?php $post_meta = '<span class="entry-meta">';
-                                            $post_meta .= coauthors_posts_links(null, null, null, null, false);
-                                            $post_meta .= sprintf( ' on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s',
-                                                esc_url( get_permalink() ),
-                                                esc_attr( get_the_time() ),
-                                                esc_attr( get_the_date( 'c' ) ),
-                                                esc_html( get_the_date() ),
-                                                get_the_category_list( ', ' ),
-                                                $write_comments );
-                                            $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
-                                            if ($post_type !== '') {
-                                               $post_meta .= ' <span class="post-type ' . $post_type . ' %3$s">' . $post_type .'</span>';
-                                            }
-                                            $post_meta .= '</span>';
-                                            echo $post_meta; ?>
-                                            </div><!-- .entry-list-right -->
-                                        </article><!-- #post-<?php the_ID(); ?> -->
-                                    </li>
-                                    <?php $count++;
-                                endwhile; ?>
-                            </ul> <!-- end .slides -->
-                        </div> <!-- flexslider -->
-                    </div><!-- .clear -->
+                <div class="clear primary_posts">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <?php
+                            $count = 1;
+                            $fclass = '';
+                            $lclass = '';
+                            while ( $primary_query->have_posts() ) :
+                                $primary_query->the_post();
+                                $fclass = ( 0 == ( ( $count - 1 ) % 2 ) ) ? ' first-grid' : '';
+                                $lclass = ( 0 == ( $count % 2 ) ) ? ' last-grid' : ''; ?>
+                                <li>
+                                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-list clear' ); ?>>
+                                    <?php get_template_part( 'formats/list-format', get_post_format() ); ?>
+                                    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+                                    <?php echo ( '<p class="post-excerpt">' . get_the_excerpt() . '</p>' ); ?>
+                                    <?php $post_meta = '<span class="entry-meta">';
+                                        $post_meta .= coauthors_posts_links(null, null, null, null, false);
+                                        $post_meta .= sprintf( ' on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s',
+                                            esc_url( get_permalink() ),
+                                            esc_attr( get_the_time() ),
+                                            esc_attr( get_the_date( 'c' ) ),
+                                            esc_html( get_the_date() ),
+                                            get_the_category_list( ', ' ),
+                                            $write_comments );
+                                        $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
+                                        if ($post_type !== '') {
+                                           $post_meta .= ' <span class="post-type ' . $post_type . ' %3$s">' . $post_type .'</span>';
+                                        }
+                                        $post_meta .= '</span>';
+                                        echo $post_meta; ?>
+                                        </div><!-- .entry-list-right -->
+                                    </article><!-- #post-<?php the_ID(); ?> -->
+                                </li>
+                                <?php $count++;
+                            endwhile; ?>
+                        </ul> <!-- end .slides -->
+                    </div> <!-- flexslider -->
+                </div><!-- .clear -->
                 <?php else:
                     // no posts found
                 endif; ?>

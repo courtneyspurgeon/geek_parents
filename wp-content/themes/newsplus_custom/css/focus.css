@@ -1,0 +1,19 @@
+/**
+ * Author: courtneyspurgeon
+ * Author URI: http://courtneyspurgeon.com
+**/
+
+ /* Custom Styles for main layout/fonts/colors */
+
+.focus_section .primary_posts .entry-list-left { width: 50%; }
+.focus_section .primary_posts .entry-list-left .entry-thumb {max-height: 280px; overflow: hidden;}
+.focus_section .primary_posts .entry-list-right { margin-left: 54%; }
+.focus_section .section-title .right_link {float: right; padding-top: 5px; font-size: .8em;} 
+
+.focus_section .primary_posts .entry-list,
+.focus_section .secondary_posts .entry-list,
+.focus_section .carousel .slide {border-bottom: 0px; margin-bottom: 0px;}
+
+
+.primary_posts,
+.secondary_posts { border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5em;}

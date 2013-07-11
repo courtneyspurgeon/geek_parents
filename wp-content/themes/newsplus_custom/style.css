@@ -16,6 +16,6 @@
 
  @import url("../newsplus/style.css");
 
- /* Custom Styles for main layout/fonts/colors */
- @import url("css/layout.css");
- @import url("css/bb_press.css");
+ @import url("css/layout.css"); /* Custom Styles for main layout/fonts/colors */
+ @import url("css/bb_press.css"); /* buddypress overrides */
+ @import url("css/focus.css"); /* stylesheet for the quarterly focus section */

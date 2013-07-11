@@ -130,8 +130,7 @@ class BPXS_Loader
 	function check_requirements()
 	{		
 		global $wp_version;
-		global $error;
-
+		
 		if( version_compare( $wp_version, $this->min_wp, '>=' ) == false )
 		{
 			add_action( 'admin_notices', create_function( '', 'global $bpxs; printf(\'<div id="message" class="error"><p><strong>\' . __(\'BP Xtra Signup works only under WordPress %s or higher. <a href="%supdate-core.php">Upgrade now</a>!\', "bpxs" ) . \'</strong></p></div>\', $bpxs->min_wp, admin_url() );' ) );

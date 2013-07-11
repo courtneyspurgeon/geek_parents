@@ -95,6 +95,8 @@
 .post-type.scholarly {background-color: #5D96DD;}
 .post-type.news {background-color: #5D96DD;}
 
+/* ======================= General Sidebar ======= */
+#sidebar .post-list .post-thumb { overflow: hidden; max-height: 80px;}
 
 /* ======================= Article Page ======= */
 

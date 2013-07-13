@@ -716,7 +716,14 @@ function list_cats_desc_thumb() {
       $base_i++;
     }
  
-    // If we find one, add our description <p>
+    // replace ([count]), with (View all [count] articles), and make it part of the link
+    $base_arr[$base_i] = str_replace('</a>', '', $base_arr[$base_i]);
+    $pattern = '/\([0-9]+\)/';
+    preg_match($pattern, $base_arr[$base_i], $matches);
+    $count_text = $matches[0];
+    preg_match('/[0-9]/', $count_text, $number_match);
+    $number = $number_match[0];
+    $base_arr[$base_i] = str_replace($count_text, '(View all '.$number.' articles)</a>', $base_arr[$base_i]);
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }

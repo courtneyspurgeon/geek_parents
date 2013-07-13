@@ -33,7 +33,6 @@ function insert_homepage_section_posts( $atts ) {
 		'hide_image'		=> 'false'
 	), $atts ) );
 
-	error_log("section: ".$section);
 	$custom_args = array(
 		'tax_query' => array(
 			'relation' => 'AND',

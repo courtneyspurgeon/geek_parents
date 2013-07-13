@@ -755,7 +755,7 @@ function add_login_out_item_to_menu( $items, $args ){
     $links = array();
     if( is_user_logged_in( ) ) {
         array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'Logbook' ) .'">' . __( 'Logbook' ) . '</a>');
-        array_push($links, '<a href="' . bp_loggedin_user_domain() . '/profile" title="' .  __( 'My Account' ) .'">' . __( 'My Account' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . 'profile" title="' .  __( 'My Account' ) .'">' . __( 'My Account' ) . '</a>');
         array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
     }
     else {
@@ -769,4 +769,50 @@ function add_login_out_item_to_menu( $items, $args ){
     return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
+
+/**
+ * Social Sharing feature on single posts
+ */
+if ( ! function_exists( 'ss_sharing' ) ) :
+    function ss_sharing() {
+    global $pls_ss_fb, $pls_ss_tw, $pls_ss_tw_usrname, $pls_ss_gp, $pls_ss_pint, $pls_ss_ln;
+        $share_link = get_permalink();
+        $share_title = get_the_title();
+        $out = '';
+        if ( 'true' == $pls_ss_fb ) {
+            $out .= '<div class="fb-like" data-href="' . $share_link . '" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div>';
+        }
+
+        if ( 'true' == $pls_ss_tw ) {
+            if( ! empty( $pls_ss_tw_usrname ) ) {
+                $out .= '<div class="ss-sharing-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $share_link . '"  data-text="' . $share_title . '" data-via="' . $pls_ss_tw_usrname . '">Tweet</a></div>';
+            }
+            else {
+                $out .= '<div class="ss-sharing-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $share_link . '"  data-text="' . $share_title . '">Tweet</a></div>';
+            }
+        }
+        $out .= '<br/><div class="ss-sharing-btn"><a href="mailto:?subject=Article: ' . get_the_title() . '&amp;body=Read the full article: ' . get_permalink() . '" title="Share by Email"><img src="' . get_stylesheet_directory_uri() . '/images/email_icon.png"></a></div>';
+        if ( 'true' == $pls_ss_gp ) {
+            $out .= '<div class="ss-sharing-btn"><div class="g-plusone" data-size="medium" data-href="' . $share_link . '"></div></div>';
+        }
+        if ( 'true' == $pls_ss_pint ) {
+            global $post;
+            setup_postdata( $post );
+            if ( has_post_thumbnail( $post->ID ) ) {
+                $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '', '' );
+                $image = $src[0];
+            }
+            else
+                $image = '';
+            $description = 'Next%20stop%3A%20Pinterest';
+            $share_link = get_permalink();
+            $out .= '<div class="ss-sharing-btn"><a data-pin-config="beside" href="//pinterest.com/pin/create/button/?url=' . $share_link . '&amp;media=' . $image . '&amp;description=' . $description . '" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" alt="PinIt" /></a></div>';
+            wp_reset_postdata();
+        }
+        if ( 'true' == $pls_ss_ln ) {
+            $out .= '<div class="ss-sharing-btn"><script type="IN/Share" data-url="' . $share_link . '" data-counter="right"></script></div>';
+        }
+        echo $out;
+    }
+endif;
 ?>

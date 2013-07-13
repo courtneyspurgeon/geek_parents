@@ -32,7 +32,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                 ) );
                 if ( $primary_query->have_posts() ) : ?>
 
-                 <h2 class="section-title"><span class="ss-label red">Focus On: <?php echo $focus_topic ?></span> &nbsp;feature articles by our staff<span class="right_link"><a href="#">Browse Previous Features</a></span></h2>
+                 <h2 class="section-title"><span class="ss-label red">Focus On: <?php echo $focus_topic ?></span> &nbsp;<span>feature articles by our staff</span><span class="right_link"><a href="#"></a></span></h2>
                 <div class="clear primary_posts">
                     <div class="flexslider">
                         <ul class="slides">
@@ -86,6 +86,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                 <div class="clear secondary_posts">
                     <?php //following code taken from newsplus shortcodes posts_carousel
                         $slider_id = 'slider-' . rand( 5, 20000 );
+                        $controlNav = ($secondary_query->found_posts > 2) ? 'true' : 'false';
                         $out = '<div class="slider-wrap clear">
                         <script type="text/javascript">
                         jQuery(window).load(function(){
@@ -110,13 +111,13 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                                 nextText: "Next",
                                 controlsContainer: "#' . $slider_id . '-controls",
                                 animationLoop: false,
-                                controlNav: true,
-                                directionNav: true,
+                                directionNav: ' . $controlNav . ',
+                                controlNav: ' . $controlNav . ',
                                 itemWidth: item_width,
                                 itemMargin: item_margin,
-                                minItems: 1,
+                                minItems: 2,
                                 maxItems: max_items,
-                                move: 0,
+                                move: 1,
                                 start: function(slider) {
                                     jQuery(slider).removeClass("flex-loading");
                                 },
@@ -209,35 +210,29 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                     ) );
                     
                     if ( $tertiary_query->have_posts() ) : ?>
-                        <h2 class="section-title"><span class="ss-label blue">Focus On: <?php echo $focus_topic ?></span> &nbsp;related content from around the web</h2>
+                        <h2 class="section-title"><span class="ss-label blue">Focus On: <?php echo $focus_topic ?></span> &nbsp;<span>related content from around the web</span></h2>
                         <div class="clear">
-                            <div class="flexslider">
-                                <ul class="slides">
-                                    <?php
-                                    $count = 1;
-                                    $fclass = '';
-                                    $lclass = '';
-                                    while ( $tertiary_query->have_posts() ) :
-                                        $tertiary_query->the_post();
-                                        $fclass = ( 0 == ( ( $count - 1 ) % 4 ) ) ? ' first-grid' : '';
-                                        $lclass = ( 0 == ( $count % 4 ) ) ? ' last-grid' : ''; ?>
-                                        <li>
-                                        <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col4'. $fclass . $lclass ); ?>>
-                                        <?php get_template_part( 'formats/format', get_post_format() ); ?>
+                            <?php
+                            $count = 1;
+                            $fclass = '';
+                            $lclass = '';
+                            while ( $tertiary_query->have_posts() ) :
+                                $tertiary_query->the_post();
+                                $fclass = ( 0 == ( ( $count - 1 ) % 4 ) ) ? ' first-grid' : '';
+                                $lclass = ( 0 == ( $count % 4 ) ) ? ' last-grid' : ''; ?>
+                                <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col4'. $fclass . $lclass ); ?>>
+                                <?php get_template_part( 'formats/format', get_post_format() ); ?>
 
-                                        <div class="entry-content">
-                                            <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                                            <p class="post-excerpt"><?php echo short( get_the_excerpt(), 150 ); ?></p>
-                                            <?php if( 'true' != $pls_hide_post_meta ) { ?>
-                                            <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_small_meta(); ?></aside>
-                                            <?php } ?>
-                                        </div><!-- .entry-content -->
-                                        </article><!-- #post-<?php the_ID();?> -->
-                                    </li>
-                                        <?php $count++;
-                                    endwhile; ?>
-                                    </ul>
-                            </div><!-- end flexslider -->
+                                <div class="entry-content">
+                                    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+                                    <p class="post-excerpt"><?php echo short( get_the_excerpt(), 150 ); ?></p>
+                                    <?php if( 'true' != $pls_hide_post_meta ) { ?>
+                                    <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_small_meta(); ?></aside>
+                                    <?php } ?>
+                                </div><!-- .entry-content -->
+                                </article><!-- #post-<?php the_ID();?> -->
+                                <?php $count++;
+                            endwhile; ?>
                         </div><!-- .clear -->
                     <?php else:
                         // no posts found

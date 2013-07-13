@@ -11,7 +11,7 @@ get_header(); ?>
         if ( have_posts() )
 			the_post();
 		if ( is_category() ) { ?>
-		<h1 class="section-title"><?php printf( __( 'Archive by category %s', 'newsplus' ), single_cat_title( '', false ) ); ?></h1>
+		<h1 class="section-title header-title"><?php printf( __( 'Archive: %s', 'newsplus' ), single_cat_title( '', false ) ); ?></h1>
 		<?php echo category_description();
         }
 		elseif ( is_day() ) { ?>

@@ -9,7 +9,7 @@ get_header(); ?>
 <div id="primary" class="site-content">
     <div id="content" role="main">
 
-        <h2>Browse by Topic</h2>
+        <h1 class="section-title">Browse by Topic</h1>
 
         <div id="category_list">
             <ul>

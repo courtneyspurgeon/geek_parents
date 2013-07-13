@@ -42,6 +42,19 @@ a { color: #1A72C9;}
   margin-bottom: 20px;
   height: 130px;
   }
+.homepage-grid .section-title { margin-bottom: 0px;}
+.homepage-grid .section-title + p,
+.homepage-grid .column > br  {display: none;} /* hiding strange empty p and br tags the cms inserts */
+.homepage-grid .ss-label { display: block; text-align: center;}
+
+/* news and gallery */
+.homepage-grid .gallery .entry-content,
+.homepage-grid .news .entry-content { padding: 0 10px;}
+.homepage-grid .gallery .entry-grid,
+.homepage-grid .news .entry-grid  { border-bottom: 0px; margin-bottom: 0px;}
+.homepage-grid .gallery { background: #D7ECFD; }
+.homepage-grid .news { background: #555; color: #fff;}
+.homepage-grid .news h3 a {color: #fff;}
 
 /* This day in History Widget */
 .tdih_list { list-style: none; margin-left: 0px; margin-bottom: 10px;}
@@ -83,6 +96,27 @@ a { color: #1A72C9;}
   border-radius: 5px;
   font-size: .7em;
 }
+/* differentiating original content */
+.post.original-article { background: #EDEDED;}
+.post.original-article .entry-content{ padding: 0 10px;}
+.post.original-article .entry-meta a { background: #888; color: #fff;}
+.post.original-article .entry-meta a:hover { background: #fff; color: #000; }
+.post-thumb .original-tag {
+  background: #222;
+  position:absolute;
+  top: 37px;
+  right: 110px;
+  text-align: center;
+  padding: .2em;
+  width: 100%;
+  color: #fff;
+  transform:rotate(315deg);
+  -ms-transform:rotate(315deg); /* IE 9 */
+  -webkit-transform:rotate(315deg); /* Safari and Chrome */
+  box-shadow: 0px 3px 3px #000;
+  -webkit-box-shadow: 0px 3px 3px #000;
+}
+/* post-type tag/blurbs */
 .post-type {
   display: inline-block;
   color: #fff;
@@ -165,8 +199,6 @@ h3.sb-title {
 
 
 /* ======================= Category Browse ==== */
-h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
-.section-title + p {font-size: 1.2em;}
 #category_list ul {list-style-type: none;}
 #category_list ul ul {padding-left: 30px;}
 #category_list .cat-item > a {font-size: 1.4em;}
@@ -175,10 +207,14 @@ h1.section-title { margin-bottom: 0em; color: rgb(85, 85, 85);}
   height: 80px; 
   overflow: hidden;
   padding: 10px 0;
-  border-top: 3px solid #ddd;
+  border-top: 2px solid #ddd;
 }
 #category_list .cat_thumbnails img {float: left; margin-right: 15px; max-height: 100%; max-width: 80px;}
 #category_list .cat-item .count {font-size: .7em;}
+
+/* ======================= Category View ==== */
+.section-title.header-title { font-size: 1.6em; border-bottom: 1px solid #ddd;}
+
 
 /* ======================= Footer ============== */
 .notes-left {width: 100%; text-align: center;}

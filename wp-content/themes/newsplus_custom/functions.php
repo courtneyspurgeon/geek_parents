@@ -721,9 +721,9 @@ function list_cats_desc_thumb() {
     $pattern = '/\([0-9]+\)/';
     preg_match($pattern, $base_arr[$base_i], $matches);
     $count_text = $matches[0];
-    preg_match('/[0-9]/', $count_text, $number_match);
+    preg_match('/[0-9]+/', $count_text, $number_match);
     $number = $number_match[0];
-    $base_arr[$base_i] = str_replace($count_text, '(View all '.$number.' articles)</a>', $base_arr[$base_i]);
+    $base_arr[$base_i] = str_replace($count_text, '(View all '.$number.')</a>', $base_arr[$base_i]);
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }

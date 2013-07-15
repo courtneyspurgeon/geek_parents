@@ -17,32 +17,37 @@ if ( ! have_posts() ) : ?>
 <?php endif; ?>
 <div class="clear">
 <?php /* Initialize counter and class variables */
-	$col = 2;
 	$count = 1;
 	$thumbclass = '';
 	$fclass = '';
 	$lclass = '';
-	while ( have_posts()) :
-		the_post();
-
-		/* Calculate appropriate class names for first and last grids */
-		$fclass = ( 0 == ( ( $count - 1 ) % 2 ) ) ? ' first-grid' : '';
-		$lclass = ( 0 == ( $count % 2 ) ) ? ' last-grid' : '';
-		?>
-        <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid '. $fclass.$lclass ); ?>>
-			<?php get_template_part( 'formats/format', get_post_format() ); ?>
-            <div class="entry-content">
-                <h2 class="entry-title">
-                    <?php if (get_post_time('U', true) > strtotime('-5 days')) { ?><span class="new-tag">New</span><?php } ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                </h2>
-                <p class="post-excerpt"><?php echo short( get_the_excerpt(), 160 ); ?></p>
-                <?php if ( 'true' != $pls_hide_post_meta ) { ?>
-                <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_small_meta(); ?></aside>
-                <?php } ?>
-            </div><!-- .entry-content -->
-		</article><!-- #post-<?php the_ID();?> -->
-		<?php $count++;
-	endwhile; // End the loop ?>
-    </div><!-- .clear -->
-	<?php newsplus_content_nav( 'nav-below' ); ?>
+	while ( $wp_query->have_posts() ) :
+        $wp_query->the_post();
+        $article_url = get_post_meta( $post->ID, '_cmb_source_url', true );
+        $article_class = (strlen($article_url) > 1) ? '' : ' original-article';
+        $fclass = ( 0 == ( ( $count - 1 ) % 3 ) ) ? ' first-grid' : '';
+        $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
+        <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass . $article_class); ?>>
+        <?php if ( has_post_thumbnail() ) {
+            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
+            $img = $img_src[0];
+            $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . get_the_title() . '">';
+            $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
+            if (strlen($article_url) < 1) {
+                $out .= '<div class="original-tag">Exclusive!</div>';
+            }
+            $out .= '</a></div>';
+            echo $out;
+        } ?>
+        <div class="entry-content">
+            <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+            <p class="post-excerpt"><?php echo short( get_the_excerpt(), 160 ); ?></p>
+            <?php if( 'true' != $pls_hide_post_meta ) { ?>
+            <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_post_meta(); ?></aside>
+            <?php } ?>
+        </div><!-- .entry-content -->
+        </article><!-- #post-<?php the_ID();?> -->
+        <?php $count++;
+    endwhile; ?>
+</div><!-- .clear -->
+<?php newsplus_content_nav( 'nav-below' ); ?>

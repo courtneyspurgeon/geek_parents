@@ -38,7 +38,13 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 			 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="entry-header">
                     <h1 class="entry-title">
-                        <?php printf( __( '<span class="post-type %1$s">%1$s</span> %2$s', 'buddypress' ), get_post_meta(get_the_ID(), '_cmb_source_type', true), get_the_title() ); ?></h1>
+                        <?php $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true); 
+                        if ($post_type !== ''):
+                            printf( __( '<span class="post-type %1$s">%1$s</span> %2$s', 'buddypress' ), get_post_meta(get_the_ID(), '_cmb_source_type', true), get_the_title() ); 
+                        else:
+                            printf( __( '%1$s', 'buddypress' ), get_the_title() );
+                        endif; ?>
+                        </h1>
                     <?php 
                     if( 'video' == get_post_format() )
                         get_template_part( 'formats/format', 'video' );
@@ -82,7 +88,10 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                     endif; // Globally hide post meta ?>
                 </header>
                 <div class="entry-content">
-					       <?php the_content(); ?>
+					<?php the_content(); ?>
+                    <?php if ($article_url) : ?>
+                        <p><a href="<?php echo $article_url ?>" class="read-more">Read More</a></p>
+                    <?php endif; ?>
                 </div><!-- .entry-content -->
                 <footer>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'newsplus' ), 'after' => '</div>' ) );
@@ -119,8 +128,6 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 					</div><!-- .author-info -->
 				<?php endif; // has description
 			endif; // Show Author Bio
-			if ( 'true' == $pls_rp )
-				newsplus_related_posts( $pls_rp_taxonomy, $pls_rp_style, $pls_rp_num );
 			if ( '' == $ad_below_check ) :
 				if( ! empty( $pls_ad_below ) && '' == $ad_below ) : ?>
                     <div class="ad-area">

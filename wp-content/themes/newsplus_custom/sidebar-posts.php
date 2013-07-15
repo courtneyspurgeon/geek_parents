@@ -30,6 +30,8 @@ endif; ?>
 
 
   <?php if (!dynamic_sidebar('sidebar-posts') ) : // pull in the custom sidebar-posts widget?>
+    <?php if ( 'true' == $pls_rp )
+        newsplus_related_posts( $pls_rp_taxonomy, $pls_rp_style, $pls_rp_num ); ?>
   <?php endif; ?>
 
 </div><!-- #sidebar -->

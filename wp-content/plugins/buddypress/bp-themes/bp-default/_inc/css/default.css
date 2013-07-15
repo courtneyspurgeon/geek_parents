@@ -1554,7 +1554,6 @@ div#message.updated p {
 	padding: 6px;
 	width: 90%;
 }
-
 div.accept,
 div.reject {
 	float: left;
@@ -1673,13 +1672,12 @@ div#signup-avatar img {
 }
 .standard-form #basic-details-section,
 .standard-form #blog-details-section,
-.standard-form #profile-details-section{
+.standard-form #profile-details-section {
 	float: left;
 	width: 48%;
 }
-.standard-form #profile-details-section{
+.standard-form #profile-details-section {
 	float: right;
-    width: 48%;
 }
 .standard-form #blog-details-section {
 	clear: left;

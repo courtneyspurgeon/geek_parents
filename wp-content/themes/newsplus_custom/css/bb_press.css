@@ -49,3 +49,7 @@
 .bbp-breadcrumb-current {font-size: 1.4em;}
 
 #bbpress-forums div.bbp-reply-author img.avatar {height: 60px;}
+
+/* ================================== Activity Feed Page =========== */
+#buddypress form#whats-new-form p.activity-greeting {line-height: 1em;}
+

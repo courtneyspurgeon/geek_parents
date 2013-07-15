@@ -56,14 +56,22 @@ function newsplus_post_meta() {
     } else {
         the_author_posts_link();
     }
-    printf( __( '| %1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+    printf( __( ' on %1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+    if (strlen($post_type) > 1) {
+        printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
+    }
 
 }
 
 function newsplus_small_meta() {
     // Styled to reflect meta display in original theme
     $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
-    printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
+    if ($post_type !== '') {
+        printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
+    } else {
+        printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ));
+    }
+    
 
 }
 
@@ -88,6 +96,7 @@ add_action( 'init', 'build_taxonomies', 0 );
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-680', 680, 320, true );
+add_image_size( 'sm_thumb', 80, 80, true );
 /* Currently not using additional custom sizes
 //add_image_size( 'bones-thumb-300', 300, 250, true );
 */
@@ -490,7 +499,7 @@ function get_thumbnails_from_categories($strCategory = null)
     $arrPosts = get_transient('gb_get_recent_posts_thumb'.$strCategory);
     if (!$arrPosts)
     {
-        $arrPosts = wp_get_recent_posts(array('numberposts' => '4', 'category' => $strCategory, 'post_type' => 'post'));
+        $arrPosts = wp_get_recent_posts(array('numberposts' => '4', 'category' => $strCategory, 'post_type' => 'post', 'post_status' => 'publish' ));
         set_transient('gb_get_recent_posts_thumb'.$strCategory,$arrPosts, 60*60*2);
     }
 
@@ -500,7 +509,7 @@ function get_thumbnails_from_categories($strCategory = null)
     foreach ($arrPosts as $objPost)
     {
         $strDefaultThumb = '<img width="90" height="90" src="http://dummyimage.com/90x90/000/fff.png" class="attachment-thumbnail wp-post-image" alt="blank image">';
-        $strThumbnail = get_the_post_thumbnail($objPost['ID'], array('90','90'));
+        $strThumbnail = '<a href="' . get_permalink( $objPost['ID'] ) . '">' . get_the_post_thumbnail($objPost['ID'], array('80','80')) . '</a>';
         $strThumbnails .= $strThumbnail ? $strThumbnail : $strDefaultThumb;
     }
 
@@ -579,6 +588,84 @@ function bp_after_signup_profile_fields(){
 }
 add_action('bp_after_signup_profile_fields','bp_after_signup_profile_fields');
 
+// 2013.07.03 => Added by Rob Brennan for additional registration
+function display_after_registration() { ?>
+
+    <?php
+    global $bp;   // Refer to http://codex.buddypress.org/developer/developer-docs/the-bp-global/
+    // Get the user object that matches our username
+    $user = get_user_by( 'login', $bp->signup->username );  // Refer to http://codex.wordpress.org/Function_Reference/get_user_by
+    $the_user_id = $user->id;
+    $username = $bp->signup->username;
+
+    /*
+    foreach ( (array)$bp as $key => $value ) {
+        echo '<pre>';
+        echo '<strong>' . $key . ': </strong><br />';
+        print_r( $value );
+        echo '</pre>';
+    }
+    */
+
+    updateUserDisplayName($the_user_id);    // Programatically update our user's display and nickname values
+    ?>
+    <p>&nbsp;</p>
+    <?
+    if (getAge($the_user_id) <= 18){
+        // The user requires additional approval before their account will be active
+        ?>
+        <strong class="required">ATTENTION: Parental or Legal Guardian Consent Required</strong>
+        <p>&nbsp;</p>
+        <p><strong>Anyone <a href="/privacy-for-teen-members" target="__blank">under the age of eighteen (18) years old</a> must have approval from their parent or legal guardian before their account will be active. Please have your parent or legal guardian fill out our <a href="/consent-form" target="__blank">consent form</a>.</strong></p>
+        <?
+        updateUnderageUser($the_user_id);
+    } else {
+        ?>
+        Thank you. Your account has been created on Parental Planet.
+        <?
+    }
+
+}
+add_action( 'bp_after_registration_confirmed', 'display_after_registration' );
+
+function getAge($userID)
+{
+    $dob_time=xprofile_get_field_data('Date of birth', $userID);//get the datetime as mysql datetime
+    $dob=new DateTime($dob_time);//create a DateTime Object from that
+    $current_date_time=new DateTime();//current date time object
+    $diff= $current_date_time->diff($dob);//returns DateInterval object
+    return $diff->format("%y years %m months %d days");
+}
+
+// 2013.07.05 Update user based on age during the registration process
+function updateUnderageUser($userID){
+    if (getAge($userID) <= 18){
+        // What role should we assign?
+        $role = 'parental_approval_needed';
+        // Update their account
+        wp_update_user( array ( 'ID' => $userID, 'role' => $role ) ) ;
+    }
+}
+
+// 2013.07.05 Update user based on age during the registration process
+function updateUserDisplayName($userID){
+    $firstName = xprofile_get_field_data('First Name', $userID);
+    $lastName = xprofile_get_field_data('Last Name', $userID);
+    wp_update_user( array ( 'ID' => $userID, 'first_name' => $firstName, 'last_name' => $lastName, 'display_name' => $firstName .' '.$lastName, 'nickname' => $firstName ) ) ;
+}
+
+// 2013.07.05 Disable email activation in BuddyPress
+function disable_validation( $user_id ) {
+    global $wpdb;
+
+    $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->users SET user_status = 0 WHERE ID = %d", $user_id ) );
+}
+add_action( 'bp_core_signup_user', 'disable_validation' );
+
+function fix_signup_form_validation_text() {
+    return false;
+}
+add_filter( 'bp_registration_needs_activation', 'fix_signup_form_validation_text' );    // ~Line 227 in /wp-content/plugins/buddypress/bp-themes/bp-default/registration/register.php is where the confirmation message gets displayed
 
 // 2013.06.26 added by Courtney Spurgeon - otherwise wp_list_categories causes formatting
 // errors when category descriptions have non alphabetic characters, ex: ()
@@ -591,7 +678,7 @@ add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 // 2013.06.26 added by Courtney Spurgeon to list categories with descriptions
 // code found online and adjusted to our needs
 // source: http://www.wplover.com/1016/category-based-navigation-with-description-a-la-grid-focus/
-function list_cats_with_desc() {
+function list_cats_desc_thumb() {
   $base = wp_list_categories('echo=0&title_li=&show_count=1');
  
   // wp_list_categories adds a "cat-item-[category_id]" class to the <li> so let's make use of that! 
@@ -605,14 +692,16 @@ function list_cats_with_desc() {
   foreach($cat_id[0] as $id) {
     $id = trim($id,'cat-item-');
     $id = trim($id,'"');
+    $cat = get_category($id);
  
-    $desc = trim(strip_tags(category_description($id)),"\n");   // For some reason, category_description returns the
+    $desc = trim(strip_tags($cat->category_description),"\n");   // For some reason, category_description returns the
                                                                 // description wrapped in an unwanted paragraph tag which
                                                                 // we remove with strip_tags. It also adds a newline
                                                                 // which we promptly trim out.
-    if($desc=="") $desc = "Add Description";
+    $thumbs = get_thumbnails_from_categories($cat->term_id);
  
-    $inject_desc[$i] = '</a><p class="cat-desc">' . $desc . '</p>';
+    $inject_desc[$i] = '<div class="cat_thumbnails">' . $thumbs . '</div>' .
+        '<p class="cat-desc">' . $desc . '</p></li>';
     $i++;
   }
  
@@ -627,7 +716,14 @@ function list_cats_with_desc() {
       $base_i++;
     }
  
-    // If we find one, ad our description <p>
+    // replace ([count]), with (View all [count] articles), and make it part of the link
+    $base_arr[$base_i] = str_replace('</a>', '', $base_arr[$base_i]);
+    $pattern = '/\([0-9]+\)/';
+    preg_match($pattern, $base_arr[$base_i], $matches);
+    $count_text = $matches[0];
+    preg_match('/[0-9]+/', $count_text, $number_match);
+    $number = $number_match[0];
+    $base_arr[$base_i] = str_replace($count_text, '(View all '.$number.')</a>', $base_arr[$base_i]);
     $base_arr[$base_i] .= $desc;
     $base_i++;
   }
@@ -653,7 +749,7 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 // 2013.06.26 added by Courtney Spurgeon to add state-specific links to the top secondary nav menu
-// Logged in users have: Members, My Profile, Logout
+// Logged in users have: Logbook, My Account
 // Logged out users have: Login, Register
 function add_login_out_item_to_menu( $items, $args ){
 
@@ -665,8 +761,8 @@ function add_login_out_item_to_menu( $items, $args ){
     //build links
     $links = array();
     if( is_user_logged_in( ) ) {
-        array_push($links, '<a href="/members" title="' .  __( 'Members' ) .'">' . __( 'Members' ) . '</a>');
-        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'My Profile' ) .'">' . __( 'My Profile' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'Logbook' ) .'">' . __( 'Logbook' ) . '</a>');
+        array_push($links, '<a href="' . bp_loggedin_user_domain() . 'profile" title="' .  __( 'My Account' ) .'">' . __( 'My Account' ) . '</a>');
         array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
     }
     else {
@@ -680,4 +776,50 @@ function add_login_out_item_to_menu( $items, $args ){
     return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_login_out_item_to_menu', 50, 2 );
+
+/**
+ * Social Sharing feature on single posts
+ */
+if ( ! function_exists( 'ss_sharing' ) ) :
+    function ss_sharing() {
+    global $pls_ss_fb, $pls_ss_tw, $pls_ss_tw_usrname, $pls_ss_gp, $pls_ss_pint, $pls_ss_ln;
+        $share_link = get_permalink();
+        $share_title = get_the_title();
+        $out = '';
+        if ( 'true' == $pls_ss_fb ) {
+            $out .= '<div class="fb-like" data-href="' . $share_link . '" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div>';
+        }
+
+        if ( 'true' == $pls_ss_tw ) {
+            if( ! empty( $pls_ss_tw_usrname ) ) {
+                $out .= '<div class="ss-sharing-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $share_link . '"  data-text="' . $share_title . '" data-via="' . $pls_ss_tw_usrname . '">Tweet</a></div>';
+            }
+            else {
+                $out .= '<div class="ss-sharing-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $share_link . '"  data-text="' . $share_title . '">Tweet</a></div>';
+            }
+        }
+        $out .= '<br/><div class="ss-sharing-btn"><a href="mailto:?subject=Article: ' . get_the_title() . '&amp;body=Read the full article: ' . get_permalink() . '" title="Share by Email"><img src="' . get_stylesheet_directory_uri() . '/images/email_icon.png"></a></div>';
+        if ( 'true' == $pls_ss_gp ) {
+            $out .= '<div class="ss-sharing-btn"><div class="g-plusone" data-size="medium" data-href="' . $share_link . '"></div></div>';
+        }
+        if ( 'true' == $pls_ss_pint ) {
+            global $post;
+            setup_postdata( $post );
+            if ( has_post_thumbnail( $post->ID ) ) {
+                $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '', '' );
+                $image = $src[0];
+            }
+            else
+                $image = '';
+            $description = 'Next%20stop%3A%20Pinterest';
+            $share_link = get_permalink();
+            $out .= '<div class="ss-sharing-btn"><a data-pin-config="beside" href="//pinterest.com/pin/create/button/?url=' . $share_link . '&amp;media=' . $image . '&amp;description=' . $description . '" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" alt="PinIt" /></a></div>';
+            wp_reset_postdata();
+        }
+        if ( 'true' == $pls_ss_ln ) {
+            $out .= '<div class="ss-sharing-btn"><script type="IN/Share" data-url="' . $share_link . '" data-counter="right"></script></div>';
+        }
+        echo $out;
+    }
+endif;
 ?>

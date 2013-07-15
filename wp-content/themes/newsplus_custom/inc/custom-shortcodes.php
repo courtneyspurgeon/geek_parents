@@ -33,7 +33,6 @@ function insert_homepage_section_posts( $atts ) {
 		'hide_image'		=> 'false'
 	), $atts ) );
 
-	error_log("section: ".$section);
 	$custom_args = array(
 		'tax_query' => array(
 			'relation' => 'AND',
@@ -99,20 +98,33 @@ function insert_homepage_section_posts( $atts ) {
 			else {
 				$write_comments = '';
 			}
-			$post_meta = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta"><a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>%5$s</span>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			$write_comments );
-			
-			$post_meta_big = ( $hide_meta == 'true' ) ? '' : sprintf( '<span class="entry-meta"><a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s</span>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			get_the_category_list( ', ' ),
-			$write_comments );
+			if ( $hide_meta == 'true' ) {
+				$post_meta = '';
+			} else {
+				$post_meta = '<span class="entry-meta">';
+				$post_meta .= coauthors_posts_links(null, null, null, null, false);
+				$post_meta .= sprintf( ' on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>%5$s</span>',
+					esc_url( get_permalink() ),
+					esc_attr( get_the_time() ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() ),
+					$write_comments );
+
+			} 
+
+			if ( $hide_meta == 'true' ) {
+				$post_meta_big = '';
+			} else {
+				$post_meta_big = '<span class="entry-meta">';
+				$post_meta_big .= coauthors_posts_links(null, null, null, null, false);
+				$post_meta_big .= sprintf( ' on <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a> | %5$s%6$s</span>',
+					esc_url( get_permalink() ),
+					esc_attr( get_the_time() ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() ),
+					get_the_category_list( ', ' ),
+					$write_comments );
+			}
 			
 			$no_meta_class = ( 'true' == $hide_excerpt && 'true' == $hide_meta ) ? 'no-meta' : '';
 

@@ -97,7 +97,7 @@ Bug fixes and minor enhancements
 * Bug fix: Resolved incorrect caps check against user editing an already published post. [See forum thread](http://wordpress.org/support/topic/multiple-authors-cant-edit-pages?replies=17#post-2741243)
 
 = 2.6.2 (Mar. 6, 2012) =
-* AJAX user search matches against first name, last name, and nickname fields too, in addition to display name, user login, and email address
+* AJAX user search matches against first name, last name, and displayname fields too, in addition to display name, user login, and email address
 * Comment moderation and approved notifications are properly sent to all co-authors with the correct caps
 * Filter required capability for user to be returned in an AJAX search with 'coauthors_edit_author_cap'
 * Filter out administrators and other non-authors from AJAX search with 'coauthors_edit_ignored_authors'
@@ -163,7 +163,7 @@ Bug fixes and minor enhancements
 * DOCS: Added details about the new template tags
 
 = 1.1.5 (Apr. 26, 2009) =
-* FIX: Not searching Updated SQL query for autosuggest to search through first name, last name, and nickname
+* FIX: Not searching Updated SQL query for autosuggest to search through first name, last name, and displayname
 * FIX: When editing an author, and clicking on a suggested author, the original author was not be removed
 * DOCS: Added code comments to javascript; more still to be added
 * DOCS: Updated readme information

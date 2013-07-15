@@ -383,13 +383,7 @@ function bp_core_fetch_avatar( $args = '' ) {
 
 		// Filter gravatar vars
 		$email    = apply_filters( 'bp_core_gravatar_email', $email, $item_id, $object );
-
 		$gravatar = apply_filters( 'bp_gravatar_url', $host ) . md5( strtolower( $email ) ) . '?d=' . $default_grav . '&amp;s=' . $grav_size;
-        // 2013.06.24 Performance enhancement added by Rob Brennan
-        if ('mystery' == $bp->grav_default->{$object}){
-            //$gravatar = apply_filters( 'bp_gravatar_url', BP_PLUGIN_URL . 'bp-core/images/mystery-man.jpg');
-        }
-        //
 
 		// Gravatar rating; http://bit.ly/89QxZA
 		$rating = get_option( 'avatar_rating' );

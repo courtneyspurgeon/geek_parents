@@ -22,7 +22,13 @@ a { color: #1A72C9;}
 .secondary-nav {max-width: 65%;}
 .brand { max-width: 50%; margin-bottom: 2em; }
 
-/* ======================= Homepage Featured Content === */
+/* ======================= Homepage Content === */
+.home-page .section-title {margin-bottom: 0px;}
+.home-page .row > p,
+.homepage-grid .section-title + p,
+.homepage-grid .column > br  {display: none;} /* hiding strange empty p and br tags the cms inserts */
+.home-page .focus-content .section-title {overflow: hidden;}
+.home-page .focus-content .section-title span {float: left;}
 .home-page .entry-content .half {
   width: 45.484848%;
   margin-right: 5.030303%
@@ -43,18 +49,17 @@ a { color: #1A72C9;}
   height: 130px;
   }
 .homepage-grid .section-title { margin-bottom: 0px;}
-.homepage-grid .section-title + p,
-.homepage-grid .column > br  {display: none;} /* hiding strange empty p and br tags the cms inserts */
 .homepage-grid .ss-label { display: block; text-align: center;}
 
 /* news and gallery */
+.homepage-grid .gallery,
+.homepage-grid .news { width: 31%; border-style: solid; border-width: 2px; margin-bottom: 5px;}
 .homepage-grid .gallery .entry-content,
 .homepage-grid .news .entry-content { padding: 0 10px;}
 .homepage-grid .gallery .entry-grid,
 .homepage-grid .news .entry-grid  { border-bottom: 0px; margin-bottom: 0px;}
-.homepage-grid .gallery { background: #D7ECFD; }
-.homepage-grid .news { background: #555; color: #fff;}
-.homepage-grid .news h3 a {color: #fff;}
+.homepage-grid .gallery { background: #D7ECFD; border-color: #0099ff; }
+.homepage-grid .news { background: #BFFFE3; border-color: #33cc99;}
 
 /* This day in History Widget */
 .tdih_list { list-style: none; margin-left: 0px; margin-bottom: 10px;}
@@ -104,8 +109,8 @@ a { color: #1A72C9;}
 .post-thumb .original-tag {
   background: #222;
   position:absolute;
-  top: 37px;
-  right: 110px;
+  top: 22px;
+  right: 120px;
   text-align: center;
   padding: .2em;
   width: 100%;

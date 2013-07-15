@@ -34,7 +34,7 @@ if ( ! have_posts() ) : ?>
             $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . get_the_title() . '">';
             $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
             if (strlen($article_url) < 1) {
-                $out .= '<div class="original-tag">Original Content</div>';
+                $out .= '<div class="original-tag">Exclusive!</div>';
             }
             $out .= '</a></div>';
             echo $out;

@@ -10,8 +10,6 @@
 
 			<div class="bp-widget <?php bp_the_profile_group_slug(); ?>">
 
-				<h4><?php bp_the_profile_group_name(); ?></h4>
-
 				<table class="profile-fields">
 
 					<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>

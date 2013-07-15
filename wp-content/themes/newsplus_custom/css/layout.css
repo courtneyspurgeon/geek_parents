@@ -260,3 +260,6 @@ h3.sb-title {
 
 /* Staff List */
 div.staff .entry-title {}
+
+/* ======================= Events ======== */
+.timely .ai1ec-calendar-toolbar {display: none;}

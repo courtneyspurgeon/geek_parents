@@ -218,8 +218,33 @@ h3.sb-title {
 #category_list .cat-item .count {font-size: .7em;}
 
 /* ======================= Category View ==== */
-.section-title.header-title { font-size: 1.6em; border-bottom: 1px solid #ddd;}
+.section-title.header-title { font-size: 1.7em; border-bottom: 1px solid #ddd;}
+.section-title.header-title.sub-section {border-top: 1px solid #ddd; margin-top: 20px;}
+.flex-viewport .entry-grid {margin-bottom: 0px;}
 
+/* Post Navigation */
+#nav-above {
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  margin: .5em 0 0em;
+  float: right;
+  width: 35%;
+}
+#nav-above .nav-previous,
+#nav-above .nav-next {float: right; text-align: right;}
+
+#nav-above a,
+#nav-above a:visited,
+.more-link,
+.more-link:visited {
+  color: #999;
+}
+
+#nav-above a:hover,
+.more-link:hover {
+  color: #333;
+}
 
 /* ======================= Footer ============== */
 .notes-left {width: 100%; text-align: center;}

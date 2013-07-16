@@ -822,4 +822,24 @@ if ( ! function_exists( 'ss_sharing' ) ) :
         echo $out;
     }
 endif;
+
+/**
+ * next/previous navigation for pages and archives
+ */
+if ( ! function_exists( 'newsplus_content_nav_right' ) ) :
+function newsplus_content_nav( $html_id ) {
+    global $wp_query;
+    $html_id = esc_attr( $html_id );
+    if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi();
+    else {
+    if ( $wp_query->max_num_pages > 1 ) : ?>
+        <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+            <div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'newsplus' ) ); ?></div>
+            <div class="nav-previous alignright"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'newsplus' ) ); ?></div>
+        </nav><!-- #<?php echo $html_id; ?> .navigation -->
+    <?php endif;
+    }
+}
+endif;
+
 ?>

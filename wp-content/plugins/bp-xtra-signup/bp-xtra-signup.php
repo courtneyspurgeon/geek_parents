@@ -177,11 +177,13 @@ class BPXS_Loader
 	 */
 	function globals()
 	{
+        /*
 		if( $options = get_option( 'bpxs_options' ) )
 		{
 			foreach( $options as $key => $var )
 				$this->options->{$key} = $var;
 		}
+        */
 	}
 	
 	/**

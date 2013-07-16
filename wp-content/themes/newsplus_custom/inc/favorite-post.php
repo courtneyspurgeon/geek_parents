@@ -1,28 +1,4 @@
 <?php
-/* Based on the work of 
- *
- * http://www.dnxpert.com/2010/06/11/mark-blog-post-as-favorite-in-buddypress/
- */
-
-function my_bp_activity_is_favorite($activity_id) 
-{
-  global $bp, $activities_template;
-  return apply_filters( 'bp_get_activity_is_favorite', in_array( $activity_id, (array)$activities_template->my_favs ) );
-}
-
-function my_bp_activity_favorite_link($activity_id) 
-{
-  global $activities_template;
-  echo apply_filters( 'bp_get_activity_favorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/favorite/' . $activity_id . '/' ), 'mark_favorite' ) );
-}
-
-function my_bp_activity_unfavorite_link($activity_id) 
-{
-  global $activities_template;
-  echo apply_filters( 'bp_get_activity_unfavorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/unfavorite/' . $activity_id . '/' ), 'unmark_favorite' ) );
-}
-
-
 /* Add a new activity stream item for when people read a post */
 function read_articles_post_activity() 
 {
@@ -52,7 +28,7 @@ function read_articles_post_activity()
   if ($count == 0)
   {
       bp_activity_add(array( 
-          'action'              => sprintf( __( '%s read the article %s' ), $current_user->first_name,$post->post_title ),
+          'action'              => sprintf( __( '%s read the article %s' ), '<a href="'.$current_user->user_url.'">'.$current_user->first_name.'</a>', '<a href="'.get_permalink($post_id).'">'.$post->post_title.'</a>' ),
           'component'           => 'blogs',
           'type'                => 'blog_post_read',
           'user_id'             => $current_user->ID,

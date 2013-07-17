@@ -24,20 +24,14 @@ if ( ! have_posts() ) : ?>
 	while ( $wp_query->have_posts() ) :
         $wp_query->the_post();
         $article_url = get_post_meta( $post->ID, '_cmb_source_url', true );
-        $article_class = (strlen($article_url) > 1) ? '' : ' original-article';
         $fclass = ( 0 == ( ( $count - 1 ) % 3 ) ) ? ' first-grid' : '';
         $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
-        <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass . $article_class); ?>>
+        <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
         <?php if ( has_post_thumbnail() ) {
             $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
             $img = $img_src[0];
             $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . get_the_title() . '">';
             $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
-            if (has_term( 'hi-five-kids', 'section' ) ) {
-                $out .= '<div class="banner-tag hi-five">Hi Five, Kid!</div>';
-            } elseif (strlen($article_url) < 1) {
-                $out .= '<div class="banner-tag exclusive">Exclusive</div>';
-            }
             $out .= '</a></div>';
             echo $out;
         } ?>

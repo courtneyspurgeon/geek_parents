@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by courtneyspurgeon
- * Date: 6/25/13 4:05 PM
+ * Date: 6/25/13
  * http://courtneyspurgeon.com
  */
 

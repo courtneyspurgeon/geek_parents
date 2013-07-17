@@ -37,7 +37,7 @@ a { color: #1A72C9;}
   margin-right: 0px; 
   width: 49.484848%;
   }
-.section-title span {display: inline-table;}
+.section-title span {display: inline-block;}
 .home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
 .home-page .column.half .one-col { border-bottom: 0;}
 .home-page .column.half div + div + div { border-bottom: 0; }
@@ -52,8 +52,12 @@ a { color: #1A72C9;}
 .homepage-grid .ss-label { display: block; text-align: center;}
 
 /* news and gallery */
+.ss-label {background: #F7E0A9; color: #000;}
+.ss-label.red, .ss-label.green, .ss-label.aqua, .ss-label.brown, .ss-label.orange {color: #fff;}
 .homepage-grid .gallery,
 .homepage-grid .news { width: 31%; border-style: solid; border-width: 2px; margin-bottom: 5px;}
+.homepage-grid .gallery .ss-label,
+.homepage-grid .news .ss-label { color: #fff;}
 .homepage-grid .gallery .entry-content,
 .homepage-grid .news .entry-content { padding: 0 10px;}
 .homepage-grid .gallery .entry-grid,
@@ -106,7 +110,7 @@ a { color: #1A72C9;}
 .post.original-article .entry-content{ padding: 0 10px;}
 .post.original-article .entry-meta a { background: #888; color: #fff;}
 .post.original-article .entry-meta a:hover { background: #fff; color: #000; }
-.post-thumb .original-tag {
+.post-thumb .banner-tag {
   background: #222;
   position:absolute;
   top: 22px;
@@ -118,8 +122,12 @@ a { color: #1A72C9;}
   transform:rotate(315deg);
   -ms-transform:rotate(315deg); /* IE 9 */
   -webkit-transform:rotate(315deg); /* Safari and Chrome */
-  box-shadow: 0px 3px 3px #000;
-  -webkit-box-shadow: 0px 3px 3px #000;
+  box-shadow: 2px 3px 5px #888888;
+  -webkit-box-shadow: 2px 3px 5px #888888;
+}
+.post-thumb .banner-tag.hi-five {
+  background: #FEEA63;
+  color: #000;
 }
 /* post-type tag/blurbs */
 .post-type {
@@ -138,6 +146,11 @@ a { color: #1A72C9;}
 #sidebar .post-list .post-thumb { overflow: hidden; max-height: 80px;}
 
 /* ======================= Article Page ======= */
+/* image */
+.entry-header img.wp-post-image {margin-bottom: 0;}
+.entry-header .main-image {margin-bottom: 1.5em;}
+.main-image span {color: #999;}
+.main-image span a {color: #777; text-decoration: underline;}
 
 .single-post .entry-title .post-type { font-size: .7em; padding: .1em .5em .2em;}
 .single-post .entry-content a {text-decoration: underline;}
@@ -226,8 +239,33 @@ h3.sb-title {
 #category_list .cat-item .count {font-size: .7em;}
 
 /* ======================= Category View ==== */
-.section-title.header-title { font-size: 1.6em; border-bottom: 1px solid #ddd;}
+.section-title.header-title { font-size: 1.7em; border-bottom: 1px solid #ddd;}
+.section-title.header-title.sub-section {border-top: 1px solid #ddd; margin-top: 20px;}
+.flex-viewport .entry-grid {margin-bottom: 0px;}
 
+/* Post Navigation */
+#nav-above {
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  margin: .5em 0 0em;
+  float: right;
+  width: 35%;
+}
+#nav-above .nav-previous,
+#nav-above .nav-next {float: right; text-align: right;}
+
+#nav-above a,
+#nav-above a:visited,
+.more-link,
+.more-link:visited {
+  color: #999;
+}
+
+#nav-above a:hover,
+.more-link:hover {
+  color: #333;
+}
 
 /* ======================= Footer ============== */
 .notes-left {width: 100%; text-align: center;}
@@ -268,3 +306,6 @@ h3.sb-title {
 
 /* Staff List */
 div.staff .entry-title {}
+
+/* ======================= Events ======== */
+.timely .ai1ec-calendar-toolbar {display: none;}

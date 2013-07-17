@@ -52,8 +52,12 @@ a { color: #1A72C9;}
 .homepage-grid .ss-label { display: block; text-align: center;}
 
 /* news and gallery */
+.ss-label {background: #F7E0A9; color: #000;}
+.ss-label.red, .ss-label.green, .ss-label.aqua, .ss-label.brown, .ss-label.orange {color: #fff;}
 .homepage-grid .gallery,
 .homepage-grid .news { width: 31%; border-style: solid; border-width: 2px; margin-bottom: 5px;}
+.homepage-grid .gallery .ss-label,
+.homepage-grid .news .ss-label { color: #fff;}
 .homepage-grid .gallery .entry-content,
 .homepage-grid .news .entry-content { padding: 0 10px;}
 .homepage-grid .gallery .entry-grid,

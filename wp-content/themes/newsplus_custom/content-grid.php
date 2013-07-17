@@ -33,14 +33,19 @@ if ( ! have_posts() ) : ?>
             $img = $img_src[0];
             $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . get_the_title() . '">';
             $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
-            if (strlen($article_url) < 1) {
-                $out .= '<div class="original-tag">Exclusive!</div>';
+            if (has_term( 'hi-five-kids', 'section' ) ) {
+                $out .= '<div class="banner-tag hi-five">Hi Five, Kid!</div>';
+            } elseif (strlen($article_url) < 1) {
+                $out .= '<div class="banner-tag exclusive">Exclusive</div>';
             }
             $out .= '</a></div>';
             echo $out;
         } ?>
         <div class="entry-content">
-            <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="entry-title">
+                <?php if (get_post_time('U', true) > strtotime('-5 days')) { ?><span class="new-tag">New</span><?php } ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            </h2>
             <p class="post-excerpt"><?php echo short( get_the_excerpt(), 160 ); ?></p>
             <?php if( 'true' != $pls_hide_post_meta ) { ?>
             <aside id="meta-<?php the_ID();?>" class="entry-meta"><?php newsplus_post_meta(); ?></aside>

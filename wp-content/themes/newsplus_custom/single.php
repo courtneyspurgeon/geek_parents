@@ -51,10 +51,21 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                     elseif ( 'gallery' == get_post_format() )
                         get_template_part( 'formats/format', 'gallery' );
                     else {
-                    if ( 'true' != $pls_hide_feat_image )
-                      the_post_thumbnail( 'single_thumb' );
+                        if ( 'true' != $pls_hide_feat_image ) :
+                            echo '<div class="main-image">';
+                            the_post_thumbnail( 'single_thumb' ); 
+                            $thumbnail_id    = get_post_thumbnail_id($post->ID);
+                            $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+                            if ($thumbnail_image && isset($thumbnail_image[0])) {
+                                echo '<span>'.$thumbnail_image[0]->post_excerpt.'</span>';
+                            }
+                            echo '</div>'; //end main-image div
+                        endif;
                     }
                     ?>
+
+
                     <?php if ( 'true' != $pls_hide_post_meta ) :
                         if ( 'true' != $hide_meta ) : ?>
                             <aside id="meta-<?php the_ID();?>" class="entry-meta">
@@ -87,6 +98,7 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                         <?php endif; // Hide Post meta on individual post
                     endif; // Globally hide post meta ?>
                 </header>
+
                 <div class="entry-content">
 					<?php the_content(); ?>
                     <?php if ($article_url) : ?>

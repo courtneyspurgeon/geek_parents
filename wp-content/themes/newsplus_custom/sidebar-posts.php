@@ -14,6 +14,10 @@ endif; ?>
 
 <div id="sidebar" class="widget-area" role="complementary">
 
+  <?php if ( is_user_logged_in() ) : ?>
+    <?php wpfp_link(); ?> 
+  <?php endif;?>
+
   <?php if ( 'true' == $pls_ss_sharing ) : ?>
     <h3 class="sb-title">Share this Article</h3>
     <div class="ss-sharing-container clear">

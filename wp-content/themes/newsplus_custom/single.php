@@ -36,9 +36,6 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 		<?php endif; // if ad not empty
 		endif; // Single post show-ad-above check ?>
 			 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                 <?php if ( is_user_logged_in() ) : ?>
-                     <?php wpfp_link(); ?>
-                 <?php endif;?>
 
                 <header class="entry-header">
                     <h1 class="entry-title">

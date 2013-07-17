@@ -176,7 +176,15 @@ h3.sb-title {
   color: #999;
   padding-top: 10px;
 }
-
+.wpfp-span {
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin-bottom: .5em;
+  color: #999;
+  padding-top: 10px;
+}
+.wpfp-span a { color: #999;}
+.wpfp-span img { float: left; margin-top: .3em; }
 /* sharing sidebar */
 .ss-sharing-container {border-bottom: 0px; margin-bottom: 1em;}
 .fb-like, .ss-sharing-btn { padding: 0px; border-right: 0px;}

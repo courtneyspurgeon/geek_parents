@@ -10,31 +10,36 @@
 		</div>
 	</noscript>
 
-	<?php if ( empty( $_POST['page'] ) ) : ?>
+	<?php if ( bp_current_action() === 'favorites' ) : // courtneyspurgeon: favorites tab displays favorited posts instead of activities ?>
+		<?php echo do_shortcode('[wp-favorite-posts]'); ?>
+	<?php else: ?>
 
-		<ul id="activity-stream" class="activity-list item-list">
+		<?php if ( empty( $_POST['page'] ) ) : ?>
 
-	<?php endif; ?>
+			<ul id="activity-stream" class="activity-list item-list">
 
-	<?php while ( bp_activities() ) : bp_the_activity(); ?>
+		<?php endif; ?>
 
-		<?php bp_get_template_part( 'activity/entry' ); ?>
+		<?php while ( bp_activities() ) : bp_the_activity(); ?>
 
-	<?php endwhile; ?>
+			<?php bp_get_template_part( 'activity/entry' ); ?>
 
-	<?php if ( bp_activity_has_more_items() ) : ?>
+		<?php endwhile; ?>
 
-		<li class="load-more">
-			<a href="#more"><?php _e( 'Load More', 'buddypress' ); ?></a>
-		</li>
+		<?php if ( bp_activity_has_more_items() ) : ?>
 
-	<?php endif; ?>
+			<li class="load-more">
+				<a href="#more"><?php _e( 'Load More', 'buddypress' ); ?></a>
+			</li>
 
-	<?php if ( empty( $_POST['page'] ) ) : ?>
+		<?php endif; ?>
 
-		</ul>
+		<?php if ( empty( $_POST['page'] ) ) : ?>
 
-	<?php endif; ?>
+			</ul>
+
+		<?php endif; ?>
+	<?php endif; // end if favorite ?>
 
 <?php else : ?>
 

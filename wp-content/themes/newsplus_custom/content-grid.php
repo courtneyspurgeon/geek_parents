@@ -31,7 +31,8 @@ if ( ! have_posts() ) : ?>
         <?php if ( has_post_thumbnail() ) {
             $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
             $img = $img_src[0];
-            $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . get_the_title() . '">';
+            $title = get_the_title();
+            $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . $title . '">';
             $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
             if (has_term( 'hi-five-kids', 'section' ) ) {
                 $out .= '<div class="banner-tag hi-five">Hi Five, Kid!</div>';

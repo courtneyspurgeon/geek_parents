@@ -124,7 +124,7 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
                     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $co_author->ID ), array(64,64) );
                     if ($img_src ) :
                         $img = $img_src[0];
-                        $author_avatar = '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';    
+                        $author_avatar = '<img src="' . $img . '"/>';    
                     else:
                         $author_avatar = get_avatar( get_the_author_meta( 'user_email' ), 64 );
                     endif;

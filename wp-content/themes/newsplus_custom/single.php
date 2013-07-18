@@ -117,26 +117,44 @@ $article_domain   = parse_url($article_url, PHP_URL_HOST);
 			</article><!-- #post-<?php the_ID();?> -->
 			<?php //sharing was moved from here to the sidebar-posts.php template ?>
 			<?php if ( 'true' == $pls_author ) :
-				if ( get_the_author_meta( 'description' ) ) : ?>
+                if (  function_exists( 'coauthors_posts_links' ) ) {
+                    $co_authors = get_coauthors();
+                    $co_author = $co_authors[0];
+                    $author_description = $co_author->description;
+                    $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $co_author->ID ), array(64,64) );
+                    if ($img_src ) :
+                        $img = $img_src[0];
+                        $author_avatar = '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';    
+                    else:
+                        $author_avatar = get_avatar( get_the_author_meta( 'user_email' ), 64 );
+                    endif;
+                    $author = coauthors_posts_links( null, null, null, null, false );
+                    $author_posts_url = get_author_posts_url( $co_author->ID, $co_author->user_nicename );
+                } else {
+                    $author_description = get_the_author_meta( 'description' );
+                    $author_avatar = get_avatar( get_the_author_meta( 'user_email' ), 64 );
+                    $author = get_the_author();
+                    $author_posts_url = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+                }
+				if ( $author_description ) : ?>
 					<div class="author-info">
 						<div class="author-avatar">
-							<?php
-							echo get_avatar( get_the_author_meta( 'user_email' ), 64 ); ?>
+							<?php echo $author_avatar; ?>
 						</div><!-- .author-avatar -->
 						<div class="author-description">
 							<h3>
                                 <?php 
                                 if ($article_url) :
-                                    printf( __( 'Discovered by %s', 'newsplus' ), get_the_author() ); 
+                                    printf( __( 'Discovered by %s', 'newsplus' ), $author ); 
                                 else :
-                                    printf( __( 'About %s', 'newsplus' ), get_the_author() ); 
+                                    printf( __( 'About %s', 'newsplus' ), $author ); 
                                 endif; 
                                 ?>
-                                <a class="more-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+                                <a class="more-link" href="<?php echo $author_posts_url; ?>" rel="author">
                                     <?php printf( __( 'View all posts', 'newsplus' ) ); ?>
                                 </a>
                             </h3>
-							<p><?php the_author_meta( 'description' ); ?></p>
+							<p><?php echo $author_description; ?></p>
 						</div><!-- .author-description -->
 					</div><!-- .author-info -->
 				<?php endif; // has description

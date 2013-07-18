@@ -34,7 +34,8 @@
         wp_reset_query();
     else:
         echo "<li>";
-        echo $wpfp_options['favorites_empty'];
+        echo $wpfp_options['favorites_empty']; // this is not working as of 7/2013, WP version: 3.5.2, Plugin version: 1.5.8
+        echo 'Favorite list is empty - go to an article page to add it to favorites!';
         echo "</li>";
     endif;
     echo "</ul>";

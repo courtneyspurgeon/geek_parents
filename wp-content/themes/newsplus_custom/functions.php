@@ -675,63 +675,6 @@ function wp_list_categories_remove_title_attributes($output) {
 }
 add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 
-// 2013.06.26 added by Courtney Spurgeon to list categories with descriptions
-// code found online and adjusted to our needs
-// source: http://www.wplover.com/1016/category-based-navigation-with-description-a-la-grid-focus/
-function list_cats_desc_thumb() {
-  $base = wp_list_categories('echo=0&title_li=&show_count=1');
- 
-  // wp_list_categories adds a "cat-item-[category_id]" class to the <li> so let's make use of that! 
-  $get_cat_id = '/cat-item-[0-9]+/';
-  preg_match_all($get_cat_id, $base, $cat_id);
- 
-  // Let's prepare our category descriptions to be injected.
-  $inject_desc = array();
- 
-  $i = 0;
-  foreach($cat_id[0] as $id) {
-    $id = trim($id,'cat-item-');
-    $id = trim($id,'"');
-    $cat = get_category($id);
- 
-    $desc = trim(strip_tags($cat->category_description),"\n");   // For some reason, category_description returns the
-                                                                // description wrapped in an unwanted paragraph tag which
-                                                                // we remove with strip_tags. It also adds a newline
-                                                                // which we promptly trim out.
-    $thumbs = get_thumbnails_from_categories($cat->term_id);
- 
-    $inject_desc[$i] = '<div class="cat_thumbnails">' . $thumbs . '</div>' .
-        '<p class="cat-desc">' . $desc . '</p></li>';
-    $i++;
-  }
- 
-  // Now we inject our descriptions
-  $base_arr = explode("\n", $base);
- 
-  $base_i = 0;
-  foreach($inject_desc as $desc) {
- 
-    // We check whether there's an occurence of "</a>"
-    while(strpos($base_arr[$base_i], "</a>") === false) {
-      $base_i++;
-    }
- 
-    // replace ([count]), with (View all [count] articles), and make it part of the link
-    $base_arr[$base_i] = str_replace('</a>', '', $base_arr[$base_i]);
-    $pattern = '/\([0-9]+\)/';
-    preg_match($pattern, $base_arr[$base_i], $matches);
-    $count_text = $matches[0];
-    preg_match('/[0-9]+/', $count_text, $number_match);
-    $number = $number_match[0];
-    $base_arr[$base_i] = str_replace($count_text, '(View all '.$number.')</a>', $base_arr[$base_i]);
-    $base_arr[$base_i] .= $desc;
-    $base_i++;
-  }
- 
-  $base = implode("\n", $base_arr);
-  echo $base;
-}
-
 /* Customizing the login page */
 function my_login_stylesheet() { ?>
     <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/css/login.css'; ?>" type="text/css" media="all" />

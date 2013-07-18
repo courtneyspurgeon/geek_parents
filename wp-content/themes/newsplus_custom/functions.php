@@ -98,6 +98,7 @@ add_action( 'init', 'build_taxonomies', 0 );
 // Thumbnail sizes
 add_image_size( 'bones-thumb-680', 680, 320, true );
 add_image_size( 'sm_thumb', 80, 80, true );
+add_image_size( 'bones-thumb-200', 200, 200, true );
 /* Currently not using additional custom sizes
 //add_image_size( 'bones-thumb-300', 300, 250, true );
 */

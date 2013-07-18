@@ -308,6 +308,7 @@ h3.sb-title {
 
 /* Staff List */
 div.staff .entry-title {}
+.author .post-thumb {max-height: 200px; max-width: 200px;}
 
 /* ======================= Events ======== */
 .timely .ai1ec-calendar-toolbar {display: none;}

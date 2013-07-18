@@ -31,7 +31,7 @@ get_header(); ?>
       </article><!-- #post-0 -->
         <?php endif; ?>
         <?php
-            $blogusers = get_users('blog_id=1&orderby=nicename&role=administrator&fields=all_with_meta');
+            $blogusers = get_users('blog_id=1&orderby=nicename&role=editor&fields=all_with_meta');
             $count = 1;
             $fclass = '';
             $lclass = '';

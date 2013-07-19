@@ -133,7 +133,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                             $time = get_the_time( get_option( 'date_format' ) );
                             $permalink = get_permalink();
                             $title = get_the_title();
-                            $excerpt = ( $hide_excerpt == 'true' ) ? '' : sprintf( '<p class="post-excerpt">%1$s</p>', short( get_the_excerpt(), 5000 ) );
+                            $excerpt = sprintf( '<p class="post-excerpt">%1$s</p>', short( get_the_excerpt(), 5000 ) );
                             $postID = get_the_ID();
                             $num_comments = get_comments_number();
                             if ( comments_open() ) {
@@ -163,7 +163,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                                $post_meta .= ' <span class="post-type ' . $post_type . ' %3$s">' . $post_type .'</span>';
                             }
                             $post_meta .= '</span>';
-                            if ( has_post_thumbnail() && 'true' !== $hide_image ) {
+                            if ( has_post_thumbnail() ) {
                                 $img_big = wp_get_attachment_image_src( get_post_thumbnail_id( $GLOBALS['post']->ID ), 'three_col_thumb' );
                                 $thumbnail = $img_big[0];
                                 $thumblink = sprintf( '<div class="post-thumb"><a href="%1$s" title="%2$s"><img src="%3$s" alt="%2$s" title="%2$s"/></a></div>', $permalink, $title, $thumbnail );
@@ -180,7 +180,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                                     $thumblink = sprintf( '<div class="embed-wrap">%1$s</div>', $post_embed );
                                 }
                             }
-                            $no_meta_class = ( 'true' == $hide_excerpt && 'true' == $hide_meta ) ? 'no-meta' : '';
+                            $no_meta_class = '';
                             $format = '<div class="slide post-%1$s">%2$s<div class="entry-content %7$s"><h3><a href="%3$s" title="%4$s">%4$s</a></h3>%5$s%6$s</div></div>';
                             $slides .= sprintf ( $format, $postID, $thumblink, $permalink, $title, $excerpt, $post_meta, $no_meta_class );
                         endwhile;

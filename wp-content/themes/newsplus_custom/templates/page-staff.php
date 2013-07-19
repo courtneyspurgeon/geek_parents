@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-<div id="primary" class="site-content full-width">
+<div id="primary" class="site-content full-width author">
     <div id="content" role="main">
     <?php show_breadcrumbs();
       if ( have_posts() ) :
@@ -42,9 +42,8 @@ get_header(); ?>
               <article <?php post_class( 'entry-grid col3'. $fclass . $lclass ); ?>>
                 <?php //echo bp_core_get_avatar( $user->ID, 2 ); ?>
                 <div class="post-thumb">
-                  <?php echo get_avatar( $user->ID, 320); ?>
+                  <?php echo get_avatar( $user->ID, 200); ?>
                 </div>
-
                   <div class="entry-content">
                     <?php //echo print_r($user) ?>
                     <h2 class="entry-title"><?php echo $user_info->display_name . $user->ID ?></a></h2>

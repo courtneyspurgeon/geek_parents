@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-<div id="primary" class="site-content full-width">
+<div id="primary" class="site-content full-width author">
     <div id="content" role="main">
     <?php show_breadcrumbs();
       if ( have_posts() ) :
@@ -52,16 +52,16 @@ get_header(); ?>
         $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
         <div class="post-thumb">
-          <?php $title = get_the_title();
-            if ( has_post_thumbnail() ) {
-              $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
-              $img = $img_src[0];
-              echo( '<div class="post-thumb"><img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/></div>');
+          <?php if ( has_post_thumbnail() ) {
+              echo get_the_post_thumbnail(null, array(200,200));
             } ?>
-        </div>
+          </div>
         <div class="entry-content">
           <h2 class="entry-title"><?php the_title(); ?></h2>
           <p class="post-excerpt"><?php echo $meta['cap-description'][0]; ?></p>
+          <?php if ($meta['cap-website'][0] !== '') : ?>
+            <p class="author_website">Website: <a href="<?php echo $meta['cap-website'][0]; ?>"><?php echo $meta['cap-website'][0]; ?></a></p>
+          <?php endif; ?>
         </div><!-- .entry-content -->
         </article><!-- #post-<?php the_ID();?> -->
         <?php $count++;

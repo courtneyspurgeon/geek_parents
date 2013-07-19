@@ -57,6 +57,7 @@ function newsplus_post_meta() {
         the_author_posts_link();
     }
     printf( __( ' on %1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ) );
+    $post_type = get_post_meta(get_the_ID(), '_cmb_source_type', true);
     if (strlen($post_type) > 1) {
         printf( __( '%1$s <span>in %2$s</span> <span class="post-type %3$s">%3$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ' ' ), $post_type, ucwords($post_type) );
     }
@@ -97,6 +98,7 @@ add_action( 'init', 'build_taxonomies', 0 );
 // Thumbnail sizes
 add_image_size( 'bones-thumb-680', 680, 320, true );
 add_image_size( 'sm_thumb', 80, 80, true );
+add_image_size( 'bones-thumb-200', 200, 200, true );
 /* Currently not using additional custom sizes
 //add_image_size( 'bones-thumb-300', 300, 250, true );
 */
@@ -765,6 +767,52 @@ if ( ! function_exists( 'ss_sharing' ) ) :
         echo $out;
     }
 endif;
+
+/**
+ * Favorite posts
+ *
+ * Added by Rob Brennan on 2013.07.15 as suggested by http://www.dnexpert.com/2010/06/11/mark-blog-post-as-favorite-in-buddypress/
+ */
+function my_bp_activity_is_favorite($activity_id) {
+    global $bp, $activities_template;
+    return apply_filters( 'bp_get_activity_is_favorite', in_array( $activity_id, (array)$activities_template->my_favs ) );
+}
+
+function my_bp_activity_favorite_link($activity_id) {
+    global $activities_template;
+    echo apply_filters( 'bp_get_activity_favorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/favorite/' . $activity_id . '/' ), 'mark_favorite' ) );
+}
+
+function my_bp_activity_unfavorite_link($activity_id) {
+    global $activities_template;
+    echo apply_filters( 'bp_get_activity_unfavorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/unfavorite/' . $activity_id . '/' ), 'unmark_favorite' ) );
+}
+
+function addFavoriteActivity($post_id){
+    global $current_user;
+    get_currentuserinfo();
+    $post = get_post($post_id);
+
+    $user_id = $current_user->ID;
+    $user_url = $current_user->user_url;
+    $user_firstName = $current_user->first_name;
+    $post_id = $post->ID;
+    $post_permalink = get_permalink($post->ID);
+    $post_title = $post->post_title;
+    //
+    $action = sprintf( __( '%s added %s as a favorite' ), '<a href="'.$user_url.'">'.$user_firstName.'</a>', '<a href="'.$post_permalink.'">'.$post_title.'</a>' );
+
+    bp_activity_add(array(
+        'action'              => $action,
+        'component'           => 'blogs',
+        'type'                => 'blog_post_favorited',
+        'user_id'             => $user_id,
+        'item_id'             => 1,
+        'secondary_item_id'   => $post_id,
+        'recorded_time'       => date('Y-m-d H:i:s'),
+    ));
+}
+add_action( 'wpfp_after_add', 'addFavoriteActivity' );
 
 /**
  * next/previous navigation for pages and archives

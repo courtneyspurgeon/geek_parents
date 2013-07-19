@@ -1,6 +1,6 @@
 <?php do_action( 'bp_before_activity_loop' ); ?>
-
-<?php if ( bp_has_activities( bp_ajax_querystring( 'activity' ) ) ) : ?>
+<?php $fav_display = (bp_current_action() === 'favorites') ? true : false; ?>
+<?php if ( bp_has_activities( bp_ajax_querystring( 'activity' ) ) || $fav_display ) : ?>
 
 	<?php /* Show pagination if JS is not enabled, since the "Load More" link will do nothing */ ?>
 	<noscript>
@@ -10,7 +10,7 @@
 		</div>
 	</noscript>
 
-	<?php if ( bp_current_action() === 'favorites' ) : // courtneyspurgeon: favorites tab displays favorited posts instead of activities ?>
+	<?php if ( $fav_display ) : // courtneyspurgeon: favorites tab displays favorited posts instead of activities ?>
 		<?php if (function_exists( 'wp_favorite_posts' )) : ?>
 			<?php echo do_shortcode('[wp-favorite-posts]'); ?>
 		<?php else: ?>

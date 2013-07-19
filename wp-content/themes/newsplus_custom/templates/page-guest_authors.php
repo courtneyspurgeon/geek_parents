@@ -53,11 +53,11 @@ get_header(); ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
         <div class="post-thumb">
           <?php if ( has_post_thumbnail() ) {
-              echo get_the_post_thumbnail(null, array(200,200));
+              echo '<a href="'. get_author_posts_url( get_the_ID(), $meta['cap-user_login'][0] ) .'">' . get_the_post_thumbnail(null, array(200,200)) . '</a>';
             } ?>
           </div>
         <div class="entry-content">
-          <h2 class="entry-title"><?php the_title(); ?></h2>
+          <h2 class="entry-title"><?php coauthors_posts_links(); ?></h2>
           <p class="post-excerpt"><?php echo $meta['cap-description'][0]; ?></p>
           <?php if ($meta['cap-website'][0] !== '') : ?>
             <p class="author_website">Website: <a href="<?php echo $meta['cap-website'][0]; ?>"><?php echo $meta['cap-website'][0]; ?></a></p>

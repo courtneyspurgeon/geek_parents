@@ -40,13 +40,13 @@ get_header(); ?>
             $fclass = ( 0 == ( ( $count - 1 ) % 3 ) ) ? ' first-grid' : '';
             $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
               <article <?php post_class( 'entry-grid col3'. $fclass . $lclass ); ?>>
-                <?php //echo bp_core_get_avatar( $user->ID, 2 ); ?>
+                <?php $user_url = esc_url( get_author_posts_url( $user->ID)); ?>
                 <div class="post-thumb">
-                  <?php echo get_avatar( $user->ID, 200); ?>
+                  <?php echo '<a href="'. $user_url .'">' . get_avatar( $user->ID, 200) . '</a>' ?>
                 </div>
                   <div class="entry-content">
                     <?php //echo print_r($user) ?>
-                    <h2 class="entry-title"><?php echo $user_info->display_name . $user->ID ?></a></h2>
+                    <h2 class="entry-title"><?php echo '<a href="'. $user_url .'">' . $user_info->display_name .'</a>'; ?></h2>
                     <p class="post-excerpt"><?php echo $user_info->user_description; ?></p>
                     <?php if ($user_info->user_url !== '') : ?>
                       <p class="author_website">Website: <a href="<?php echo $user_info->user_url; ?>"><?php echo $user_info->user_url; ?></a></p>

@@ -28,7 +28,7 @@ if ( ! have_posts() ) : ?>
         $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; ?>
         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
         <?php if ( has_post_thumbnail() ) {
-            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'two_col_thumb' );
+            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumb-320' );
             $img = $img_src[0];
             $title = get_the_title();
             $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . $title . '">';

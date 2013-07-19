@@ -6,9 +6,40 @@
 // Register and initialize custom short codes
 function newsplus_custom_add_shortcodes() {
 	add_shortcode( 'insert_homepage_section_posts', 'insert_homepage_section_posts' );
+	add_shortcode( 'show_today_featured_event', 'show_today_featured_event');
 }
 add_action( 'init', 'newsplus_custom_add_shortcodes' );
 
+function show_today_featured_event() {
+
+	$args = array(
+		'post_type' => 'ai1ec_event',
+		'events_categories' => 'featured-events',
+		//'status' => 'published'
+		'showposts' => 1,
+		// 'caller_get_posts' => 1,
+		//'number' => 1
+    );
+
+    $my_query = new WP_Query($args);
+    if( $my_query->have_posts() ) 
+    	{
+    		$out = '<div>';
+    		while ($my_query->have_posts()) : $my_query->the_post();
+    			$meta = get_post_meta( get_the_ID() );
+    			print_r($meta->location);
+    			//$out .= print_r($post);
+    			$out .= get_the_title();
+      			$out .= get_the_excerpt();
+      			$out .= $post->location;
+      		endwhile;
+      		$out .= '</div>';
+      		return $out;
+    	} //if ($my_query)
+
+	wp_reset_query();
+	wp_reset_postdata(); // Restore global post data
+}
 
 // This is an altered version of insert_posts from the newsplus theme
 // with added functionality for inserting posts by section and making sure
@@ -139,7 +170,7 @@ function insert_homepage_section_posts( $atts ) {
 					$img = wp_get_attachment_image_src( get_post_thumbnail_id( $GLOBALS['post']->ID ), 'two_col_thumb' );
 				}
 				elseif ( $display_style == 'three-col' ) {
-					$img = wp_get_attachment_image_src( get_post_thumbnail_id( $GLOBALS['post']->ID ), 'three_col_thumb' );
+					$img = wp_get_attachment_image_src( get_post_thumbnail_id( $GLOBALS['post']->ID ), 'thumb-320' );
 				}
 				else {
 					$img = wp_get_attachment_image_src( get_post_thumbnail_id( $GLOBALS['post']->ID ), 'size_max' );

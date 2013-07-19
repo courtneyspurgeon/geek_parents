@@ -14,7 +14,7 @@ endif; ?>
 
 <div id="sidebar" class="widget-area" role="complementary">
 
-  <?php if ( is_user_logged_in() ) : ?>
+  <?php if ( is_user_logged_in() && function_exists( 'wp_favorite_posts' ) ) : ?>
     <?php wpfp_link(); ?> 
   <?php endif;?>
 

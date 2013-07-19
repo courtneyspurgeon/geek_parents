@@ -11,7 +11,12 @@
 	</noscript>
 
 	<?php if ( bp_current_action() === 'favorites' ) : // courtneyspurgeon: favorites tab displays favorited posts instead of activities ?>
-		<?php echo do_shortcode('[wp-favorite-posts]'); ?>
+		<?php if (function_exists( 'wp_favorite_posts' )) : ?>
+			<?php echo do_shortcode('[wp-favorite-posts]'); ?>
+		<?php else: ?>
+			<p>The ability to favorite posts is currently offline.</p>
+		<?php endif; ?>
+		
 	<?php else: ?>
 
 		<?php if ( empty( $_POST['page'] ) ) : ?>

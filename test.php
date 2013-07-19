@@ -10,5 +10,5 @@
 ?>
 
 <html>
-<h1>This is just a test for automated deployment.</h1>
+<h1>Let's see if this works</h1>
 </html>

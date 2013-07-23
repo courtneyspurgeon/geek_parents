@@ -707,7 +707,6 @@ function add_login_out_item_to_menu( $items, $args ){
     //build links
     $links = array();
     if( is_user_logged_in( ) ) {
-        array_push($links, '<a href="' . bp_loggedin_user_domain() . '" title="' .  __( 'Logbook' ) .'">' . __( 'Logbook' ) . '</a>');
         array_push($links, '<a href="' . bp_loggedin_user_domain() . 'profile" title="' .  __( 'My Account' ) .'">' . __( 'My Account' ) . '</a>');
         array_push($links, '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>');
     }
@@ -832,6 +831,35 @@ function newsplus_content_nav( $html_id ) {
     <?php endif;
     }
 }
+endif;
+
+/* Cspurgeon 7/2013 - adding Favorites tab to buddypress
+Requires wp-favorites plugin  */
+if (function_exists( 'wp_favorite_posts' )) :
+    function bp_setup_sub_nav() {
+      global $bp;
+     
+        // Add a nav item for favorites
+        bp_core_new_nav_item( array(
+            'name' => __( 'Favorites', 'wp-favorites' ),
+            'slug' => 'favorites',
+            'default_subnav_slug' => 'favorites',
+            'screen_function' => 'bp_favorites_screen_settings_menu',
+            'position' => 60
+        ) );
+    }
+    add_action( 'bp_setup_nav', 'bp_setup_sub_nav' );
+     
+     
+    function bp_favorites_screen_settings_menu() {
+        add_action( 'bp_template_content', 'bp_favorites_screen_settings_content' );
+        bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
+    }
+     
+     
+    function bp_favorites_screen_settings_content() {
+        echo do_shortcode('[wp-favorite-posts]');
+    }
 endif;
 
 ?>

@@ -32,7 +32,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                 ) );
                 if ( $primary_query->have_posts() ) : ?>
 
-                 <h2 class="section-title"><span class="ss-label red">Focus On: <?php echo $focus_topic ?></span> &nbsp;<span>feature articles by our staff</span><span class="right_link"><a href="#"></a></span></h2>
+                 <h2 class="section-title"><span class="ss-label red">Focus On:</span>&nbsp;<span><?php echo $focus_topic ?></span><span class="right_link"><a href="#"></a></span></h2>
                 <div class="clear primary_posts">
                     <div class="flexslider">
                         <ul class="slides">
@@ -86,7 +86,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                 <div class="clear secondary_posts">
                     <?php //following code taken from newsplus shortcodes posts_carousel
                         $slider_id = 'slider-' . rand( 5, 20000 );
-                        $controlNav = ($secondary_query->found_posts > 2) ? 'true' : 'false';
+                        $controlNav = ($secondary_query->found_posts > 3) ? 'true' : 'false';
                         $out = '<div class="slider-wrap clear">
                         <script type="text/javascript">
                         jQuery(window).load(function(){
@@ -95,7 +95,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                             bodyFontSizeNum = parseFloat ( bodyFontSize );
                             item_width = Math.floor( ( parentWidth - bodyFontSizeNum * 3 ) / 3 );
                             item_margin = bodyFontSizeNum * 1.5;
-                            max_items = 2;
+                            max_items = 3;
                             if ( parentWidth < 480 ) {
                                 item_width = Math.floor( ( parentWidth - bodyFontSizeNum * 1.5 ) / 2 );
                                 max_items = 2;
@@ -115,7 +115,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                                 controlNav: ' . $controlNav . ',
                                 itemWidth: item_width,
                                 itemMargin: item_margin,
-                                minItems: 2,
+                                minItems: 3,
                                 maxItems: max_items,
                                 move: 1,
                                 start: function(slider) {
@@ -210,7 +210,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
                     ) );
                     
                     if ( $tertiary_query->have_posts() ) : ?>
-                        <h2 class="section-title"><span class="ss-label blue">Focus On: <?php echo $focus_topic ?></span> &nbsp;<span>related content from around the web</span></h2>
+                        <h2 class="section-title"><span>Related content from around the web</span></h2>
                         <div class="clear">
                             <?php
                             $count = 1;

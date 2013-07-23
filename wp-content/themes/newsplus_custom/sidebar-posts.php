@@ -13,7 +13,9 @@ elseif ( is_single() ) :
 endif; ?>
 
 <div id="sidebar" class="widget-area" role="complementary">
+  <div style="height: 170px; background-color: #2D4388; color: #fff; text-align: center; padding: 20px; margin-bottom: 20px">Ad space placeholder</div>
 
+  <div class="clear"></div>
   <?php if ( is_user_logged_in() && function_exists( 'wp_favorite_posts' ) ) : ?>
     <?php wpfp_link(); ?> 
   <?php endif;?>
@@ -26,11 +28,6 @@ endif; ?>
         ss_sharing(); ?>
     </div><!-- .ss-sharing-container -->
   <?php endif; // Social Sharing ?>
-
-
-  <h3 class="sb-title">Start a Conversation</h3>
-  <p>Wanna talk further about something related to this article (or anything else)? Start a conversation!</p>
-  <?php echo do_shortcode('[bbp-topic-form]'); ?>
 
 
   <?php if (!dynamic_sidebar('sidebar-posts') ) : // pull in the custom sidebar-posts widget?>

@@ -82,7 +82,18 @@ $original_posts_exist = ($original_content->have_posts() ) ? true : false;
                         $lclass = ( 0 == ( $count % 3 ) ) ? ' last-grid' : ''; 
                         if ($fclass) echo '<li>'; ?>
                         <article id="post-<?php the_ID();?>" <?php post_class( 'entry-grid col3' . $fclass . $lclass ); ?>>
-                        <?php get_template_part( 'formats/format', get_post_format() ); ?>
+                        <?php if ( has_post_thumbnail() ) {
+                            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumb-320' );
+                            $img = $img_src[0];
+                            $title = get_the_title();
+                            $out = '<div class="post-thumb"><a href="' . get_permalink() . '" title="' . $title . '">';
+                            $out .= '<img src="' . $img . '" alt="' . $title . '" title="' . $title . '"/>';
+                            if (has_term( 'hi-five-kids', 'section' ) ) {
+                                $out .= '<div class="banner-tag hi-five">Hi Five, Kid!</div>';
+                            }
+                            $out .= '</a></div>';
+                            echo $out;
+                        } ?>
                         <div class="entry-content">
                             <h2 class="entry-title">
                                 <?php if (get_post_time('U', true) > strtotime('-5 days')) { ?><span class="new-tag">New</span><?php } ?>

@@ -122,8 +122,8 @@ a { color: #1A72C9;}
   transform:rotate(315deg);
   -ms-transform:rotate(315deg); /* IE 9 */
   -webkit-transform:rotate(315deg); /* Safari and Chrome */
-  box-shadow: 2px 3px 5px #888888;
-  -webkit-box-shadow: 2px 3px 5px #888888;
+  box-shadow: 2px 3px 15px #000;
+  -webkit-box-shadow: 2px 3px 15px #000;
 }
 .post-thumb .banner-tag.hi-five {
   background: #FEEA63;

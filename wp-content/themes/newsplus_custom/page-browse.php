@@ -67,7 +67,7 @@ get_header(); ?>
 <div id="primary" class="site-content">
     <div id="content" role="main">
 
-        <h1 class="section-title">Browse by Topic</h1>
+        <h1 class="section-title">Browse by Topic <span id="collapse-images">[ Hide Images ]</span></h1>
 
         <div id="category_list">
             <ul>

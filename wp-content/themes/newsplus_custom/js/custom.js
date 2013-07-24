@@ -1,5 +1,16 @@
 jQuery(document).ready(function( $ ) {
 
+  // Show/Hide images on browse
+  $('#collapse-images').on('click', function(){
+    $('.cat_thumbnails').slideToggle();
+    if ($(this).text().indexOf('Show') != -1) {
+       $(this).text($(this).text().replace('Show', 'Hide'))
+    }
+    else if ($(this).text().indexOf('Hide') != -1) {
+       $(this).text($(this).text().replace('Hide', 'Show'))
+     }
+  });
+
   // When log book is visible: toggle body class "logbook-show"
   $("#logbook-heading a").click(function() {
       current = $('div#user-logbook').attr('class')

@@ -862,4 +862,25 @@ if (function_exists( 'wp_favorite_posts' )) :
     }
 endif;
 
+
+/**
+ * Funtion to shorten any text
+ * Override of newsplus short function - original cut off at last space, even if no shortening was necessary
+ */
+if ( ! function_exists( 'short' ) ) :
+    function short( $text, $limit )
+    {
+        $chars_limit = $limit;
+        $text = strip_tags( $text );
+        $chars_text = strlen( $text );
+        if ( $chars_text > $chars_limit )
+        {
+            $text = substr( $text, 0, $chars_limit );
+            $text = substr( $text, 0, strrpos( $text, ' ' ) );
+            $text = $text . " &hellip;";
+        }
+        return $text;
+    }
+endif;
+
 ?>

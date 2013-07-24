@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-<div id="primary" class="site-content full-width author">
+<div id="primary" class="site-content full-width author-list">
     <div id="content" role="main">
     <?php show_breadcrumbs();
       if ( have_posts() ) :

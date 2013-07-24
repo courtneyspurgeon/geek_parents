@@ -25,10 +25,13 @@ a { color: #1A72C9;}
 /* ======================= Homepage Content === */
 .home-page .section-title {margin-bottom: 0px;}
 .home-page .row > p,
-.homepage-grid .section-title + p,
-.homepage-grid .column > br  {display: none;} /* hiding strange empty p and br tags the cms inserts */
-.home-page .focus-content .section-title {overflow: hidden;}
-.home-page .focus-content .section-title span {float: left;}
+.home-page .row > br,
+.home-page .entry-content > div > p,
+.home-page .column > div > br,
+.home-page .entry-content-title + p,
+.home-page .column > br  {display: none;} /* hiding strange empty p and br tags the cms inserts */
+.home-page .full .section-title {overflow: hidden;}
+.home-page .full .section-title span {float: left;}
 .home-page .entry-content .half {
   width: 45.484848%;
   margin-right: 5.030303%
@@ -38,38 +41,35 @@ a { color: #1A72C9;}
   width: 49.484848%;
   }
 .section-title span {display: inline-block;}
-.home-page .entry-list-left .entry-thumb {max-height: 115px; overflow: hidden;}
+.home-page .entry-list-left .entry-thumb {max-height: 165px; overflow: hidden;}
 .home-page .column.half .one-col { border-bottom: 0;}
-.home-page .column.half div + div + div { border-bottom: 0; }
+.home-page .column .entry-list:last-child { border-bottom: 0; }
+.home-page .focus-content .row { margin-bottom: 0;}
 .ad-row { 
   border-top: 1px solid #e5e5e5; 
   border-bottom: 1px solid #e5e5e5; 
   margin-top: -20px;
   margin-bottom: 20px;
-  height: 130px;
+  padding: 10px 0;
   }
-.homepage-grid .section-title { margin-bottom: 0px;}
-.homepage-grid .ss-label { display: block; text-align: center;}
+.ad-row .widgettitle {padding-top: 0px;}
+.home-page .section-title { margin-bottom: 0px;}
+.home-page .ss-label { display: block; text-align: center;}
+
+/* events */
+.events-today .event-title {font-size: 1.2em;}
 
 /* news and gallery */
-.ss-label {background: #F7E0A9; color: #000;}
-.ss-label.red, .ss-label.green, .ss-label.aqua, .ss-label.brown, .ss-label.orange {color: #fff;}
-.homepage-grid .gallery,
-.homepage-grid .news { width: 31%; border-style: solid; border-width: 2px; margin-bottom: 5px;}
-.homepage-grid .gallery .ss-label,
-.homepage-grid .news .ss-label { color: #fff;}
-.homepage-grid .gallery .entry-content,
-.homepage-grid .news .entry-content { padding: 0 10px;}
-.homepage-grid .gallery .entry-grid,
-.homepage-grid .news .entry-grid  { border-bottom: 0px; margin-bottom: 0px;}
-.homepage-grid .gallery { background: #D7ECFD; border-color: #0099ff; }
-.homepage-grid .news { background: #BFFFE3; border-color: #33cc99;}
 
-/* This day in History Widget */
-.tdih_list { list-style: none; margin-left: 0px; margin-bottom: 10px;}
-.tdih_list li + li {display: none;}
-.tdih_year { font-weight: bold; }
-.ad-row .widgettitle + p {display: none;}
+.ss-label.red, .ss-label.green, .ss-label.aqua, .ss-label.brown, .ss-label.orange {color: #fff;}
+.home-page .gallery,
+.home-page .news { width: 31%; border-style: solid; border-width: 2px; margin-bottom: 5px;}
+.home-page .gallery .entry-content,
+.home-page .news .entry-content { padding: 0 10px;}
+.home-page .gallery .entry-grid,
+.home-page .news .entry-grid  { border-bottom: 0px; margin-bottom: 0px;}
+.home-page .gallery { background: #E6FFF2; border-color: #339966; }
+.home-page .news { background: #FED3C4; border-color: #ff7600;}
 
 
 /* ======================= Meta content =======
@@ -308,7 +308,7 @@ h3.sb-title {
 
 /* Staff List */
 div.staff .entry-title {}
-.author .post-thumb {max-height: 200px; max-width: 200px;}
+.author-list .post-thumb {max-height: 200px; max-width: 200px;}
 
 /* ======================= Events ======== */
 .timely .ai1ec-calendar-toolbar {display: none;}

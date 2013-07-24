@@ -11,34 +11,43 @@ function newsplus_custom_add_shortcodes() {
 add_action( 'init', 'newsplus_custom_add_shortcodes' );
 
 function show_today_featured_event() {
+	global $ai1ec_calendar_helper, $ai1ec_events_helper;
+	$time = $ai1ec_events_helper->gmt_to_local( Ai1ec_Time_Utility::current_time() );
+    $bits = $ai1ec_events_helper->gmgetdate( $time );
 
-	$args = array(
-		'post_type' => 'ai1ec_event',
-		'events_categories' => 'featured-events',
-		//'status' => 'published'
-		'showposts' => 1,
-		// 'caller_get_posts' => 1,
-		//'number' => 1
-    );
+    // Sets start time to today
+    $start = gmmktime(0,0,0,$bits['mon'],$bits['mday'],$bits['year']);
 
-    $my_query = new WP_Query($args);
-    if( $my_query->have_posts() ) 
-    	{
-    		$out = '<div>';
-    		while ($my_query->have_posts()) : $my_query->the_post();
-    			$meta = get_post_meta( get_the_ID() );
-    			print_r($meta->location);
-    			//$out .= print_r($post);
-    			$out .= get_the_title();
-      			$out .= get_the_excerpt();
-      			$out .= $post->location;
-      		endwhile;
-      		$out .= '</div>';
-      		return $out;
-    	} //if ($my_query)
+    // Sets end time to a year from today i.e. $bits['year']+1
+    $end = gmmktime(0,0,0,$bits['mon'],$bits['mday']+1,$bits['year']);
+    $filter = array('cat_ids' => array('951'));
 
-	wp_reset_query();
-	wp_reset_postdata(); // Restore global post data
+    // Look in class-ai1ec-calendar-helper.php for details
+    $get_events = $ai1ec_calendar_helper->get_events_between($start, $end, $filter, $spanning = false);
+
+    // Create the events-today div for display with the title and description
+    $out = '<div class="events-today">';
+
+    $out .= '<h4 class="widgettitle">';
+    
+    $event = $get_events[0];
+    // echo '<pre>' . print_r($event) . '</pre>';
+
+    if (count($get_events) === 0 ) {
+    	$out .= "There are no events today";
+    } else {
+    	$eventTitle = $event->post->post_title;
+        $eventURL = $event->post->guid . $event->instance_id;
+    	$out .= date("F j") . ': ' . '<a href="'. $eventURL .'">' . $eventTitle . '</a>';
+    }
+    $out .= '</h4>';
+
+    $out .= '<p>' . substr( $event->post->post_content, 0, 320) . '</p>';
+    //$out .= short( $event->post->post_excerpt(), 500 );
+    
+    $out .= '</div>'; // end events-today div
+    return $out;
+
 }
 
 // This is an altered version of insert_posts from the newsplus theme
